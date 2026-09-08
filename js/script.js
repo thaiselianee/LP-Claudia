@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
 /* =====================================================
    FAQ - DESKTOP ABERTO / MOBILE FECHADO
 ===================================================== */
@@ -47,5 +48,48 @@ document.addEventListener("DOMContentLoaded", function () {
     ajustarFAQ();
 
     window.addEventListener("resize", ajustarFAQ);
+
+});
+
+
+/* =====================================================
+   BOTÃO DA SEGUNDA CHAMADA - MOBILE
+===================================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const ctaButton = document.querySelector(".cta-form button");
+
+    if (ctaButton) {
+
+        ctaButton.addEventListener("click", function (event) {
+
+            /* MOBILE */
+            if (window.innerWidth <= 768) {
+
+                /*
+                   Impede o envio do formulário e a
+                   validação dos campos required escondidos.
+                */
+                event.preventDefault();
+
+                /* Procura o HERO */
+                const hero = document.querySelector(".hero");
+
+                /* Vai para o HERO */
+                if (hero) {
+
+                    hero.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }
+
+        });
+
+    }
 
 });

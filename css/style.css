@@ -161,20 +161,26 @@ p {
     color: var(--vinho);
 }
 
-.hero-info span:first-child::after {
-    content: "•";
+/* =====================================================
+   SOMENTE DESKTOP
+   ===================================================== */
 
-    position: absolute;
+@media (min-width: 769px) {
 
-    right: -38px;
+    /* Esconde os ícones no desktop */
+    .hero-info svg {
+        display: none;
+    }
 
-    color: var(--vinho);
+    /* Esconde o ponto no desktop */
+    .hero-info span:first-child::after {
+        display: none;
+    }
+
 }
 
 
-/* 
-   TÍTULO
- */
+/*  TÍTULO */
 
 .hero h1 {
     max-width: 900px;
@@ -201,9 +207,7 @@ p {
 }
 
 
-/* 
-   VÍDEO
- */
+/* VÍDEO */
 
 .hero-video {
     position: relative;
@@ -230,9 +234,7 @@ p {
 
 
 
-/* 
-   FORMULÁRIO
- */
+/*  FORMULÁRIO */
 
 .hero-form {
     width: 900px;
@@ -257,10 +259,7 @@ p {
 }
 
 
-/* 
-   INPUTS
-   botao
- */
+/* INPUTS botao */
 .hero-input {
     position: relative;
     width: 200px;
@@ -289,9 +288,7 @@ p {
     border-color: var(--vinho);
 }
 
-/* 
-  SGV ÍCONES DOS CAMPOS
-*/
+/* SGV ÍCONES DOS CAMPOS */
 
 .hero-input-icon {
 
@@ -380,6 +377,10 @@ p {
     color: var(--bege);
     font-style: normal;
 }
+
+
+
+
 
 /* RECONHECIMENTO */
 
@@ -515,9 +516,7 @@ p {
 }
 
 
-/* =========================
-   TEXTO DOS 4 ITENS
-========================= */
+/* TEXTO DOS 4 ITENS */
 
 .reconhecimento-itens .reconhecimento-item p {
     max-width: 175px;
@@ -531,9 +530,7 @@ p {
 }
 
 
-/* =========================
-   FRASE FINAL
-========================= */
+/* FRASE FINAL */
 
 .reconhecimento-final {
     margin-top: 22px;
@@ -614,7 +611,7 @@ p {
 }
 
 
-/* ---------- ITENS ---------- */
+/*  ITENS */
 
 .encontro-items {
     display: grid;
@@ -702,9 +699,7 @@ p {
 
 
 
-/* 
-   FLORES DECORATIVAS
- */
+/* FLORES DECORATIVAS*/
 
 .encontro::before,
 .encontro::after {
@@ -896,6 +891,7 @@ p {
     width: 100%;
     padding: 0;
 }
+
 /* estrutura foto + texto */
 
 .sobre-claudia-content {
@@ -907,9 +903,7 @@ p {
 }
 
 
-/* 
-   FOTO
- */
+/* FOTO */
 
 .sobre-claudia-imagem {
     width: 100%;
@@ -933,9 +927,7 @@ p {
 }
 
 
-/* 
-   TEXTO
- */
+/*TEXTO*/
 
 .sobre-claudia-texto {
     padding: 8px 60px 18px;
@@ -948,9 +940,7 @@ p {
 }
 
 
-/* 
-   LINHAS + SÍMBOLO
- */
+/*LINHAS + SÍMBOLO*/
 
 .sobre-decoration {
     display: flex;
@@ -991,9 +981,7 @@ p {
 }
 
 
-/* 
-   SOBRE A CLÁUDIA
- */
+/* SOBRE A CLÁUDIA*/
 
 .sobre-label {
     padding-right: 300px;
@@ -1021,9 +1009,7 @@ p {
 }
 
 
-/* 
-   PARÁGRAFOS
- */
+/*PARÁGRAFOS*/
 
 .sobre-claudia-texto > p:not(.sobre-label) {
     margin: 0 0 16px;
@@ -1038,9 +1024,7 @@ p {
 }
 
 
-/* 
-   LOGO
- */
+/*  LOGO */
 
 .sobre-logo {
     display: flex;
@@ -1064,9 +1048,7 @@ p {
 }
 
 
-/* =====================================================
-   SEGUNDA CHAMADA
-===================================================== */
+/* SEGUNDA CHAMADA  */
 
 .segunda-chamada {
   position: relative;
@@ -1220,9 +1202,7 @@ p {
 }
 
 
-/* 
-   FLORES DA SEGUNDA CHAMADA
- */
+/* FLORES DA SEGUNDA CHAMADA*/
 
 .segunda-chamada::before,
 .segunda-chamada::after {
@@ -1271,9 +1251,7 @@ p {
 }
 
 
-/* =====================================================
-   FAQ
-===================================================== */
+/* FAQ */
 
 .faq {
   padding: 27px 0 24px;
@@ -1392,9 +1370,7 @@ p {
 }
 
 
-/* =====================================================
-   PERGUNTA
-===================================================== */
+/* PERGUNTA */
 
 .faq-question {
     width: 100%;
@@ -1416,20 +1392,17 @@ p {
 }
 
 
-/* =====================================================
-   SETA
-   ESCONDIDA NO DESKTOP
-===================================================== */
+/*  SETA ESCONDIDA NO DESKTOP*/
 
 .faq-arrow {
     display: none !important;
 }
 
 
-/* =====================================================
+/* 
    RESPOSTA DESKTOP
    SEMPRE VISÍVEL
-===================================================== */
+ */
 
 .faq-answer {
     display: block;
@@ -1512,24 +1485,44 @@ p {
 }
 
 
-
-
-
-
-
 /* =========================================================
-   TABLET
-   769px até 1100px
+   AJUSTES FINAIS — TABLET
+   769px ATÉ 1100px
    ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
-    /* -----------------------------------------
-       SOBRE A CLÁUDIA
-       ----------------------------------------- */
+    /* HERO */
+
+    .hero {
+        min-height: auto;
+        padding-bottom: 40px;
+    }
+
+    /* Logo do Hero */
+    .logo-hero {
+        width: 45px;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* Informações ONLINE / GRATUITO */
+    .hero-info {
+        margin-top: 50px;
+    }
+
+    /* Remove flores do Hero no tablet */
+    .hero .flor {
+        display: none !important;
+    }
+
+
+    /* SOBRE A CLÁUDIA */
 
     .sobre-claudia-content {
         grid-template-columns: 45% 55%;
+        align-items: stretch;
     }
 
     .sobre-claudia-imagem {
@@ -1537,22 +1530,104 @@ p {
     }
 
     .sobre-claudia-texto {
-        padding: 20px 35px;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 20px 35px !important;
     }
 
+    .sobre-label {
+        order: 1 !important;
+
+        width: 100% !important;
+        margin: 0 0 6px 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+
+        align-self: center !important;
+
+        position: static !important;
+        transform: none !important;
+    }
+
+    .sobre-decoration {
+        order: 2 !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        display: flex !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        margin: 0 auto 12px auto !important;
+        padding: 0 !important;
+
+        position: static !important;
+        transform: none !important;
+    }
+ 
+
     .sobre-claudia-texto h2 {
+        order: 3 !important;
+
+        width: 100% !important;
+
+        margin: 0 0 16px 0 !important;
+        padding: 0 !important;
+
+        text-align: center !important;
+
+        align-self: center !important;
+
         font-size: 32px;
     }
 
+
     .sobre-claudia-texto > p:not(.sobre-label) {
+        order: 4 !important;
+
+        width: 100% !important;
+
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        text-align: left !important;
+
         font-size: 15px;
         line-height: 1.3;
     }
 
 
-    /* 
-       FAQ TABLET
-     */
+
+    .sobre-claudia-texto img {
+    order:5!important;
+    display:block!important;
+    margin-left:auto!important;
+    margin-right:auto!important;
+}
+
+
+ .sobre-logo {
+    order: 5 !important;
+
+    display: flex !important;
+
+    margin-top: 10px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+
+    .encontro-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 
     .faq-list {
         max-width: 920px;
@@ -1571,6 +1646,10 @@ p {
         font-size: 12px;
     }
 
+    .container {
+        max-width: 100%;
+    }
+
 }
 
 
@@ -1582,31 +1661,33 @@ p {
 
 @media (max-width: 768px) {
 
-
-    /* 
-       GERAL
-     */
-
+ 
     .container {
         width: 90%;
         max-width: none;
         margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .hero {
         min-height: auto;
-        padding: 18px 0 25px;
+        padding: 25px 0 35px;
         overflow: hidden;
     }
 
     .hero .container {
         width: 90%;
+        max-width: none;
 
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
+
+        box-sizing: border-box;
     }
 
+
+ 
 
     .logo-hero {
         position: relative;
@@ -1614,129 +1695,267 @@ p {
         top: auto;
         left: auto;
 
-        width: 45px;
+        width: 40px;
 
-        margin: 0 auto 10px;
+        margin: 0 auto 18px;
 
         z-index: 2;
     }
 
-
-    .flor-esquerda {
-        width: 130px;
-        left: -55px;
-        bottom: 0;
-    }
-
+    .flor-esquerda,
     .flor-direita {
-        width: 130px;
-        right: -55px;
-        top: 15px;
+        display: none;
     }
-
-
+      
     .hero-info {
-        gap: 32px;
-        margin-bottom: 12px;
+        width: 100%;
+        min-height: 34px;
+
+        margin: 0 0 16px;
+        padding: 6px 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        gap: 12px;
+
+        border: 1px solid var(--vinho);
+        border-radius: 18px;
+
+        background-color: var(--vinho);
+
+        box-sizing: border-box;
     }
+
 
     .hero-info span {
-        font-size: 8px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+
+        color: white;
+
+        font-family: "Lato", sans-serif;
+        font-size: 10px;
+        font-weight: 400;
+
+        line-height: 1;
+
+        white-space: nowrap;
     }
 
-    .hero-info span:first-child::after {
-        right: -21px;
+
+    .hero-info span svg {
+        width: 20px;
+        height: 20px;
+
+        fill: none;
+        stroke: white;
+
+        stroke-width: 1.8;
+
+        stroke-linecap: round;
+        stroke-linejoin: round;
+
+        flex-shrink: 0;
+    }
+
+
+    .hero-info .hero-separador {
+        display: block;
+
+        margin: 0 3px;
+
+        color: white;
+
+        font-family: Arial, sans-serif;
+        font-size: 9px;
+
+        line-height: 1;
     }
 
 
     .hero h1 {
         width: 100%;
-        max-width: 330px;
+        max-width: none;
 
-        margin-bottom: 8px;
+        margin: 0 0 6px;
+        padding: 3px;
 
-        font-size: 17px;
-        line-height: 1.05;
+        box-sizing: border-box;
 
-        text-align: center;
+        font-size: 20px;
+        line-height: 1.15;
+        font-weight: 500;
+
+        text-align: left;
     }
-
 
     .hero-subtitle {
         width: 100%;
-        max-width: 320px;
+        max-width: none;
 
-        margin-bottom: 12px;
+        margin: -8px 0 18px;
+        padding: 3px;
 
-        font-size: 10px;
-        line-height: 1.3;
+        box-sizing: border-box;
 
-        text-align: center;
+        font-size: 16px;
+        line-height: 1.4;
+
+        text-align: left;
     }
 
-
-    /* VÍDEO */
 
     .hero-video {
         width: 100%;
-        max-width: 100%;
+        max-width: none;
 
         height: auto;
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 15 / 9;
 
-        margin-bottom: 15px;
+        margin: 10px 0 35px;
 
-        border-radius: 6px;
+        border-radius: 8px;
 
         overflow: hidden;
-    }
 
+        box-sizing: border-box;
+    }
 
     .hero-form {
         width: 100%;
+        max-width: none;
 
         display: flex;
         flex-direction: column;
+        align-items: stretch;
 
-        align-items: center;
+        gap: 12px;
 
-        gap: 7px;
+        margin: 0;
+
+        box-sizing: border-box;
     }
 
 
     .hero-form h2 {
         width: 100%;
 
-        margin: 0 0 3px;
+        margin: 0 0 12px;
+        padding: 0;
 
-        font-size: 7px;
+        font-family: "Lato", sans-serif;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 1.2;
 
         text-align: left;
+
+        color: var(--vinho);
+    }
+
+    .hero-input {
+        position: relative;
+
+        width: 100%;
+        height: 50px;
+
+        margin: 0;
+        padding: 0;
+
+        box-sizing: border-box;
     }
 
 
+    .hero-input-icon {
+        position: absolute;
+
+        left: 16px;
+        top: 50%;
+
+        transform: translateY(-50%);
+
+        width: 17px;
+        height: 17px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        z-index: 2;
+
+        pointer-events: none;
+    }
+
+
+    .hero-input-icon svg {
+        width: 17px;
+        height: 17px;
+
+        fill: none;
+        stroke: var(--vinho);
+
+        stroke-width: 1.6;
+
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
+
     .hero-form input {
         width: 100%;
-        height: 23px;
+        height: 50px;
 
-        padding: 0 9px;
+        margin: 0;
+        padding: 0 15px 0 45px;
+
+        box-sizing: border-box;
 
         border: 1px solid #AB855F;
-        border-radius: 4px;
+        border-radius: 6px;
 
-        font-size: 7px;
+        background: transparent;
+
+        font-family: "Lato", sans-serif;
+        font-size: 11px;
+
+        color: var(--carvao);
+
+        outline: none;
+    }
+
+
+    .hero-form input::placeholder {
+        color: var(--carvao);
+
+        opacity: 1;
+
+        font-family: "Lato", sans-serif;
+        font-size: 11px;
     }
 
 
     .hero-form button {
         width: 100%;
-        height: 26px;
+        height: 50px;
 
-        margin-top: 8px;
+        margin: 15px 0 0;
+        padding: 0;
 
-        border-radius: 4px;
+        box-sizing: border-box;
 
-        font-size: 7px;
+        border: none;
+        border-radius: 7px;
+
+        background: var(--vinho);
+        color: white;
+
+        font-family: "Lato", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+
+        cursor: pointer;
     }
 
 
@@ -1746,157 +1965,269 @@ p {
 
 
 
+
+/* RECONHECIMENTO - MOBILE */
+
+.reconhecimento {
+    min-height: auto;
+
+    padding: 30px 0 55px;
+
+    text-align: center;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+}
+
+
+/* CONTAINER */
+
+.reconhecimento .container {
+    width: calc(100% - 60px);
+    max-width: 320px;
+
+    margin: 0 auto;
+}
+
+
+/* A PERGUNTA */
+
+.reconhecimento > .container > .section-label {
+    display: block;
+
+    margin: 0 0 18px;
+
+    font-family: "Lato", sans-serif;
+    font-size: 10px;
+    line-height: 1;
+
+    color: var(--vinho);
+}
+
+
+.reconhecimento h2 {
+    width: 100%;
+    max-width: 320px;
+
+    margin: 0 auto 14px;
+    padding: 0;
+
+    font-size: 21px;
+    line-height: 1.15;
+    font-weight: 500;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.reconhecimento h2 br {
+    display: none;
+}
+
+
+.reconhecimento > .container > p:not(.destaque) br {
+    display: none;
+}
+
+.reconhecimento > .container > p:not(.destaque) {
+    width: 100%;
+    max-width: 320px;
+
+    margin: 0 auto 32px;
+    padding: 0;
+
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+
+    text-align: center;
+}
+
+
+.reconhecimento .destaque {
+    width: 100%;
+
+    margin: 0 auto 22px;
+    padding: 0;
+
+    font-family: "Lato", sans-serif;
+    font-size: 13px;
+    line-height: 1.3;
+    font-weight: 600;
+
+    color: var(--vinho);
+
+    text-align: center;
+}
+
+
+.reconhecimento-itens {
+    width: calc(100% + 20px);
+    max-width: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+
+    margin: 0 -10px;
+}
+
+
+.reconhecimento-itens .reconhecimento-item {
+    width: 100%;
+
+    height: auto;
+    min-height: 82px;
+
+    padding: 14px 12px;
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #C8A985;
+    border-radius: 8px;
+
+    text-align: left;
+
+    overflow: visible;
+}
+
+
+.reconhecimento-item .icon {
+    width: 60px;
+    min-width: 42px;
+
+    height: 100%;
+    min-height: 50px;
+
+    padding-right: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    border-right: 1px solid #DCCFC4;
+
+    flex-shrink: 0;
+}
+
+
+/* SVG */
+
+.reconhecimento-item .icon svg {
+    width: 30px;
+    height: 30px;
+
+    fill: none;
+
+    stroke: var(--vinho);
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    flex-shrink: 0;
+}
+
+
+.reconhecimento-itens .reconhecimento-item p {
+    flex: 1;
+
+    width: auto;
+    max-width: none;
+
+    height: auto;
+    min-height: 0;
+
+    margin: 0;
+    padding: 0;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 10px;
+    line-height: 1.35;
+
+    text-align: left;
+
+    color: var(--carvao);
+
+    white-space: normal;
+
+    overflow: visible;
+
+    word-break: normal;
+    overflow-wrap: break-word;
+}
+
+
+.reconhecimento-itens .reconhecimento-item:last-child {
+    height: auto;
+    min-height: 105px;
+
+    border: 1px solid #DCCFC4;
+
+    overflow: visible;
+}
+ 
+.reconhecimento-final {
+    margin-top: 28px;
+
+    width: 100%;
+}
+
+
+/* PRIMEIRA FRASE */
+
+.reconhecimento-final p:first-child {
+    width: 100%;
+    max-width: none;
+
+    margin: 0 auto 7px;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+    line-height: 1.2;
+
+    color: var(--vinho);
+
+    text-align: center;
+
+    white-space: nowrap;
+    margin-left: -13px;
+}
+
+/* SEGUNDA FRASE */
+
+.reconhecimento-final p:last-child {
+    width: 100%;
+    max-width: 315px;
+
+    margin: 0 auto;
+
+    font-family: "Lato", sans-serif;
+    font-size: 12px;
+    line-height: 1.35;
+
+    text-align: center;
+}
     /* 
-       RECONHECIMENTO
-        */
-
-    .reconhecimento {
-        min-height: auto;
-
-        padding: 28px 0 25px;
-
-        text-align: center;
-    }
-
-
-    .reconhecimento .container {
-        width: 90%;
-    }
-
-
-    .reconhecimento > .container > .section-label {
-        margin-bottom: 9px;
-
-        font-size: 8px;
-    }
-
-
-    .reconhecimento h2 {
-        width: 100%;
-
-        margin: 0 auto 10px;
-
-        font-size: 19px;
-        line-height: 1.05;
-    }
-
-
-    .reconhecimento > .container > p:not(.destaque) {
-        width: 100%;
-
-        margin: 0 auto 10px;
-
-        font-size: 9px;
-        line-height: 1.3;
-    }
-
-
-    .reconhecimento .destaque {
-        margin: 12px auto 18px;
-
-        font-size: 10px;
-        line-height: 1.2;
-    }
-
-
-    .reconhecimento-itens {
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 8px;
-
-        margin: 0 auto;
-    }
-
-
-    .reconhecimento-itens .reconhecimento-item {
-        min-height: auto;
-
-        padding: 9px 10px;
-
-        display: flex;
-        flex-direction: row;
-
-        align-items: center;
-
-        gap: 10px;
-
-        text-align: left;
-
-        border: 1px solid #DCCFC4;
-        border-radius: 5px;
-    }
-
-
-    .reconhecimento-itens .reconhecimento-item:last-child {
-        border-right: 1px solid #DCCFC4;
-    }
-
-
-    .reconhecimento-item .icon {
-        width: 28px;
-        height: 28px;
-
-        flex-shrink: 0;
-
-        margin-bottom: 0;
-    }
-
-
-    .reconhecimento-item .icon svg {
-        width: 26px;
-        height: 26px;
-
-        stroke-width: 1.5;
-    }
-
-
-    .reconhecimento-itens .reconhecimento-item p {
-        max-width: none;
-
-        margin: 0;
-
-        font-size: 8px;
-        line-height: 1.3;
-
-        text-align: left;
-    }
-
-
-    .reconhecimento-final {
-        margin-top: 16px;
-    }
-
-
-    .reconhecimento-final p:first-child {
-        max-width: 100%;
-
-        margin: 0 auto 5px;
-
-        font-size: 10px;
-        line-height: 1.2;
-    }
-
-
-    .reconhecimento-final p:last-child {
-        max-width: 95%;
-
-        margin: 0 auto;
-
-        font-size: 8px;
-        line-height: 1.3;
-    }
-
-
-
-    /* 
-       O QUE VOCÊ VAI VER
+      SESSAO O QUE VOCÊ VAI VER
      */
 
     .encontro {
-        padding: 30px 0 28px;
+        padding: 40px 0 30px;
 
         overflow: hidden;
     }
@@ -1922,7 +2253,7 @@ p {
 
 
     .encontro .section-title h2 {
-        font-size: 15px;
+        font-size: 18px;
 
         white-space: nowrap;
 
@@ -1976,8 +2307,8 @@ p {
 
 
     .encontro-item .icon svg {
-        width: 28px;
-        height: 28px;
+        width: 32px;
+        height: 32px;
 
         stroke-width: 1.5;
     }
@@ -1988,7 +2319,7 @@ p {
 
         margin: 0;
 
-        font-size: 9px;
+        font-size: 11px;
         line-height: 1.3;
 
         text-align: left;
@@ -2001,7 +2332,7 @@ p {
      */
 
     .detalhes {
-        padding: 22px 0 22px;
+        padding: 25px 0 25px;
     }
 
 
@@ -2013,7 +2344,7 @@ p {
     .detalhes h2 {
         margin: 0 0 12px;
 
-        font-size: 15px;
+        font-size: 18px;
     }
 
 
@@ -2033,9 +2364,9 @@ p {
     .detalhe-item {
         width: 100%;
 
-        min-height: 43px;
+        min-height: 50px;
 
-        padding: 6px 14px;
+        padding: 8px 30px;
 
         display: flex;
 
@@ -2079,7 +2410,7 @@ p {
 
 
     .detalhe-item > div > span {
-        font-size: 7px;
+        font-size: 12px;
         line-height: 1.1;
     }
 
@@ -2087,18 +2418,15 @@ p {
     .detalhe-item p {
         margin: 0;
 
-        font-size: 8px;
+        font-size: 10px;
         line-height: 1.1;
     }
 
-
-
-    /* 
-       SOBRE A CLÁUDIA
-        */
-
     .sobre-claudia {
+        width: 100%;
         padding: 0;
+
+        background-color: #F8F3EC;
 
         overflow: hidden;
     }
@@ -2106,482 +2434,607 @@ p {
 
     .sobre-claudia .container {
         width: 100%;
-        padding: 0;
-    }
-
-
-    .sobre-claudia-content {
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    /* 
-       FOTO
-        */
-
-    .sobre-claudia-imagem {
-        width: 100%;
-
-        height: auto;
-        min-height: 0;
-
-        overflow: hidden;
-    }
-
-
-    .sobre-claudia-imagem img {
-        width: 100%;
-        height: auto;
-
-        display: block;
-
-        object-fit: contain;
-        object-position: center;
-    }
-
-
-    /* 
-       TEXTO
-        */
-
-    .sobre-claudia-texto {
-        width: 100%;
-
-        padding: 22px 25px 20px;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-
-    .sobre-decoration {
-        gap: 12px;
-
-        margin-bottom: 13px;
-        margin-top: 0;
-    }
-
-
-    .sobre-decoration span {
-        width: 40px;
-    }
-
-
-    .sobre-decoration svg {
-        width: 16px;
-        height: 16px;
-    }
-
-
-    .sobre-label {
-        font-size: 8px;
-    }
-
-
-    .sobre-claudia-texto h2 {
-        margin: 2px 0 13px;
-
-        font-size: 27px;
-
-        text-align: center;
-    }
-
-
-    .sobre-claudia-texto > p:not(.sobre-label) {
-        margin: 0 0 10px;
-
-        font-size: 10px;
-        line-height: 1.35;
-
-        text-align: left;
-    }
-
-
-    .sobre-logo {
-        margin-top: 5px;
-
-        padding-top: 0;
-    }
-
-
-    .sobre-logo img {
-        width: 35px;
-    }
-
-
-
-    /* =====================================================
-       SEGUNDA CHAMADA
-       ===================================================== */
-
-    .segunda-chamada {
-        padding: 35px 0 32px;
-
-        overflow: hidden;
-    }
-
-
-    .segunda-chamada .container {
-        width: 90%;
-    }
-
-
-    .cta-content {
-        width: 100%;
-        max-width: none;
-
-        display: flex;
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 20px;
-    }
-
-
-    .cta-texto {
-        width: 100%;
 
         padding: 0;
-
-        text-align: center;
-    }
-
-
-    .cta-texto h2 {
-        margin: 0 0 6px;
-
-        font-size: 25px;
-        line-height: 1.15;
-
-        text-align: center;
-    }
-
-
-    .cta-texto p {
         margin: 0;
-
-        font-size: 18px;
-        line-height: 1.2;
-
-        text-align: center;
-    }
-
-
-    .cta-form {
-        width: 100%;
-
-        display: flex;
-        flex-direction: column;
-
-        gap: 8px;
-    }
-
-
-    .input-group {
-        width: 100%;
-        height: 38px;
-    }
-
-
-    .cta-form input {
-        width: 100%;
-        height: 38px;
-
-        padding: 0 12px 0 38px;
-
-        border-radius: 5px;
-
-        font-size: 10px;
-    }
-
-
-    .input-icon {
-        left: 14px;
-
-        width: 13px;
-        height: 13px;
-    }
-
-
-    .input-icon svg {
-        width: 13px;
-        height: 13px;
-    }
-
-
-    .cta-form button {
-        width: 100%;
-        height: 40px;
-
-        margin-top: 4px;
-
-        border-radius: 5px;
-
-        font-size: 11px;
     }
 
 
 
-    /* =====================================================
-       FAQ - MOBILE
-       ===================================================== */
+.sobre-claudia-content {
+    width: 100%;
 
-    .faq {
-        padding: 28px 0 25px;
+    display: grid;
 
-        background-color: var(--off-white);
-    }
+    grid-template-columns: 1fr;
 
+    grid-template-areas:
+        "label"
+        "decoracao"
+        "foto"
+        "titulo"
+        "texto1"
+        "texto2"
+        "texto3"
+        "texto4"
+        "texto5"
+        "texto6"
+        "logo";
+}
 
-    .faq .container {
-        width: 90%;
-    }
 
+/* =================================================
+   FOTO
+   ================================================= */
 
-    /* TÍTULO */
+.sobre-claudia-imagem {
+    grid-area: foto;
 
-    .faq .section-title {
-        display: flex;
+    width: 194px !important;
+    height: 198px !important;
 
-        align-items: center;
-        justify-content: center;
+    min-height: 0 !important;
+    max-height: 198px !important;
 
-        gap: 10px;
+    margin: 0 auto !important;
 
-        margin-bottom: 20px;
-    }
+    overflow: hidden;
 
+    border-radius: 10px;
+}
 
-    .faq .section-title span {
-        width: 30px;
-        height: 1px;
 
-        flex-shrink: 0;
+.sobre-claudia-imagem img {
+    width: 100% !important;
+    height: 100% !important;
 
-        background-color: var(--rose);
-    }
+    min-height: 0 !important;
+    max-height: 198px !important;
 
+    display: block;
 
-    .faq .section-title h2 {
-        margin: 0;
+    object-fit: cover;
+    object-position: center center;
+}
 
-        font-size: 21px;
-        font-weight: 400;
 
-        white-space: nowrap;
 
-        text-align: center;
-    }
+.sobre-claudia-texto {
+    display: contents;
+}
 
 
-    /* LISTA */
+.sobre-label {
+    grid-area: label;
 
-    .faq-list {
-        width: 100%;
+    width: 100%;
 
-        display: flex;
-        flex-direction: column;
+    margin: 13px 0 0;
+    padding: 0;
 
-        gap: 9px;
+    text-align: center;
 
-        margin: 0 auto;
-    }
+    font-size: 12px;
+    line-height: 1.2;
 
+    color: #6F1D2A;
 
-    /* BLOCO */
+    font-weight: 500;
 
-    .faq-item {
-        width: 100%;
+    letter-spacing: 0.2px;
+}
 
-        min-height: auto;
 
-        padding: 0;
+/* DECORAÇÃO */
 
-        display: block;
+/*
+   Agora a decoração fica DEPOIS dos textos,
+   embaixo da seção e centralizada.
+*/
 
-        border: 1px solid rgba(200, 169, 133, 0.65);
+.sobre-decoration {
+    grid-area: decoracao;
 
-        border-radius: 5px;
+    width: 300px !important;
+    max-width: calc(100% - 40px);
 
-        background-color: var(--off-white);
+    height: 13px;
 
-        box-shadow: 0 2px 7px rgba(45, 35, 37, 0.12);
+    display: flex !important;
 
-        overflow: hidden;
+    align-items: center !important;
+    justify-content: center !important;
 
-        box-sizing: border-box;
-    }
+    gap: 12px;
 
+    margin: 8px auto 14px !important;
+    padding: 0 !important;
 
-    /* ÁREA CLICÁVEL */
+    position: relative;
 
-    .faq-item summary {
-        width: 100%;
+    left: auto !important;
+    right: auto !important;
 
-        min-height: 51px;
+    transform: none !important;
 
-        padding: 10px 13px;
+    box-sizing: border-box;
+}
 
-        display: flex;
 
-        align-items: center;
+.sobre-decoration span {
+    display: block;
 
-        gap: 11px;
+    width: 36px;
+    height: 1px;
 
-        cursor: pointer;
+    flex-shrink: 0;
 
-        list-style: none;
+    background-color: #B89A91;
+}
 
-        box-sizing: border-box;
-    }
 
+.sobre-decoration svg {
+    width: 13px;
+    height: 13px;
 
-    .faq-item summary::-webkit-details-marker {
-        display: none;
-    }
+    flex-shrink: 0;
 
-    .faq-item summary::marker {
-        display: none;
-    }
+    display: block;
 
+    fill: none;
 
-    /* ÍCONE */
+    stroke: #B89A91;
 
-    .faq-item .faq-icon {
-        width: 27px;
-        height: 27px;
+    stroke-width: 1.3;
+}
 
-        flex-shrink: 0;
 
-        margin: 0;
 
-        border: 1.5px solid var(--vinho);
+.sobre-claudia-texto h2 {
+    grid-area: titulo;
 
-        border-radius: 50%;
+    margin: 12px 0 14px;
+    padding: 0;
 
-        display: flex;
+    text-align: center;
 
-        align-items: center;
-        justify-content: center;
-    }
+    font-size: 25px;
+    line-height: 1.2;
 
+    font-weight: 400;
 
-    .faq-item .faq-icon svg {
-        width: 21px;
-        height: 21px;
+    color: #6F1D2A;
+}
 
-        fill: none;
 
-        stroke: var(--vinho);
+.sobre-claudia-texto > p:not(.sobre-label) {
+    width: 300px;
 
-        stroke-width: 1.5;
+    max-width: calc(100% - 40px);
 
-        stroke-linecap: round;
-        stroke-linejoin: round;
-    }
+    margin: 0 auto 12px;
 
+    font-size: 12px;
 
-    /* PERGUNTA */
+    line-height: 1.4;
 
-    .faq-question {
-        width: 100%;
+    text-align: left;
 
-        display: flex;
+    color: #171717;
+}
 
-        align-items: center;
-        justify-content: space-between;
 
-        gap: 10px;
-    }
+/* PARÁGRAFOS */
 
+.sobre-claudia-texto > p:nth-of-type(2) {
+    grid-area: texto1;
+}
 
-    .faq-question h3 {
-        margin: 0;
+.sobre-claudia-texto > p:nth-of-type(3) {
+    grid-area: texto2;
+}
 
-        font-size: 15px;
-        font-weight: 500;
+.sobre-claudia-texto > p:nth-of-type(4) {
+    grid-area: texto3;
+}
 
-        line-height: 1.2;
-    }
+.sobre-claudia-texto > p:nth-of-type(5) {
+    grid-area: texto4;
+}
 
+.sobre-claudia-texto > p:nth-of-type(6) {
+    grid-area: texto5;
+}
 
-   
+.sobre-claudia-texto > p:nth-of-type(7) {
+    grid-area: texto6;
+}
 
-    .faq-arrow {
-        display: block;
 
-        flex-shrink: 0;
+/* LOGO */
 
-        color: #8D817B;
+.sobre-logo {
+    grid-area: logo;
 
-        font-family: Arial, sans-serif;
+    width: 300px;
+    max-width: calc(100% - 40px);
 
-        font-size: 17px;
+    margin: 2px auto 20px !important;
 
-        line-height: 1;
+    padding-top: 8px;
 
-        transform: none !important;
+    border-top: 1px solid #D8C5B8;
 
-        transition: none !important;
-    }
+    display: flex !important;
 
+    justify-content: center !important;
+    align-items: center !important;
+}
 
-    /* MESMA SETA ABERTA E FECHADA */
 
-    .faq-item[open] .faq-arrow {
-        transform: none !important;
-    }
+.sobre-logo img {
+    width: 35px;
+    height: auto;
 
+    display: block;
 
-    /* =====================================================
-       RESPOSTA
-       ===================================================== */
+    margin: 0 auto !important;
+}
 
-    .faq-answer {
+
+.segunda-chamada {
+    padding: 40px 0 35px;
+    overflow: hidden;
+}
+
+.segunda-chamada .container {
+    width: 100%;
+}
+
+.cta-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+.cta-texto {
+    width: 100%;
+
+    padding: 0 47px;
+
+    text-align: left;
+
+    box-sizing: border-box;
+}
+
+
+.cta-texto h2 {
+    margin: 0 30px 6px;
+
+    font-size: 25px;
+    line-height: 1.15;
+
+    text-align: left;
+
+    /* NÃO DEIXA O TÍTULO QUEBRAR */
+    white-space: nowrap;
+}
+
+
+/* ESCONDE O <br> SOMENTE NO MOBILE 
+.cta-texto h2 br {
+    display: none;
+}
+*/
+
+
+.cta-texto p {
+    margin: 0 30px;
+
+    font-size: 18px;
+    line-height: 1.2;
+
+    text-align: left;
+
+    /* DEIXA A FRASE EM UMA ÚNICA LINHA */
+    white-space: nowrap;
+}
+
+
+/* FORMULÁRIO */
+
+.cta-form {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0;
+}
+
+
+/* ESCONDE SOMENTE OS CAMPOS NO MOBILE */
+/* O BOTÃO CONTINUA APARECENDO */
+.cta-form .input-group {
+    display: none;
+}
+
+
+
+.cta-form button {
+    width: 280px;
+    height: 48px;
+
+    margin: 0 auto;
+
+    padding: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 5px;
+
+    font-size: 17px;
+
+    cursor: pointer;
+}
+ 
+
+.faq {
+    padding: 28px 0 25px;
+
+    background-color: var(--off-white);
+}
+
+.faq .container {
+    width: 90%;
+}
+
+.faq .section-title {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
+
+.faq .section-title span {
+    width: 30px;
+    height: 1px;
+
+    flex-shrink: 0;
+
+    background-color: var(--rose);
+}
+
+.faq .section-title h2 {
+    margin: 0;
+
+    font-size: 21px;
+    font-weight: 400;
+
+    white-space: nowrap;
+
+    text-align: center;
+}
+
+.faq-list {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin: 0 auto;
+}
+
+.faq-item {
+    width: 100%;
+
+    min-height: auto;
+
+    padding: 0;
+
+    display: block;
+
+    border: 1px solid rgba(200, 169, 133, 0.65);
+
+    border-radius: 5px;
+
+    background-color: var(--off-white);
+
+    box-shadow: 0 2px 7px rgba(45, 35, 37, 0.12);
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+}
+
+
+.faq-item summary {
+    width: 100%;
+
+    min-height: 51px;
+
+    padding: 10px 13px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    cursor: pointer;
+
+    list-style: none;
+
+    box-sizing: border-box;
+}
+
+
+/* REMOVE SETA PADRÃO DO DETAILS */
+.faq-item summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq-item summary::marker {
+    display: none;
+}
+
+
+.faq-item .faq-icon {
+    width: 27px;
+    height: 27px;
+
+    flex-shrink: 0;
+
+    margin: 0;
+
+    border: 1.5px solid var(--vinho);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.faq-item .faq-icon svg {
+    width: 21px;
+    height: 21px;
+
+    fill: none;
+
+    stroke: var(--vinho);
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+
+.faq-question {
+    width: 100%;
+
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.faq-question h3 {
+    margin: 0;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.2;
+}
+
+
+/* SETA */
+
+/*
+   NÃO vamos usar o "⌄" do HTML.
+
+   A seta será criada pelo ::after.
+*/
+
+.faq-question .faq-arrow {
     display: none !important;
+}
+
+
+/* SETA PARA BAIXO */
+.faq-question::after {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    flex-shrink: 0;
+
+    display: block;
+
+    border-right: 2px solid #8D817B;
+    border-bottom: 2px solid #8D817B;
+
+    transform: rotate(45deg);
+
+    margin-right: 5px;
+    margin-top: -5px;
+
+    box-sizing: border-box;
+
+    transition: transform 0.2s ease;
+}
+
+
+/* SETA QUANDO ABERTO */
+
+.faq-item[open] .faq-question::after {
+    transform: rotate(225deg);
+
+    margin-top: 5px;
+}
+
+
+/* RESPOSTA */
+
+.faq-answer {
+    display: none;
+
     margin-left: 0;
     margin-top: 10px;
 }
 
-.faq-item[open] > .faq-answer {
-    display: block !important;
+.faq-item[open] .faq-answer {
+    display: block;
+
+    max-height: 300px;
+
+    padding: 0 14px 14px 51px;
+
+    opacity: 1;
 }
 
-    .faq-answer p {
-        margin: 0;
+.faq-answer p {
+    margin: 0;
 
-        color: var(--carvao);
+    color: var(--carvao);
 
-        font-family: "Lato", sans-serif;
+    font-family: "Lato", sans-serif;
 
-        font-size: 11px;
+    font-size: 11px;
 
-        line-height: 1.4;
-    }
-
-
-    /* ABERTO */
-
-    .faq-item[open] .faq-answer {
-        display: block;
-
-        max-height: 300px;
-
-        padding: 0 14px 14px 51px;
-
-        opacity: 1;
-    }
+    line-height: 1.4;
+}
 
 
-
-    /* =====================================================
-       FOOTER
-       ===================================================== */
 
     .footer {
-        padding: 13px 0 11px;
+        padding: 15px 0 15px;
 
         background-color: var(--vinho);
 
@@ -2597,7 +3050,7 @@ p {
     .footer p {
         margin: 0;
 
-        font-size: 8px;
+        font-size: 10px;
 
         line-height: 1.4;
     }
@@ -2611,12 +3064,12 @@ p {
 
 
     .footer-links a {
-        font-size: 8px;
+        font-size: 10px;
     }
 
 
     .footer-links span {
-        font-size: 7px;
+        font-size: 10px;
     }
 
 }  
