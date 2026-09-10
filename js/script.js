@@ -1286,6 +1286,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
         `;
 
+        card.classList.add("sucesso-ativo");
+
 
         /*
          * O questionário continua sendo a camada
