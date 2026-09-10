@@ -1,5 +1,5 @@
 /* =====================================================
-   FAQ - DESKTOP ABERTO / MOBILE FECHADO
+   FAQ - DESKTOP ABERTO / TABLET E MOBILE FECHADOS
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function ajustarFAQ() {
 
-        if (window.innerWidth > 768) {
+        if (window.innerWidth > 1100) {
 
             faqItems.forEach(function (item) {
                 item.setAttribute("open", "");
