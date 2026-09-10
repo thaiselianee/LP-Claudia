@@ -50,7 +50,6 @@ img {
 
 
 /* CONTAINER */
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -59,7 +58,6 @@ img {
 
 
 /* TÍTULOS GERAIS */
-
 h1,
 h2,
 h3 {
@@ -73,8 +71,6 @@ p {
     color: var(--carvao);
     line-height: 1.45;
 }
-
-
 
 .section-label {
     display: block;
@@ -139,9 +135,7 @@ p {
 }
 
 
-/* 
-   ONLINE / GRATUITO
- */
+/* ONLINE / GRATUITO */
 
 .hero-info {
     display: flex;
@@ -161,9 +155,8 @@ p {
     color: var(--vinho);
 }
 
-/* =====================================================
-   SOMENTE DESKTOP
-   ===================================================== */
+
+/* SERVE PRA INTERFERIR OS SGV DO ONLINE, GRATUITO NO DESKTOP */
 
 @media (min-width: 769px) {
 
@@ -181,7 +174,6 @@ p {
 
 
 /*  TÍTULO */
-
 .hero h1 {
     max-width: 900px;
 
@@ -206,8 +198,6 @@ p {
     line-height: 1.35;
 }
 
-
-/* VÍDEO */
 
 .hero-video {
     position: relative;
@@ -235,7 +225,6 @@ p {
 
 
 /*  FORMULÁRIO */
-
 .hero-form {
     width: 900px;
     max-width: 100%;
@@ -246,8 +235,6 @@ p {
     flex-wrap: wrap;
 }
 
-
-/* título do formulário */
 .hero-form h2 {
     flex-basis: 100%;
     margin: 0 0 8px;
@@ -259,7 +246,6 @@ p {
 }
 
 
-/* INPUTS botao */
 .hero-input {
     position: relative;
     width: 200px;
@@ -289,7 +275,6 @@ p {
 }
 
 /* SGV ÍCONES DOS CAMPOS */
-
 .hero-input-icon {
 
     position: absolute;
@@ -315,7 +300,6 @@ p {
     z-index: 2;
 }
 
-
 .hero-input-icon svg {
 
     width: 18px;
@@ -333,8 +317,6 @@ p {
     stroke-linejoin: round;
 }
 
-
-/*BOTAO*/
 .hero-form button {
     width: 200px;
     height: 48px;
@@ -379,11 +361,7 @@ p {
 }
 
 
-
-
-
 /* RECONHECIMENTO */
-
 .reconhecimento {
     background-color: #F8F3EC;
     min-height: 600px;
@@ -411,9 +389,6 @@ p {
     margin-bottom: 12px;
 }
 
-
-/*TÍTULO*/
-
 .reconhecimento h2 {
     max-width: 800px;
 
@@ -426,9 +401,6 @@ p {
 
     color: #5A1723;
 }
-
-
-/* TEXTO INTRODUTÓRIO */
 
 .reconhecimento > .container > p:not(.destaque) {
     max-width: 700px;
@@ -443,9 +415,6 @@ p {
     color: #2D2325;
 }
 
-
-/* DESTAQUE ROSÉ */
-
 .reconhecimento .destaque {
     margin: 16px auto 30px;
     font-family: 'Lato', sans-serif;
@@ -453,9 +422,6 @@ p {
     font-weight: 700;
     color: #B9777E;
 }
-
-
-/* CONTAINER DOS 4 ITENS */
 
 .reconhecimento-itens {
     display: grid;
@@ -467,7 +433,6 @@ p {
 
 
 /* CADA ITEM */
-
 .reconhecimento-itens .reconhecimento-item {
     min-height: 115px;
 
@@ -485,15 +450,10 @@ p {
 
 
 /* remove a linha do último */
-
 .reconhecimento-itens .reconhecimento-item:last-child {
     border-right: none;
 }
 
-
-/* =========================
-   ESPAÇO DO ÍCONE
-========================= */
 
 .reconhecimento-item .icon {
     display: flex;
@@ -531,14 +491,12 @@ p {
 
 
 /* FRASE FINAL */
-
 .reconhecimento-final {
     margin-top: 22px;
 }
 
 
 /* primeira frase */
-
 .reconhecimento-final p:first-child {
     max-width: 720px;
     margin: 0 auto 6px;
@@ -548,8 +506,6 @@ p {
     color: #B9777E;
 }
 
-
-/* segunda frase */
 
 .reconhecimento-final p:last-child {
     max-width: 550px;
@@ -563,7 +519,6 @@ p {
 }
 
 /* SESSAO ENCONTRO - O QUE VOCE VAI VER NO ENCONTRO */
-
 .encontro {
     position: relative;
 
@@ -573,8 +528,6 @@ p {
 
     overflow: hidden;
 }
-
-
 
 .section-title {
     display: flex;
@@ -590,9 +543,7 @@ p {
 .section-title span {
     width: 145px;
     height: 1px;
-
     background-color: var(--bege);
-
     opacity: 0.65;
      flex-shrink: 0;
 
@@ -610,8 +561,6 @@ p {
     white-space: nowrap;
 }
 
-
-/*  ITENS */
 
 .encontro-items {
     display: grid;
@@ -645,8 +594,6 @@ p {
 }
 
 
-/* ícones */
-
 .encontro-item .icon {
   width: 52px;
 
@@ -662,7 +609,6 @@ p {
 }
 
 /*SGV*/
-
 .encontro-item .icon svg {
     width: 48px;
 
@@ -700,7 +646,6 @@ p {
 
 
 /* FLORES DECORATIVAS*/
-
 .encontro::before,
 .encontro::after {
     content: "";
@@ -725,7 +670,6 @@ p {
 
 
 /* flor esquerda - espelhada */
-
 .encontro::before {
     left: -25px;
     bottom: -25px;
@@ -733,25 +677,18 @@ p {
     transform: scaleX(-1);
 }
 
-
 /* flor direita */
-
 .encontro::after {
     right: -25px;
     bottom: -25px;
 }
 
-
 /* DETALHES DO ENCONTRO */
-
 .detalhes {
     background-color: var(--off-white);
 
     padding: 25px 0 25px;
 }
-
-
-/* título */
 
 .detalhes h2 {
     margin: 0 0 14px;
@@ -764,9 +701,6 @@ p {
 
     font-weight: 400;
 }
-
-
-/* caixa */
 
 .detalhes-box {
     max-width: 995px;
@@ -788,7 +722,6 @@ p {
 
 
 /* cada detalhe */
-
 .detalhe-item {
     min-height: 58px;
 
@@ -803,14 +736,12 @@ p {
     border-right: 1px solid rgba(184, 137, 91, 0.4);
 }
 
-
 .detalhe-item:last-child {
     border-right: none;
 }
 
 
 /* ícone */
-
 .detalhe-item .icon {
     width: 42px;
 
@@ -876,8 +807,7 @@ p {
 }
 
 
-/* SOBRE CLÁUDI */
-
+/* SOBRE CLÁUDIA */
 .sobre-claudia {
     background-color: var(--off-white);
 
@@ -893,7 +823,6 @@ p {
 }
 
 /* estrutura foto + texto */
-
 .sobre-claudia-content {
     display: grid;
 
@@ -902,9 +831,6 @@ p {
     align-items: stretch;
 }
 
-
-/* FOTO */
-
 .sobre-claudia-imagem {
     width: 100%;
 
@@ -912,7 +838,6 @@ p {
 
     overflow: hidden;
 }
-
 
 .sobre-claudia-imagem img {
     width: 100%;
@@ -925,9 +850,6 @@ p {
 
     object-position: center;
 }
-
-
-/*TEXTO*/
 
 .sobre-claudia-texto {
     padding: 8px 60px 18px;
@@ -982,7 +904,6 @@ p {
 
 
 /* SOBRE A CLÁUDIA*/
-
 .sobre-label {
     padding-right: 300px;
     margin: -45px 0 1px;   
@@ -992,9 +913,6 @@ p {
     font-size: 12px;
     font-weight: 400;
 }
-
-
-/* nome */
 
 .sobre-claudia-texto h2 {
     margin: 20px 0 15px;
@@ -1008,9 +926,6 @@ p {
     font-weight: 400;
 }
 
-
-/*PARÁGRAFOS*/
-
 .sobre-claudia-texto > p:not(.sobre-label) {
     margin: 0 0 16px;
 
@@ -1023,9 +938,6 @@ p {
     font-weight: 400;
 }
 
-
-/*  LOGO */
-
 .sobre-logo {
     display: flex;
 
@@ -1035,7 +947,6 @@ p {
 
     padding-top: 5px;
 }
-
 
 .sobre-logo img {
     width: 50px;
@@ -1049,16 +960,12 @@ p {
 
 
 /* SEGUNDA CHAMADA  */
-
 .segunda-chamada {
   position: relative;
   padding: 52px 0 43px;
   background-color: var(--vinho);
   overflow: hidden;
 }
-
-
-/* CONTEÚDO */
 
 .cta-content {
   position: relative;
@@ -1073,9 +980,6 @@ p {
 
   column-gap: 70px;
 }
-
-
-/* TEXTO */
 
 .cta-texto {
   padding-left: 0;
@@ -1102,9 +1006,7 @@ p {
   line-height: 1.2;
 }
 
-
-/* FORMULÁRIO */
-
+/* FORMULÁRIO DA SEGUNDA CHAMADA */
 .cta-form {
   display: flex;
   flex-direction: column;
@@ -1115,7 +1017,6 @@ p {
 
 
 /* GRUPO DO INPUT */
-
 .input-group {
   position: relative;
 
@@ -1123,9 +1024,7 @@ p {
   height: 51px;
 }
 
-
 /* INPUT */
-
 .cta-form input {
   box-sizing: border-box;
   margin-left: -20px;
@@ -1149,7 +1048,6 @@ p {
 
 
 /* ÍCONE DO INPUT */
-
 .input-icon {
   position: absolute;
   left: 8px;
@@ -1170,10 +1068,6 @@ p {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
-
-
-
-/* BOTÃO */
 
 .cta-form button {
   width: 440px;
@@ -1203,7 +1097,6 @@ p {
 
 
 /* FLORES DA SEGUNDA CHAMADA*/
-
 .segunda-chamada::before,
 .segunda-chamada::after {
   content: "";
@@ -1226,7 +1119,6 @@ p {
 
 
 /* FLOR ESQUERDA */
-
 .segunda-chamada::before {
   left: -20px;
   bottom: -15px;
@@ -1239,7 +1131,6 @@ p {
 
 
 /* FLOR DIREITA */
-
 .segunda-chamada::after {
   right: -15px;
   top: 25px;
@@ -1252,7 +1143,6 @@ p {
 
 
 /* FAQ */
-
 .faq {
   padding: 27px 0 24px;
 
@@ -1261,7 +1151,6 @@ p {
 
 
 /* TÍTULO */
-
 .faq .section-title {
   display: flex;
 
@@ -1292,18 +1181,12 @@ p {
   opacity: 0.9;
 }
 
-
-/* LISTA */
-
 .faq-list {
   max-width: 1050px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
-
-
-/* ITEM */
 
 .faq-item {
     display: block;
@@ -1314,7 +1197,6 @@ p {
 }
 
 
-/* REMOVE A SETA PADRÃO DO DETAILS */
 
 .faq-item summary {
     list-style: none;
@@ -1333,9 +1215,6 @@ p {
 .faq-item summary::marker {
     content: "" !important;
 }
-
-
-
 
 .faq-icon {
     width: 32px;
@@ -1369,9 +1248,6 @@ p {
     stroke-linejoin: round;
 }
 
-
-/* PERGUNTA */
-
 .faq-question {
     width: 100%;
 
@@ -1391,13 +1267,10 @@ p {
     line-height: 1.15;
 }
 
-
 /*  SETA ESCONDIDA NO DESKTOP*/
-
 .faq-arrow {
     display: none !important;
 }
-
 
 /* 
    RESPOSTA DESKTOP
@@ -1462,7 +1335,6 @@ p {
   gap: 7px;
 }
 
-
 .footer-links a {
   color: white;
 
@@ -1472,18 +1344,15 @@ p {
   text-decoration: none;
 }
 
-
 .footer-links span {
   color: white;
 
   font-size: 9px;
 }
 
-
 .footer-links a:hover {
   text-decoration: underline;
 }
-
 
 /*QUESTIONARIO DESKTOP*/
 .questionario-overlay {
@@ -1513,7 +1382,6 @@ p {
 /* =====================================================
    CARD DO QUESTIONÁRIO
 ===================================================== */
-
 .questionario-card {
     position: relative;
 
@@ -1537,11 +1405,6 @@ p {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-
-/* =====================================================
-   TOPO
-===================================================== */
-
 .questionario-header {
     display: flex;
 
@@ -1554,7 +1417,6 @@ p {
     font-family: "Lato", sans-serif;
 }
 
-
 .progresso-texto {
     font-size: 12px;
 
@@ -1565,7 +1427,6 @@ p {
     color: #5A1723;
 }
 
-
 .progresso-porcentagem {
     font-size: 13px;
 
@@ -1575,10 +1436,7 @@ p {
 }
 
 
-/* =====================================================
-   BARRA DE PROGRESSO
-===================================================== */
-
+/* BARRA DE PROGRESSO */
 .progresso-container {
     width: calc(100% - 120px);
 
@@ -1593,7 +1451,6 @@ p {
     overflow: hidden;
 }
 
-
 .progresso-barra {
     width: 8%;
 
@@ -1607,10 +1464,7 @@ p {
 }
 
 
-/* =====================================================
-   BOTÃO FECHAR
-===================================================== */
-
+/* BOTÃO FECHAR */
 .questionario-fechar {
     position: absolute;
 
@@ -1641,15 +1495,9 @@ p {
     z-index: 5;
 }
 
-
 .questionario-fechar:hover {
     opacity: 0.6;
 }
-
-
-/* =====================================================
-   CONTEÚDO
-===================================================== */
 
 .questionario-conteudo {
     flex: 1;
@@ -1662,11 +1510,6 @@ p {
 
     box-sizing: border-box;
 }
-
-
-/* =====================================================
-   PERGUNTA
-===================================================== */
 
 .questionario-conteudo h1 {
     margin: 0 0 25px;
@@ -1682,11 +1525,6 @@ p {
     color: #2D2325;
 }
 
-
-/* =====================================================
-   OPÇÕES
-===================================================== */
-
 .questionario-opcoes {
     display: flex;
 
@@ -1696,7 +1534,6 @@ p {
 
     width: 100%;
 }
-
 
 .questionario-opcao {
     width: 100%;
@@ -1732,24 +1569,17 @@ p {
     transition: all 0.2s ease;
 }
 
-
 .questionario-opcao:hover {
     border-color: #7A2635;
 
     background: #F9F0EC;
 }
 
-
 .questionario-opcao.selecionada {
     border-color: #7A2635;
 
     background: #F4E7E4;
 }
-
-
-/* =====================================================
-   RADIO
-===================================================== */
 
 .radio {
     width: 19px;
@@ -1765,11 +1595,9 @@ p {
     position: relative;
 }
 
-
 .questionario-opcao.selecionada .radio {
     border-color: #7A2635;
 }
-
 
 .questionario-opcao.selecionada .radio::after {
     content: "";
@@ -1792,10 +1620,7 @@ p {
 }
 
 
-/* =====================================================
-   TEXTAREA
-===================================================== */
-
+/*TEXTAREA */
 .questionario-texto {
     width: 100%;
 
@@ -1837,15 +1662,9 @@ p {
     color: #8E7770;
 }
 
-
-/* =====================================================
-   ESCALA 0 A 10
-===================================================== */
-
 .questionario-escala {
     width: 100%;
 }
-
 
 .escala-numeros {
     display: flex;
@@ -1858,7 +1677,6 @@ p {
 
     gap: 8px;
 }
-
 
 .escala-opcao {
     width: 48px;
@@ -1894,13 +1712,11 @@ p {
     transition: all 0.2s ease;
 }
 
-
 .escala-opcao:hover {
     border-color: #7A2635;
 
     background: #F4E7E4;
 }
-
 
 .escala-opcao.selecionada {
     border-color: #7A2635;
@@ -1909,7 +1725,6 @@ p {
 
     color: #FFFFFF;
 }
-
 
 .escala-legenda {
     display: flex;
@@ -1927,11 +1742,6 @@ p {
     color: #5C4A45;
 }
 
-
-/* =====================================================
-   NAVEGAÇÃO
-===================================================== */
-
 .questionario-navegacao {
     margin-top: auto;
 
@@ -1943,7 +1753,6 @@ p {
 
     padding-top: 30px;
 }
-
 
 .btn-voltar,
 .btn-proxima {
@@ -1980,7 +1789,6 @@ p {
     background: #EDE1DA;
 }
 
-
 .btn-proxima {
     border: none;
 
@@ -1989,11 +1797,9 @@ p {
     color: #FFFFFF;
 }
 
-
 .btn-proxima:hover {
     background: #5A1723;
 }
-
 
 .btn-proxima:disabled {
     opacity: 0.7;
@@ -2001,11 +1807,7 @@ p {
     cursor: wait;
 }
 
-
-/* =====================================================
-   INFORMAÇÕES INFERIORES
-===================================================== */
-
+/*INFORMAÇÕES INFERIORES */
 .questionario-info {
     min-height: 90px;
 
@@ -2026,7 +1828,6 @@ p {
     font-family: "Lato", sans-serif;
 }
 
-
 .info-item {
     display: flex;
 
@@ -2046,7 +1847,6 @@ p {
     color: #5C4A45;
 }
 
-
 .info-icone {
     font-size: 17px;
 
@@ -2057,11 +1857,9 @@ p {
     text-align: center;
 }
 
-
 .info-icone.escala {
     font-size: 13px;
 }
-
 
 .info-divisor {
     width: 1px;
@@ -2071,11 +1869,7 @@ p {
     background: #CDBCB3;
 }
 
-
-/* =====================================================
-   TELA DE SUCESSO
-===================================================== */
-
+/*TELA DE SUCESSO */
 .questionario-card.sucesso-ativo {
     min-height: 600px;
     height: 600px;
@@ -2184,17 +1978,11 @@ p {
 
 
 
-/* =========================================================
-   AJUSTES FINAIS — TABLET
-   769px ATÉ 1100px
-   ========================================================= */
+/*AJUSTES FINAIS — TABLET 769px ATÉ 1100px */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
- /* =====================================================
-   HERO — TABLET
-===================================================== */
-
+    /*HERO — TABLET */
     .hero {
         min-height: auto;
         padding: 25px 25px 30px;
@@ -2203,7 +1991,6 @@ p {
 
 
     /* LOGO */
-
     .logo-hero {
         width: 45px;
         top: 15px;
@@ -2214,7 +2001,6 @@ p {
 
 
     /* REMOVE FLORES DO HERO */
-
     .hero .flor,
     .hero .flor-esquerda,
     .hero .flor-direita {
@@ -2880,10 +2666,7 @@ p {
 
 
 
-/* 
-   MOBILE
-   até 768px
- */
+/* MOBILE até 768px*/
 
 @media (max-width: 768px) {
 
