@@ -802,214 +802,170 @@
 
     </footer>
 
-    <!--QUESTIONÁRIO -->
-    <div id="questionario" class="questionario-overlay">
+  <!-- =================================================
+     QUESTIONÁRIO
+================================================= -->
 
-    <!-- FUNDO VINHO -->
-    <div class="questionario-fundo">
+<div id="questionario" class="questionario-overlay">
+
+    <!-- =================================================
+         CARD DO QUESTIONÁRIO
+    ================================================== -->
+
+    <div class="questionario-card">
 
         <!-- =================================================
-             LOGO
+             TOPO
         ================================================== -->
 
-        <div class="questionario-logo">
+        <div class="questionario-header">
 
-            <span>Cláudia</span>
+            <div class="progresso-texto">
+                PERGUNTA 1 DE 12
+            </div>
 
-            <small>
-                ENCONTRO TRANSFORMADOR
-            </small>
+            <div class="progresso-porcentagem">
+                8%
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BARRA DE PROGRESSO
+        ================================================== -->
+
+        <div class="progresso-container">
+
+            <div class="progresso-barra"></div>
 
         </div>
 
 
         <!-- =================================================
-             FLOR INFERIOR ESQUERDA
-             
-             TROQUE O SRC PELO NOME DA SUA IMAGEM
+             FECHAR
         ================================================== -->
 
-        <img
-            src="assents/FLOR-HERO.png"
-            class="flor-imagem flor-esquerda"
-            alt=""
+        <button
+            type="button"
+            class="questionario-fechar"
+            aria-label="Fechar questionário"
         >
+            ×
+        </button>
 
 
         <!-- =================================================
-             FLOR SUPERIOR DIREITA
-             
-             TROQUE O SRC PELO NOME DA SUA IMAGEM
+             CONTEÚDO
         ================================================== -->
 
-        <img
-            src="assents/FLOR-HERO.png"
-            class="flor-imagem flor-direita"
-            alt=""
-        >
+        <div class="questionario-conteudo">
+
+            <h1>
+                Onde você está agora?
+            </h1>
 
 
-        <!-- =================================================
-             CARD DO QUESTIONÁRIO
-        ================================================== -->
+            <!--
+                O JavaScript coloca aqui:
+                - opções
+                - textarea
+                - escala de 0 a 10
+            -->
 
-        <div class="questionario-card">
-
-
-            <!-- =================================================
-                 TOPO
-            ================================================== -->
-
-            <div class="questionario-header">
-
-                <div class="progresso-texto">
-                    PERGUNTA 1 DE 12
-                </div>
-
-                <div class="progresso-porcentagem">
-                    8%
-                </div>
-
-            </div>
+            <div class="questionario-opcoes"></div>
 
 
             <!-- =================================================
-                 BARRA DE PROGRESSO
+                 NAVEGAÇÃO
             ================================================== -->
 
-            <div class="progresso-container">
+            <div class="questionario-navegacao">
 
-                <div class="progresso-barra"></div>
-
-            </div>
-
-
-            <!-- =================================================
-                 FECHAR
-            ================================================== -->
-
-            <button
-                type="button"
-                class="questionario-fechar"
-                aria-label="Fechar questionário"
-            >
-                ×
-            </button>
+                <button
+                    type="button"
+                    class="btn-voltar"
+                >
+                    ← <span>Voltar</span>
+                </button>
 
 
-            <!-- =================================================
-                 CONTEÚDO
-            ================================================== -->
-
-            <div class="questionario-conteudo">
-
-                <h1>
-                    Onde você está agora?
-                </h1>
-
-
-                <!--
-                    O JavaScript coloca aqui:
-                    - opções
-                    - textarea
-                    - escala de 0 a 10
-                -->
-
-                <div class="questionario-opcoes"></div>
-
-
-                <!-- =================================================
-                     NAVEGAÇÃO
-                ================================================== -->
-
-                <div class="questionario-navegacao">
-
-                    <button
-                        type="button"
-                        class="btn-voltar"
-                    >
-                        ← <span>Voltar</span>
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="btn-proxima"
-                    >
-                        Próxima <span>↗</span>
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <!-- =================================================
-                 INFORMAÇÕES
-            ================================================== -->
-
-            <div class="questionario-info">
-
-
-                <div class="info-item">
-
-                    <div class="info-icone">
-                        ▱
-                    </div>
-
-                    <p>
-                        Algumas perguntas<br>
-                        poderão ter campo de texto.
-                    </p>
-
-                </div>
-
-
-                <div class="info-divisor"></div>
-
-
-                <div class="info-item">
-
-                    <div class="info-icone">
-                        ○<br>
-                        ○<br>
-                        ○
-                    </div>
-
-                    <p>
-                        Outras serão de<br>
-                        múltipla escolha.
-                    </p>
-
-                </div>
-
-
-                <div class="info-divisor"></div>
-
-
-                <div class="info-item">
-
-                    <div class="info-icone escala">
-                        ─●─
-                        <br>
-                        │
-                    </div>
-
-                    <p>
-                        E também teremos<br>
-                        uma escala de 0 a 10.
-                    </p>
-
-                </div>
-
+                <button
+                    type="button"
+                    class="btn-proxima"
+                >
+                    Próxima <span>↗</span>
+                </button>
 
             </div>
 
         </div>
 
-    </div>
+
+        <!-- =================================================
+             INFORMAÇÕES
+        ================================================== -->
+
+        <div class="questionario-info">
+
+
+            <div class="info-item">
+
+                <div class="info-icone">
+                    ▱
+                </div>
+
+                <p>
+                    Algumas perguntas<br>
+                    poderão ter campo de texto.
+                </p>
+
+            </div>
+
+
+            <div class="info-divisor"></div>
+
+
+            <div class="info-item">
+
+                <div class="info-icone">
+                    ○<br>
+                    ○<br>
+                    ○
+                </div>
+
+                <p>
+                    Outras serão de<br>
+                    múltipla escolha.
+                </p>
+
+            </div>
+
+
+            <div class="info-divisor"></div>
+
+
+            <div class="info-item">
+
+                <div class="info-icone escala">
+                    ─●─
+                    <br>
+                    │
+                </div>
+
+                <p>
+                    E também teremos<br>
+                    uma escala de 0 a 10.
+                </p>
+
+            </div>
+
+
+        </div>
 
     </div>
+
+</div>
 
 
     <script src="js/script.js"></script>

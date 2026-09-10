@@ -1486,7 +1486,7 @@ p {
 
 /*QUESTIONARIO DESKTOP*/
 /* =====================================================
-   QUESTIONÁRIO
+   QUESTIONÁRIO DESKTOP
 ===================================================== */
 
 .questionario-overlay {
@@ -1497,6 +1497,7 @@ p {
     width: 100%;
     height: 100%;
 
+    /* Mantém o LP visível atrás do questionário */
     background: rgba(45, 35, 37, 0.68);
 
     display: none;
@@ -1513,159 +1514,30 @@ p {
 
 
 /* =====================================================
-   FUNDO VINHO
-===================================================== */
-
-.questionario-fundo {
-    position: relative;
-
-    width: 100%;
-    max-width: 1050px;
-
-    height: 590px;
-    max-height: 88vh;
-
-    background: linear-gradient(
-        135deg,
-        #48141E 0%,
-        #641C2A 55%,
-        #4A1821 100%
-    );
-
-    border-radius: 8px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-
-/* =====================================================
-   LOGO
-===================================================== */
-
-.questionario-logo {
-    position: absolute;
-
-    top: 28px;
-    left: 52px;
-
-    color: #F8F3EC;
-
-    z-index: 4;
-}
-
-
-.questionario-logo span {
-    display: block;
-
-    font-family: "Cormorant Garamond", serif;
-
-    font-size: 30px;
-
-    font-weight: 500;
-}
-
-
-.questionario-logo small {
-    display: block;
-
-    margin-top: -3px;
-
-    font-family: "Lato", sans-serif;
-
-    font-size: 8px;
-
-    letter-spacing: 2px;
-}
-
-
-/* =====================================================
-   FLORES
-===================================================== */
-
-.flor-imagem {
-    position: absolute;
-
-    pointer-events: none;
-
-    z-index: 1;
-
-    /*
-       Deixa a flor delicada.
-    */
-
-    opacity: 0.20;
-
-    /*
-       Transforma os tons da imagem
-       em uma aparência clara.
-    */
-
-    filter: brightness(0) invert(1);
-}
-
-
-/* =====================================================
-   FLOR ESQUERDA
-===================================================== */
-
-.flor-esquerda {
-    width: 300px;
-
-    left: -95px;
-
-    bottom: -105px;
-
-    transform: rotate(-8deg);
-}
-
-
-/* =====================================================
-   FLOR DIREITA
-===================================================== */
-
-.flor-direita {
-    width: 300px;
-
-    right: -55px;
-
-    top: -75px;
-
-    transform: rotate(8deg);
-}
-
-
-/* =====================================================
-   CARD
+   CARD DO QUESTIONÁRIO
 ===================================================== */
 
 .questionario-card {
     position: relative;
 
-    width: min(800px, 78%);
+    width: min(950px, 90vw);
 
-    height: 500px;
-
-    min-height: 0;
+    min-height: 600px;
+    max-height: 90vh;
 
     background: #F7F0E9;
 
-    border-radius: 16px;
+    border-radius: 18px;
 
     display: flex;
-
     flex-direction: column;
 
-    overflow: hidden;
+    overflow-y: auto;
+    overflow-x: hidden;
 
-    z-index: 3;
+    z-index: 1;
 
-    box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.18);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -1680,14 +1552,14 @@ p {
 
     align-items: center;
 
-    padding: 24px 52px 10px;
+    padding: 30px 60px 10px;
 
     font-family: "Lato", sans-serif;
 }
 
 
 .progresso-texto {
-    font-size: 11px;
+    font-size: 12px;
 
     font-weight: 700;
 
@@ -1698,7 +1570,7 @@ p {
 
 
 .progresso-porcentagem {
-    font-size: 12px;
+    font-size: 13px;
 
     font-weight: 700;
 
@@ -1711,9 +1583,9 @@ p {
 ===================================================== */
 
 .progresso-container {
-    width: calc(100% - 104px);
+    width: calc(100% - 120px);
 
-    height: 4px;
+    height: 5px;
 
     margin: 0 auto;
 
@@ -1753,13 +1625,17 @@ p {
 
     height: 32px;
 
+    padding: 0;
+
     border: none;
 
     background: transparent;
 
-    font-size: 27px;
+    font-size: 28px;
 
     font-weight: 300;
+
+    line-height: 32px;
 
     color: #5A1723;
 
@@ -1781,11 +1657,13 @@ p {
 .questionario-conteudo {
     flex: 1;
 
-    padding: 28px 52px 25px;
+    padding: 38px 60px 30px;
 
     display: flex;
 
     flex-direction: column;
+
+    box-sizing: border-box;
 }
 
 
@@ -1794,11 +1672,11 @@ p {
 ===================================================== */
 
 .questionario-conteudo h1 {
-    margin: 0 0 22px;
+    margin: 0 0 25px;
 
     font-family: "Lato", sans-serif;
 
-    font-size: 25px;
+    font-size: 28px;
 
     font-weight: 600;
 
@@ -1817,36 +1695,36 @@ p {
 
     flex-direction: column;
 
-    gap: 10px;
+    gap: 12px;
 
     width: 100%;
-
-    max-width: 650px;
 }
 
 
 .questionario-opcao {
     width: 100%;
 
-    min-height: 52px;
+    min-height: 58px;
 
-    padding: 12px 18px;
+    padding: 14px 20px;
+
+    box-sizing: border-box;
 
     display: flex;
 
     align-items: center;
 
-    gap: 13px;
+    gap: 14px;
 
     border: 1px solid #D8C9C0;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background: #FFFDFC;
 
     font-family: "Lato", sans-serif;
 
-    font-size: 14px;
+    font-size: 15px;
 
     color: #2D2325;
 
@@ -1877,9 +1755,9 @@ p {
 ===================================================== */
 
 .radio {
-    width: 17px;
+    width: 19px;
 
-    height: 17px;
+    height: 19px;
 
     flex-shrink: 0;
 
@@ -1924,9 +1802,9 @@ p {
 .questionario-texto {
     width: 100%;
 
-    min-height: 150px;
+    min-height: 180px;
 
-    padding: 15px;
+    padding: 17px;
 
     box-sizing: border-box;
 
@@ -1934,13 +1812,13 @@ p {
 
     border: 1px solid #D8C9C0;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background: #FFFDFC;
 
     font-family: "Lato", sans-serif;
 
-    font-size: 14px;
+    font-size: 15px;
 
     line-height: 1.5;
 
@@ -1969,8 +1847,6 @@ p {
 
 .questionario-escala {
     width: 100%;
-
-    max-width: 650px;
 }
 
 
@@ -1988,11 +1864,11 @@ p {
 
 
 .escala-opcao {
-    width: 44px;
+    width: 48px;
 
-    height: 44px;
+    height: 48px;
 
-    min-width: 44px;
+    min-width: 48px;
 
     padding: 0;
 
@@ -2068,23 +1944,23 @@ p {
 
     align-items: center;
 
-    padding-top: 25px;
+    padding-top: 30px;
 }
 
 
 .btn-voltar,
 .btn-proxima {
-    min-width: 125px;
+    min-width: 130px;
 
-    height: 44px;
+    height: 46px;
 
-    padding: 0 18px;
+    padding: 0 20px;
 
-    border-radius: 7px;
+    border-radius: 8px;
 
     font-family: "Lato", sans-serif;
 
-    font-size: 13px;
+    font-size: 14px;
 
     font-weight: 600;
 
@@ -2130,13 +2006,13 @@ p {
 
 
 /* =====================================================
-   INFORMAÇÕES
+   INFORMAÇÕES INFERIORES
 ===================================================== */
 
 .questionario-info {
-    min-height: 82px;
+    min-height: 90px;
 
-    padding: 16px 42px;
+    padding: 16px 50px;
 
     box-sizing: border-box;
 
@@ -2146,7 +2022,7 @@ p {
 
     justify-content: center;
 
-    gap: 25px;
+    gap: 30px;
 
     background: #EEE4DC;
 
@@ -2159,14 +2035,14 @@ p {
 
     align-items: center;
 
-    gap: 10px;
+    gap: 11px;
 }
 
 
 .info-item p {
     margin: 0;
 
-    font-size: 10px;
+    font-size: 11px;
 
     line-height: 1.4;
 
@@ -2175,7 +2051,7 @@ p {
 
 
 .info-icone {
-    font-size: 15px;
+    font-size: 17px;
 
     line-height: 0.7;
 
@@ -2186,14 +2062,14 @@ p {
 
 
 .info-icone.escala {
-    font-size: 12px;
+    font-size: 13px;
 }
 
 
 .info-divisor {
     width: 1px;
 
-    height: 32px;
+    height: 35px;
 
     background: #CDBCB3;
 }

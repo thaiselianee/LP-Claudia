@@ -73,11 +73,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
 
-
-    /* =================================================
-       ELEMENTOS
-    ================================================= */
-
     const questionario =
         document.getElementById("questionario");
 
@@ -136,13 +131,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       WEBHOOK DO QUESTIONÁRIO
-    ================================================= */
+   WEBHOOKS DADOS E QUESTIONARIO
+================================================= */
+
+    const webhookDados =
+    "https://criadordigital-n8n-webhook.bbw7sv.easypanel.host/webhook/3c22f0d6-f8c6-4f2a-ab25-918b9b25056a";
 
     const webhookQuestionario =
-        "https://criadordigital-n8n-webhook.bbw7sv.easypanel.host/webhook/b94034fe-38d0-4eba-9432-6abc5602c8b7";
-
-
+    "https://criadordigital-n8n-webhook.bbw7sv.easypanel.host/webhook/b94034fe-38d0-4eba-9432-6abc5602c8b7";
     /* =================================================
        DADOS DO LEAD
     ================================================= */
@@ -159,40 +155,51 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =================================================
-       PERGUNTAS
+       PERGUNTAS VERDADEIRAS DO QUESTIONÁRIO
     ================================================= */
 
     const perguntas = [
 
+        /* 1 */
 
         {
             pergunta:
                 "Onde você está agora?",
 
-            tipo: "opcao",
+            tipo: "multipla",
 
             opcoes: [
+
                 "Ainda estou no relacionamento",
-                "Estamos separados",
-                "Estamos tentando voltar"
+
+                "Estou me preparando para sair",
+
+                "Saí recentemente (últimos 12 meses)",
+
+                "Já saí, mas ainda me sinto presa emocionalmente",
+
+                "Não tenho certeza se estou em um relacionamento abusivo/narcisista"
+
             ]
+
         },
 
+
+        /* 2 */
 
         {
             pergunta:
-                "Como você se sente hoje?",
+                "Onde você mora hoje?",
 
-            tipo: "opcao",
+            tipo: "texto",
 
-            opcoes: [
-                "Confusa",
-                "Triste",
-                "Ansiosa",
-                "Esperançosa"
-            ]
+            placeholder:
+                "Ex: Destin, FL"
+
         },
 
+
+        /* 3 */
 
         {
             pergunta:
@@ -201,94 +208,248 @@ document.addEventListener("DOMContentLoaded", function () {
             tipo: "opcao",
 
             opcoes: [
+
                 "Brasileiro",
+
                 "Americano",
+
                 "Outra nacionalidade"
+
             ]
+
         },
 
 
+        /* 4 */
+
         {
             pergunta:
-                "Conte um pouco sobre o que aconteceu.",
+                "Marque tudo o que você sente com frequência:",
 
-            tipo: "texto"
+            tipo: "multipla",
+
+            opcoes: [
+
+                "Piso em ovos para não provocar uma reação dele",
+
+                "Sinto que estou sempre errada, mesmo quando tento acertar",
+
+                "Já me chamaram de “louca”, “exagerada” ou “sensível demais”",
+
+                "Não consigo tomar decisões sem pensar no que ele vai achar",
+
+                "Me afastei de amigos e família por causa do relacionamento",
+
+                "Sei que algo está errado, mas não consigo ir embora",
+
+                "Tenho medo de não conseguir viver sem ele",
+
+                "Tenho dificuldade em confiar em mim mesma",
+
+                "Sinto que perdi minha identidade ao longo do relacionamento",
+
+                "Afastada da minha família",
+
+                "Isolada dos meus amigos",
+
+                "Dependência financeira",
+
+                "Medo de perder conexão com os filhos",
+
+                "Esperança de que ele mude",
+
+                "Culpa ou vergonha",
+
+                "Não sei por onde começar"
+
+            ]
+
         },
 
 
+        /* 5 */
+
         {
             pergunta:
-                "O quanto essa situação está afetando você?",
+                "O quanto essa situação afeta sua vida hoje?",
 
             tipo: "escala"
+
         },
 
 
+        /* 6 */
+
         {
             pergunta:
-                "O que você mais gostaria de mudar neste momento?",
+                "Descreva, com suas próprias palavras, o que você mais sente hoje em relação a essa situação.",
 
-            tipo: "texto"
+            tipo: "texto",
+
+            placeholder:
+                "Escreva sua resposta..."
+
         },
 
 
+        /* 7 */
+
         {
             pergunta:
-                "Como você avalia sua relação atualmente?",
+                "O que você já tentou fazer para superar essa situação?",
 
-            tipo: "escala"
+            tipo: "multipla",
+
+            opcoes: [
+
+                "Terapia",
+
+                "Coach",
+
+                "Livros",
+
+                "Vídeos no YouTube",
+
+                "Cursos",
+
+                "Igreja/Espiritualidade",
+
+                "Comunidades",
+
+                "Mentorias em grupo",
+
+                "Conversar com amigos ou familiares",
+
+                "Nada ainda",
+
+                "Outro"
+
+            ]
+
         },
 
 
+        /* 8 */
+
         {
             pergunta:
-                "Você acredita que ainda existe uma possibilidade?",
+                "O que mais impede você de seguir em frente hoje?",
+
+            tipo: "multipla",
+
+            opcoes: [
+
+                "Medo da solidão",
+
+                "Dependência emocional",
+
+                "Filhos",
+
+                "Dependência financeira",
+
+                "Questões jurídicas/divórcio",
+
+                "Esperança de que ele mude",
+
+                "Culpa",
+
+                "Idioma",
+
+                "Cultura",
+
+                "Imigração",
+
+                "Visto",
+
+                "Não sei por onde começar",
+
+                "Outro"
+
+            ]
+
+        },
+
+
+        /* 9 */
+
+        {
+            pergunta:
+                "Você tem renda própria hoje?",
 
             tipo: "opcao",
 
             opcoes: [
-                "Sim",
-                "Não",
-                "Não sei"
+
+                "Sim, trabalho e tenho renda própria",
+
+                "Tenho renda, mas dividida/controlada por ele",
+
+                "Não tenho renda própria no momento"
+
             ]
+
         },
 
 
+        /* 10 */
+
         {
             pergunta:
-                "O que você mais deseja para sua vida amorosa?",
+                "Imagine que daqui a três meses você acorda, e finalmente se sente livre emocionalmente. O que teria mudado na sua vida?",
 
-            tipo: "texto"
+            tipo: "texto",
+
+            placeholder:
+                "Escreva sua resposta..."
+
         },
 
 
-        {
-            pergunta:
-                "Quanto você está disposta a transformar essa situação?",
-
-            tipo: "escala"
-        },
-
+        /* 11 */
 
         {
             pergunta:
-                "Você sente que precisa de ajuda para tomar uma decisão?",
+                "Se existisse um acompanhamento para te ajudar nessa reconstrução, você estaria pronta para começar agora?",
 
             tipo: "opcao",
 
             opcoes: [
-                "Sim",
-                "Não",
-                "Talvez"
+
+                "Sim, estou pronta",
+
+                "Sim, mas preciso entender melhor como funciona",
+
+                "Talvez, depende do investimento",
+
+                "Ainda não, só quero entender o que estou vivendo"
+
             ]
+
         },
 
 
+        /* 12 */
+
         {
             pergunta:
-                "Existe algo importante que você gostaria de compartilhar?",
+                "Se esse acompanhamento existisse, qual dessas faixas estaria dentro do que você poderia investir hoje?",
 
-            tipo: "texto"
+            tipo: "opcao",
+
+            opcoes: [
+
+                "Até U$ 500",
+
+                "Entre U$ 500 e U$ 1.500",
+
+                "Entre U$ 1.500 e U$ 3.000",
+
+                "Acima de U$ 3.000",
+
+                "Prefiro não responder agora"
+
+            ]
+
         }
 
     ];
@@ -387,15 +548,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =================================================
-           MÚLTIPLA ESCOLHA
+           ESCOLHA ÚNICA
         ================================================= */
 
         if (pergunta.tipo === "opcao") {
 
-
             pergunta.opcoes.forEach(
                 function (opcaoTexto) {
-
 
                     const botao =
                         document.createElement(
@@ -430,9 +589,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         opcaoTexto;
 
 
-                    botao.appendChild(radio);
+                    botao.appendChild(
+                        radio
+                    );
 
-                    botao.appendChild(texto);
+
+                    botao.appendChild(
+                        texto
+                    );
 
 
                     if (
@@ -451,7 +615,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     botao.addEventListener(
                         "click",
                         function () {
-
 
                             const todas =
                                 opcoesContainer.querySelectorAll(
@@ -500,11 +663,222 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =================================================
+           MÚLTIPLA ESCOLHA
+        ================================================= */
+
+        else if (
+            pergunta.tipo === "multipla"
+        ) {
+
+            let respostasSalvas = [];
+
+
+            if (
+                respostas[perguntaAtual] &&
+                Array.isArray(
+                    respostas[perguntaAtual].resposta
+                )
+            ) {
+
+                respostasSalvas =
+                    respostas[perguntaAtual].resposta;
+
+            }
+
+
+            pergunta.opcoes.forEach(
+                function (opcaoTexto) {
+
+                    const botao =
+                        document.createElement(
+                            "button"
+                        );
+
+
+                    botao.type = "button";
+
+
+                    botao.className =
+                        "questionario-opcao";
+
+
+                    const radio =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    radio.className =
+                        "radio";
+
+
+                    const texto =
+                        document.createElement(
+                            "span"
+                        );
+
+
+                    texto.textContent =
+                        opcaoTexto;
+
+
+                    botao.appendChild(
+                        radio
+                    );
+
+
+                    botao.appendChild(
+                        texto
+                    );
+
+
+                    if (
+                        respostasSalvas.includes(
+                            opcaoTexto
+                        )
+                    ) {
+
+                        botao.classList.add(
+                            "selecionada"
+                        );
+
+                    }
+
+
+                    botao.addEventListener(
+                        "click",
+                        function () {
+
+                            botao.classList.toggle(
+                                "selecionada"
+                            );
+
+
+                            const selecionadas =
+                                Array.from(
+                                    opcoesContainer.querySelectorAll(
+                                        ".questionario-opcao.selecionada"
+                                    )
+                                ).map(
+                                    function (item) {
+
+                                        return item
+                                            .querySelector(
+                                                "span:last-child"
+                                            )
+                                            .textContent;
+
+                                    }
+                                );
+
+
+                            respostas[perguntaAtual] = {
+
+                                pergunta:
+                                    pergunta.pergunta,
+
+                                resposta:
+                                    selecionadas
+
+                            };
+
+                        }
+                    );
+
+
+                    opcoesContainer.appendChild(
+                        botao
+                    );
+
+                }
+            );
+
+
+            /* =================================================
+               CAMPO "OUTRO"
+            ================================================= */
+
+            if (
+                pergunta.opcoes.includes(
+                    "Outro"
+                )
+            ) {
+
+                const outro =
+                    document.createElement(
+                        "input"
+                    );
+
+
+                outro.type = "text";
+
+
+                outro.className =
+                    "questionario-outro";
+
+
+                outro.placeholder =
+                    "Se escolheu Outro, escreva aqui...";
+
+
+                if (
+                    respostas[perguntaAtual] &&
+                    respostas[perguntaAtual].outro
+                ) {
+
+                    outro.value =
+                        respostas[
+                            perguntaAtual
+                        ].outro;
+
+                }
+
+
+                outro.addEventListener(
+                    "input",
+                    function () {
+
+                        if (
+                            !respostas[perguntaAtual]
+                        ) {
+
+                            respostas[perguntaAtual] = {
+
+                                pergunta:
+                                    pergunta.pergunta,
+
+                                resposta: []
+
+                            };
+
+                        }
+
+
+                        respostas[
+                            perguntaAtual
+                        ].outro =
+                            outro.value;
+
+                    }
+                );
+
+
+                opcoesContainer.appendChild(
+                    outro
+                );
+
+            }
+
+        }
+
+
+        /* =================================================
            TEXTO
         ================================================= */
 
-        else if (pergunta.tipo === "texto") {
-
+        else if (
+            pergunta.tipo === "texto"
+        ) {
 
             const textarea =
                 document.createElement(
@@ -517,6 +891,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             textarea.placeholder =
+                pergunta.placeholder ||
                 "Digite sua resposta...";
 
 
@@ -530,7 +905,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 textarea.value =
                     respostas[
                         perguntaAtual
-                    ].resposta;
+                    ].resposta || "";
 
             }
 
@@ -538,7 +913,6 @@ document.addEventListener("DOMContentLoaded", function () {
             textarea.addEventListener(
                 "input",
                 function () {
-
 
                     respostas[perguntaAtual] = {
 
@@ -569,7 +943,6 @@ document.addEventListener("DOMContentLoaded", function () {
             pergunta.tipo === "escala"
         ) {
 
-
             const escalaContainer =
                 document.createElement(
                     "div"
@@ -590,16 +963,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 "escala-numeros";
 
 
-            /*
-             * Cria os números de 0 até 10.
-             */
-
             for (
                 let i = 0;
                 i <= 10;
                 i++
             ) {
-
 
                 const botao =
                     document.createElement(
@@ -632,7 +1000,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 botao.addEventListener(
                     "click",
                     function () {
-
 
                         const todas =
                             numeros.querySelectorAll(
@@ -713,7 +1080,9 @@ document.addEventListener("DOMContentLoaded", function () {
            BOTÃO VOLTAR
         ================================================= */
 
-        if (perguntaAtual === 0) {
+        if (
+            perguntaAtual === 0
+        ) {
 
             voltar.style.visibility =
                 "hidden";
@@ -756,18 +1125,23 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         async function () {
 
-
             const respostaAtual =
                 respostas[perguntaAtual];
 
 
-            /*
-             * Verifica se a pergunta foi respondida.
-             */
+            /* =================================================
+               VERIFICA SE RESPONDEU
+            ================================================= */
 
             if (
                 !respostaAtual ||
-                respostaAtual.resposta === ""
+                respostaAtual.resposta === "" ||
+                (
+                    Array.isArray(
+                        respostaAtual.resposta
+                    ) &&
+                    respostaAtual.resposta.length === 0
+                )
             ) {
 
                 alert(
@@ -779,10 +1153,9 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
 
-            /*
-             * Se for a última pergunta,
-             * envia tudo para o n8n.
-             */
+            /* =================================================
+               ÚLTIMA PERGUNTA
+            ================================================= */
 
             if (
                 perguntaAtual ===
@@ -812,8 +1185,9 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function () {
 
-
-            if (perguntaAtual > 0) {
+            if (
+                perguntaAtual > 0
+            ) {
 
                 perguntaAtual--;
 
@@ -847,7 +1221,6 @@ document.addEventListener("DOMContentLoaded", function () {
         "click",
         function (event) {
 
-
             if (
                 event.target === questionario
             ) {
@@ -862,16 +1235,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* =================================================
        TELA DE SUCESSO
+       MANTENDO A ESTRUTURA QUE JÁ EXISTIA
     ================================================= */
 
     function mostrarSucesso() {
-
 
         const card =
             questionario.querySelector(
                 ".questionario-card"
             );
 
+
+        /*
+         * Mantém a tela de sucesso original.
+         * Apenas substitui o conteúdo do card.
+         */
 
         card.innerHTML = `
 
@@ -909,114 +1287,133 @@ document.addEventListener("DOMContentLoaded", function () {
         `;
 
 
+        /*
+         * O questionário continua sendo a camada
+         * principal da tela, mas agora contém
+         * somente a mensagem de sucesso.
+         *
+         * Assim não existe mais nenhuma pergunta
+         * aparecendo atrás da mensagem.
+         */
+
+        questionario.style.display =
+            "flex";
+
+
+        document.body.style.overflow =
+            "hidden";
+
+
+        /*
+         * Botão para voltar à página inicial.
+         */
+
         const btnVoltarLP =
             card.querySelector(
                 "#btnVoltarLP"
             );
 
 
-        btnVoltarLP.addEventListener(
-            "click",
-            function () {
+        if (btnVoltarLP) {
 
-                fecharQuestionario();
+            btnVoltarLP.addEventListener(
+                "click",
+                function () {
 
-            }
-        );
-
-    }
-
-
-    /* =================================================
-       ENVIAR QUESTIONÁRIO
-    ================================================= */
-
-    async function enviarQuestionario() {
-
-
-        const dados = {
-
-            nome:
-                dadosLead.nome,
-
-            email:
-                dadosLead.email,
-
-            telefone:
-                dadosLead.telefone,
-
-            respostas:
-                respostas
-
-        };
-
-
-        try {
-
-
-            proxima.disabled = true;
-
-
-            proxima.innerHTML =
-                "Enviando...";
-
-
-            await fetch(
-                webhookQuestionario,
-                {
-
-                    method: "POST",
-
-                    headers: {
-
-                        "Content-Type":
-                            "application/json"
-
-                    },
-
-                    body:
-                        JSON.stringify(dados),
-
-                    mode: "no-cors"
+                    fecharQuestionario();
 
                 }
             );
 
-
-            /*
-             * NÃO fecha mais o questionário.
-             *
-             * NÃO mostra alert.
-             *
-             * Mostra a tela de sucesso.
-             */
-
-            mostrarSucesso();
-
-
-        } catch (erro) {
-
-
-            console.error(erro);
-
-
-            alert(
-                "Não foi possível enviar suas respostas. Tente novamente."
-            );
-
-
-        } finally {
-
-
-            proxima.disabled = false;
-
-
-            proxima.innerHTML =
-                'Finalizar <span>↗</span>';
-
         }
 
     }
+
+
+/* =================================================
+   ENVIAR QUESTIONÁRIO
+================================================= */
+
+async function enviarQuestionario() {
+
+    const dados = {
+
+        nome:
+            dadosLead.nome,
+
+        email:
+            dadosLead.email,
+
+        telefone:
+            dadosLead.telefone,
+
+        respostas:
+            respostas
+
+    };
+
+
+    try {
+
+        proxima.disabled = true;
+
+        proxima.innerHTML =
+            "Enviando...";
+
+
+        await fetch(
+            webhookQuestionario,
+            {
+
+                method: "POST",
+
+                headers: {
+
+                    "Content-Type":
+                        "application/json"
+
+                },
+
+                body:
+                    JSON.stringify(dados),
+
+                mode: "no-cors"
+
+            }
+        );
+
+
+        /* =============================================
+           FINALIZAÇÃO
+        ============================================= */
+
+        mostrarSucesso();
+
+
+        /*
+         * Esconde o questionário original
+         * para ele não ficar aparecendo atrás.
+         */
+
+
+    } catch (erro) {
+
+        console.error(erro);
+
+        alert(
+            "Não foi possível enviar suas respostas. Tente novamente."
+        );
+
+    } finally {
+
+        proxima.disabled = false;
+
+        proxima.innerHTML =
+            'Finalizar <span>↗</span>';
+
+    }
+
+}
 
 
     /* =================================================
@@ -1031,11 +1428,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (formulario) {
 
-
         formulario.addEventListener(
             "submit",
             async function (event) {
-
 
                 event.preventDefault();
 
@@ -1083,10 +1478,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 try {
 
-
                     if (botao) {
 
-                        botao.disabled = true;
+                        botao.disabled =
+                            true;
+
 
                         botao.textContent =
                             "Enviando...";
@@ -1094,30 +1490,19 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
 
 
-                    /*
-                     * Pega os dados do formulário principal.
-                     */
-
                     const dadosFormulario =
                         new FormData(
                             formulario
                         );
 
 
-                    /*
-                     * Envia para o action
-                     * configurado no formulário.
-                     */
-
                     await fetch(
-                        formulario.action,
-                        {
+
+                        webhookDados,
+                         {
 
                             method: "POST",
-
-                            body:
-                                dadosFormulario,
-
+                            body:dadosFormulario,
                             mode: "no-cors"
 
                         }
@@ -1125,7 +1510,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     /*
-                     * Depois do envio,
+                     * Depois do primeiro envio,
                      * abre o questionário.
                      */
 
@@ -1133,7 +1518,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 } catch (erro) {
-
 
                     console.error(
                         "Erro no envio:",
@@ -1148,10 +1532,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 } finally {
 
-
                     if (botao) {
 
-                        botao.disabled = false;
+                        botao.disabled =
+                            false;
+
 
                         botao.textContent =
                             "QUERO RECEBER O GUIA";
