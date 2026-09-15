@@ -30,9 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-
 /* =====================================================
-   BOTÃO DA SEGUNDA CHAMADA - MOBILE
+   BOTÃO DA SEGUNDA CHAMADA REDIRECIONANDO PARA O HERO- MOBILE
 ===================================================== */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -1338,22 +1337,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 async function enviarQuestionario() {
 
+const utms = getStoredUTMs();
+
     const dados = {
 
-        nome:
-            dadosLead.nome,
+        nome: dadosLead.nome,
 
-        email:
-            dadosLead.email,
+        email: dadosLead.email,
 
-        telefone:
-            dadosLead.telefone,
+        telefone: dadosLead.telefone,
 
-        respostas:
-            respostas
+        respostas: respostas,
+
+        utm_source: utms.utm_source || "",
+        utm_medium: utms.utm_medium || "",
+        utm_campaign: utms.utm_campaign || "",
+        utm_term: utms.utm_term || "",
+        utm_content: utms.utm_content || "",
+        utm_site: utms.utm_site || "",
+        utm_id: utms.utm_id || "",
+
+        gclid: utms.gclid || "",
+        fbclid: utms.fbclid || "",
+        ttclid: utms.ttclid || "",
+        msclkid: utms.msclkid || "",
+
+        landing_page: utms.landing_page || "",
+        referrer: utms.referrer || ""
 
     };
-
 
     try {
 
@@ -1498,6 +1510,25 @@ async function enviarQuestionario() {
                         );
 
 
+                         //ADICIONA AS UTMs AO PRIMEIRO ENVIO
+                        const utms = getStoredUTMs();
+
+                        Object.entries(utms).forEach(
+                            function ([chave, valor]) {
+
+                                if (valor) {
+
+                                    dadosFormulario.append(
+                                        chave,
+                                        valor
+                                    );
+
+                                }
+
+                            }
+                        );
+
+
                     await fetch(
 
                         webhookDados,
@@ -1561,3 +1592,118 @@ async function enviarQuestionario() {
         "none";
 
 });
+
+
+
+/* =================================================
+
+   CAPTURA E PERSISTÊNCIA DE UTMs
+================================================= */
+
+const UTM_KEYS = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "utm_site",
+    "utm_id",
+    "gclid",
+    "fbclid",
+    "ttclid",
+    "msclkid"
+];
+
+(function captureUTMs() {
+
+    const params = new URLSearchParams(
+        window.location.search
+    );
+
+    UTM_KEYS.forEach(function (key) {
+
+        const value = params.get(key);
+
+        if (value) {
+
+            sessionStorage.setItem(
+                "utm_" + key,
+                value
+            );
+
+        }
+
+    });
+
+    if (
+        !sessionStorage.getItem(
+            "utm_landing_page"
+        )
+    ) {
+
+        sessionStorage.setItem(
+            "utm_landing_page",
+            window.location.href
+        );
+
+    }
+
+    if (
+        document.referrer &&
+        !sessionStorage.getItem(
+            "utm_referrer"
+        )
+    ) {
+
+        sessionStorage.setItem(
+            "utm_referrer",
+            document.referrer
+        );
+
+    }
+
+})();
+/* 
+   RECUPERAR UTMs SALVAS
+ */
+
+function getStoredUTMs() {
+
+    const utms = {};
+
+    UTM_KEYS.forEach(function (key) {
+
+        const value =
+            sessionStorage.getItem(
+                "utm_" + key
+            );
+
+        if (value) {
+
+            utms[key] = value;
+
+        }
+
+    });
+
+    utms.landing_page =
+        sessionStorage.getItem(
+            "utm_landing_page"
+        ) ||
+        window.location.href;
+
+    const referrer =
+        sessionStorage.getItem(
+            "utm_referrer"
+        );
+
+    if (referrer) {
+
+        utms.referrer = referrer;
+
+    }
+
+    return utms;
+
+}
+

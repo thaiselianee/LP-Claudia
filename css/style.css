@@ -655,7 +655,7 @@ p {
     width: 225px;
     height: 305px;
 
-    background-image: url("../assents/FLOR-HERO.png");
+    background-image: url("../img/FLOR-HERO.png");
 
     background-repeat: no-repeat;
     background-position: center;
@@ -1121,9 +1121,9 @@ p {
 /* FLOR ESQUERDA */
 .segunda-chamada::before {
   left: -20px;
-  bottom: -15px;
+  bottom: 8px;
 
-  background-image: url("../assents/FLOR.png");
+  background-image: url("../img/FLOR-2.png");
 
   transform: scaleX(-1);
   opacity: 0.20;
@@ -1133,9 +1133,9 @@ p {
 /* FLOR DIREITA */
 .segunda-chamada::after {
   right: -15px;
-  top: 25px;
+  bottom: 8px;
 
-  background-image: url("../assents/FLOR-2.png");
+  background-image: url("../img/FLOR-2.png");
     height: 290px;
 
   opacity: 0.20;
@@ -1647,6 +1647,36 @@ p {
     color: #2D2325;
 
     outline: none;
+}
+
+/* CAMPO OUTRO */
+.questionario-outro {
+    width: 100%;
+    height: 48px;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    border: 1px solid #D8C9C0;
+    border-radius: 9px;
+
+    background: #FFFDFC;
+
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    color: #2D2325;
+
+    outline: none;
+}
+
+.questionario-outro::placeholder {
+    color: #8E7770;
+}
+
+.questionario-outro:focus {
+    border-color: #7A2635;
+
+    box-shadow:
+        0 0 0 2px rgba(122, 38, 53, 0.08);
 }
 
 
@@ -3723,7 +3753,7 @@ p {
 
 
 .cta-texto h2 {
-    margin: 0 30px 6px;
+    margin: 0 25px 6px;
 
     font-size: 25px;
     line-height: 1.15;
@@ -3743,7 +3773,7 @@ p {
 
 
 .cta-texto p {
-    margin: 0 30px;
+    margin: -2px 25px;
 
     font-size: 18px;
     line-height: 1.2;
@@ -4195,6 +4225,9 @@ p {
 
     .progresso-porcentagem {
         font-size: 11px;
+        position: relative;
+        right: 22px;
+        top: 4px;
     }
 
 
@@ -4261,6 +4294,38 @@ p {
     }
 
 
+    /* CAMPO OUTRO - MOBILE */
+    .questionario-outro {
+        width: 100%;
+        height: 42px;
+
+        padding: 0 12px;
+
+        box-sizing: border-box;
+
+        border: 1px solid #D8C9C0;
+        border-radius: 9px;
+
+        background: #FFFDFC;
+
+        font-family: "Lato", sans-serif;
+        font-size: 13px;
+        color: #2D2325;
+
+        outline: none;
+    }
+
+    .questionario-outro::placeholder {
+        color: #8E7770;
+    }
+
+    .questionario-outro:focus {
+        border-color: #7A2635;
+
+        box-shadow:
+            0 0 0 2px rgba(122, 38, 53, 0.08);
+    }
+
     /* =================================================
        ESCALA
     ================================================== */
@@ -4273,20 +4338,19 @@ p {
 
 
     .escala-numeros {
-        gap: 4px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        gap: 2px;
     }
-
 
     .escala-opcao {
-        width: 32px;
-
-        height: 32px;
-
-        min-width: 32px;
-
-        font-size: 12px;
+        width: 26px;
+        height: 26px;
+        min-width: 26px;
+        flex-shrink: 0;
+        font-size: 10px;
     }
-
 
     .escala-legenda {
         margin-top: 9px;
