@@ -199,25 +199,25 @@ p {
 }
 
 
-.hero-video {
-    position: relative;
+.hero-video { 
+    position: relative; 
+    width: 74%; 
+    max-width: 1500px; 
+    height: 360px; 
+    margin-bottom: 14px; 
+    background-color: #D8D8D8; 
+    border-radius: 6px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden;
+}
 
-    width: 74%;
-    max-width: 1500px;
-
-    /* diminuí um pouco para o formulário
-       ficar enquadrado na viewport */
-    height: 360px;
-
-    margin-bottom: 14px;
-
-    background-color: #D8D8D8;
-
-    border-radius: 6px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.hero-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
 }
 
 
@@ -2070,14 +2070,20 @@ p {
 
     /* VÍDEO */
 
-    .hero-video {
-        width: 68%;
-        max-width: 600px;
-        height: 290px;
+.hero-video { 
+    width: 68%; 
+    max-width: 600px; 
+    height: 290px; 
+    margin: 0 auto 14px; 
+    overflow: hidden;
+}
 
-        margin: 0 auto 14px;
-    }
-
+.hero-video iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
 
     /* FORMULÁRIO */
 
@@ -2847,20 +2853,22 @@ p {
     }
 
 
-    .hero-video {
+    .hero-video { 
+        width: 100%; 
+        max-width: none; 
+        height: auto; 
+        aspect-ratio: 15 / 9; 
+        margin: 10px 0 35px; 
+        border-radius: 8px; 
+        overflow: hidden; 
+        box-sizing: border-box; 
+    }
+
+    .hero-video iframe {
         width: 100%;
-        max-width: none;
-
-        height: auto;
-        aspect-ratio: 15 / 9;
-
-        margin: 10px 0 35px;
-
-        border-radius: 8px;
-
-        overflow: hidden;
-
-        box-sizing: border-box;
+        height: 100%;
+        border: 0;
+        display: block;
     }
 
     .hero-form {
