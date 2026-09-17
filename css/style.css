@@ -84,227 +84,699 @@ p {
     text-align: center;
 }
 
-/*DESKTOP*/
-/* HERO */
+/* =========================================================
+   HERO - DESKTOP
+========================================================= */
 
 .hero {
-    min-height: 100vh;
-    padding: 28px 0 20px;
-    background-color: var(--off-white);
-     box-sizing: border-box;
-     position: relative;
+    position: relative;
+
+    min-height: 0;
+
+    padding: 22px 0 30px;
+
     overflow: hidden;
 
-
+    background:
+        radial-gradient(
+            circle at 50% 25%,
+            rgba(255, 255, 255, 0.55) 0%,
+            rgba(255, 248, 239, 0.15) 42%,
+            transparent 70%
+        ),
+        var(--off-white);
 }
+
+
+/* =========================================================
+   ONDA VINHO
+   DESATIVADA
+========================================================= */
+
+.hero-onda {
+    display: none;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
 
 .logo-hero {
     position: absolute;
-    top: 28px;
-    left: 70px;
-    width: 80px;
+
+    top: 30px;
+    left: 60px;
+
+    width: 72px;
     height: auto;
-    z-index: 2;
+
+    z-index: 10;
 }
+
+
+/* =========================================================
+   FLORES
+========================================================= */
 
 .flor {
     position: absolute;
-    z-index: 0;
+
+    z-index: 1;
+
     pointer-events: none;
-    opacity: 0.20;
+
+    opacity: 0.34;
+
+    filter:
+        sepia(0.15)
+        saturate(0.55);
+
+    mix-blend-mode: multiply;
 }
+
 
 .flor-esquerda {
-    width: 250px;
-    left: -25px;
-    bottom: 20px;
+    width: 230px;
+
+    left: -82px;
+    bottom: -5px;
+
+    transform:
+        rotate(-5deg)
+        scale(1.02);
 }
+
 
 .flor-direita {
-    width: 250px;
-    right: -25px;
-    top: 35px;
-    transform: scaleX(-1);
+    width: 230px;
+
+    right: -78px;
+    top: 20px;
+
+    transform:
+        scaleX(-1)
+        rotate(-5deg)
+        scale(1.02);
 }
 
 
+/* =========================================================
+   CONTAINER
+========================================================= */
+
 .hero .container {
+    position: relative;
+
+    z-index: 3;
+
+    width: 92%;
+    max-width: 1210px;
+
+    margin: 0 auto;
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
 }
 
 
-/* ONLINE / GRATUITO */
+/* =========================================================
+   ONLINE / GRATUITO
+========================================================= */
 
 .hero-info {
     display: flex;
+
     align-items: center;
     justify-content: center;
-    gap: 60px;
-    margin-bottom: 40px;
+
+    gap: 15px;
+
+    padding-top: 20px;
+
+    margin-bottom: 20px;
+
+    position: relative;
 }
 
+
+.hero-info::before,
+.hero-info::after {
+    content: "";
+
+    width: 70px;
+    height: 1px;
+
+    background: #9e735d;
+
+    opacity: 0.65;
+}
+
+
 .hero-info span {
-    position: relative;
+    color: var(--vinho);
 
     font-family: "Lato", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing: 1.7px;
+
+    line-height: 1;
+}
+
+
+.hero-separador {
+    font-size: 11px !important;
+
+    letter-spacing: 0 !important;
+
+    color: var(--vinho) !important;
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.hero-titulo {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+.hero h1 {
+    width: 100%;
+
+    max-width: 1180px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    color: var(--vinho);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-weight: 500;
+
+    line-height: 0.90;
+
+    letter-spacing: 0;
+}
+
+
+/* =========================================================
+   PRIMEIRA PARTE
+   BRASILEIRA MORANDO NOS ESTADOS UNIDOS
+========================================================= */
+
+.titulo-linha {
+    display: inline;
+
+    font-size: clamp(38px, 3.25vw, 49px);
+
+    line-height: 0.94;
+
+    font-weight: 500;
+
+    letter-spacing: -0.4px;
+}
+
+
+/*
+   Espaço visual entre:
+   "BRASILEIRA MORANDO NOS ESTADOS UNIDOS"
+   e a próxima linha
+*/
+
+.titulo-linha + .titulo-secundario {
+    margin-top: 6px;
+}
+
+
+/* =========================================================
+   SEGUNDA LINHA
+   É MAIS FÁCIL ACREDITAR QUE
+========================================================= */
+
+.titulo-secundario {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: clamp(30px, 2.5vw, 38px);
+
+    line-height: 0.93;
+
+    font-weight: 500;
+
+    color: #21191a;
+}
+
+
+/* =========================================================
+   TERCEIRA LINHA
+   O PROBLEMA É VOCÊ.
+========================================================= */
+
+.titulo-destaque {
+    display: block;
+
+    position: relative;
+
+    margin-top: 3px;
+
+    font-size: clamp(49px, 4.3vw, 64px);
+
+    line-height: 0.87;
+
+    font-weight: 700;
+
+    letter-spacing: -1.2px;
+
+    color: #76162d;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   SUBLINHADO
+========================================================= */
+
+.titulo-underline {
+    display: block;
+
+    position: relative;
+
+    width: min(520px, 52%);
+
+    height: 7px;
+
+    margin: 8px auto 0;
+
+    background: #c9364a;
+
+    border-radius: 50%;
+
+    transform:
+        rotate(-1.5deg)
+        skewX(-18deg);
+
+    opacity: 0.92;
+
+    box-shadow:
+        0 1px 0 rgba(117, 21, 43, 0.15);
+}
+
+
+.titulo-underline::after {
+    content: "";
+
+    position: absolute;
+
+    right: -8px;
+    top: 1px;
+
+    width: 30px;
+    height: 4px;
+
+    background: #c9364a;
+
+    border-radius: 50%;
+
+    transform: rotate(3deg);
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.hero-subtitle {
+    width: 100%;
+
+    max-width: 800px;
+
+    margin: 10px auto 18px;
+
+    text-align: center;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.3;
+
+    color: #241d1e;
+}
+
+
+.hero-subtitle strong {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 17px;
+
+    font-style: italic;
+
+    font-weight: 600;
 
     color: var(--vinho);
 }
 
 
-/* SERVE PRA INTERFERIR OS SGV DO ONLINE, GRATUITO NO DESKTOP */
+/* =========================================================
+   VÍDEO + FORMULÁRIO
+========================================================= */
 
-@media (min-width: 769px) {
+.hero-conteudo {
+    position: relative;
 
-    /* Esconde os ícones no desktop */
-    .hero-info svg {
-        display: none;
-    }
+    width: 100%;
 
-    /* Esconde o ponto no desktop */
-    .hero-info span:first-child::after {
-        display: none;
-    }
+    max-width: 1160px;
 
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.55fr)
+        minmax(310px, 0.88fr);
+
+    gap: 18px;
+
+    align-items: stretch;
 }
 
 
-/*  TÍTULO */
-.hero h1 {
-    max-width: 900px;
+/* =========================================================
+   VÍDEO
+========================================================= */
 
-    margin-bottom: 15px;
+.hero-video {
+    position: relative;
 
-    text-align: center;
+    width: 100%;
 
-    font-size: 38px;
-    line-height: 1.02;
-    font-weight: 500;
-}
+    aspect-ratio: 16 / 9;
 
+    margin: 0;
 
-.hero-subtitle {
-    max-width: 650px;
-
-    margin-bottom: 10px;
-
-    text-align: center;
-
-    font-size: 18px;
-    line-height: 1.35;
-}
-
-
-.hero-video { 
-    position: relative; 
-    width: 74%; 
-    max-width: 1500px; 
-    height: 360px; 
-    margin-bottom: 14px; 
-    background-color: #D8D8D8; 
-    border-radius: 6px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
     overflow: hidden;
+
+    background: #222;
+
+    border: 3px solid #d3a37e;
+
+    border-radius: 11px;
+
+    box-shadow:
+        0 0 0 1px rgba(117, 21, 43, 0.65),
+        0 0 7px rgba(255, 91, 103, 0.90),
+        0 0 17px rgba(255, 91, 103, 0.52),
+        0 9px 27px rgba(90, 23, 35, 0.20);
+
+    isolation: isolate;
 }
+
+
+.hero-video::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    border-radius: 8px;
+
+    box-shadow:
+        inset 0 0 10px rgba(255, 255, 255, 0.12);
+}
+
 
 .hero-video iframe {
     width: 100%;
     height: 100%;
-    border: 0;
+
     display: block;
+
+    border: 0;
 }
 
 
+/* =========================================================
+   CARD DO FORMULÁRIO
+========================================================= */
 
-
-
-/*  FORMULÁRIO */
 .hero-form {
-    width: 900px;
-    max-width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.hero-form h2 {
-    flex-basis: 100%;
-    margin: 0 0 8px;
-    text-align: center;
-    font-family: "Lato", sans-serif;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--vinho);
-}
-
-
-.hero-input {
     position: relative;
-    width: 200px;
-    height: 48px;
-}
 
-.hero-form input {
     width: 100%;
-    height: 48px;
-    padding: 0 15px 0 48px;
-    border: 1.5px solid #AB855F;
-    border-radius: 4px;
-    background-color: transparent;
-    color: var(--carvao);
-    font-family: "Lato", sans-serif;
-    font-size: 13px;
-    outline: none;
+    height: 100%;
+
+    min-height: 100%;
+
+    padding: 21px 23px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
     box-sizing: border-box;
+
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(160, 52, 70, 0.55),
+            transparent 42%
+        ),
+        linear-gradient(
+            160deg,
+            #62101f 0%,
+            #77172b 48%,
+            #57101e 100%
+        );
+
+    border: 2px solid #d39b72;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 0 1px rgba(112, 20, 40, 0.85),
+        0 0 7px rgba(255, 91, 103, 0.95),
+        0 0 17px rgba(255, 91, 103, 0.52),
+        0 12px 30px rgba(90, 23, 35, 0.24);
+
+    overflow: hidden;
+
+    color: white;
 }
 
-.hero-form input::placeholder {
-    color: #4D4546;
-}
 
-.hero-form input:focus {
-    border-color: var(--vinho);
-}
-
-/* SGV ÍCONES DOS CAMPOS */
-.hero-input-icon {
+.hero-form::before {
+    content: "";
 
     position: absolute;
 
-    left: 17px;
+    inset: 4px;
 
-    top: 50%;
+    border: 1px solid rgba(255, 219, 193, 0.30);
 
-    transform: translateY(-50%);
-
-    width: 18px;
-
-    height: 18px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    border-radius: 8px;
 
     pointer-events: none;
+}
+
+
+/* =========================================================
+   DETALHE DO CARD
+========================================================= */
+
+.form-florinha {
+    position: relative;
+
+    display: block;
+
+    margin: 0 0 2px;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 23px;
+
+    line-height: 1;
+
+    color: #e9c5a4;
+
+    transform: rotate(-25deg);
 
     z-index: 2;
 }
 
+
+/* =========================================================
+   TÍTULO DO FORMULÁRIO
+========================================================= */
+
+.hero-form h2 {
+    position: relative;
+
+    width: 100%;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 28px;
+
+    line-height: 0.92;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    color: #fff8f0;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   TEXTO DO FORMULÁRIO
+========================================================= */
+
+.form-subtitle {
+    position: relative;
+
+    max-width: 255px;
+
+    margin: 8px auto 14px;
+
+    text-align: center;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+
+    color: #fff3ea;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
+.hero-input {
+    position: relative;
+
+    width: 100%;
+
+    height: 38px;
+
+    margin-bottom: 7px;
+
+    z-index: 2;
+}
+
+
+.hero-form input {
+    width: 100%;
+
+    height: 38px;
+
+    padding: 0 11px 0 40px;
+
+    border: 1px solid rgba(255, 255, 255, 0.40);
+
+    border-radius: 6px;
+
+    background: #fff8f1;
+
+    color: #3e3032;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 10px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.hero-form input::placeholder {
+    color: #766b6b;
+
+    opacity: 1;
+}
+
+
+.hero-form input:focus {
+    border-color: #efb58e;
+
+    box-shadow:
+        0 0 0 2px rgba(255, 179, 139, 0.20),
+        0 0 10px rgba(255, 117, 102, 0.25);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   ÍCONES DOS CAMPOS
+========================================================= */
+
+.hero-input-icon {
+    position: absolute;
+
+    left: 12px;
+    top: 50%;
+
+    width: 16px;
+    height: 16px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    z-index: 4;
+}
+
+
 .hero-input-icon svg {
-
-    width: 18px;
-
-    height: 18px;
+    width: 16px;
+    height: 16px;
 
     fill: none;
 
@@ -317,130 +789,389 @@ p {
     stroke-linejoin: round;
 }
 
+
+/* =========================================================
+   BOTÃO
+========================================================= */
+
 .hero-form button {
-    width: 200px;
-    height: 48px;
-    padding: 0;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--vinho);
-    color: white;
+    position: relative;
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-top: 2px;
+
+    padding: 0 13px;
+
+    border: 2px solid #ff9b83;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #8d2639 0%,
+            #731629 100%
+        );
+
+    color: #fff;
+
     font-family: "Lato", sans-serif;
-    font-size: 12px;
+
+    font-size: 11px;
+
     font-weight: 700;
+
+    letter-spacing: 0.1px;
+
     cursor: pointer;
-    transition: 0.2s;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    box-shadow:
+        0 0 7px rgba(255, 99, 91, 0.95),
+        0 0 15px rgba(255, 91, 103, 0.52),
+        inset 0 1px 1px rgba(255, 255, 255, 0.18);
+
+    z-index: 2;
 }
+
+
+.hero-form button span {
+    margin-left: 4px;
+
+    font-size: 15px;
+
+    line-height: 1;
+}
+
 
 .hero-form button:hover {
-    background-color: var(--bordo);
+    background:
+        linear-gradient(
+            180deg,
+            #9d2c42 0%,
+            #7a172c 100%
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 9px rgba(255, 99, 91, 1),
+        0 0 21px rgba(255, 91, 103, 0.68),
+        inset 0 1px 1px rgba(255, 255, 255, 0.20);
 }
 
 
-/*DECORAÇAO*/
-.form-decoracao {
-    flex-basis: 100%;
+/* =========================================================
+   SEGURANÇA
+========================================================= */
+
+.form-seguranca {
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 7px;
+
     display: flex;
-    align-items: center;
+
+    align-items: flex-start;
+
     justify-content: center;
-    gap: 25px;
-    margin-top: 10px;
+
+    gap: 4px;
+
+    z-index: 2;
 }
 
-.form-decoracao span {
-    width: 123px;
-    height: 1px;
-    background-color: var(--bege);
+
+.form-seguranca .cadeado {
+    font-size: 9px;
+
+    line-height: 1.2;
 }
 
-.form-decoracao i {
+
+.form-seguranca p {
+    margin: 0;
+
+    max-width: 200px;
+
     font-family: "Lato", sans-serif;
-    font-size: 15px;
-    color: var(--bege);
-    font-style: normal;
+
+    font-size: 7.5px;
+
+    line-height: 1.2;
+
+    color: rgba(255, 243, 234, 0.88);
+
+    text-align: left;
 }
 
 
-/* RECONHECIMENTO */
+/* =========================================================
+   DECORAÇÃO
+========================================================= */
+
+.form-decoracao {
+    display: none;
+}
+
+
+/* =========================================================
+   DESKTOP MENOR
+========================================================= */
+
+@media (min-width: 1024px) and (max-width: 1250px) {
+
+    .hero {
+        padding-top: 20px;
+        padding-bottom: 27px;
+    }
+
+
+    .hero .container {
+        width: 93%;
+    }
+
+
+    .titulo-linha {
+        font-size: 39px;
+    }
+
+
+    .titulo-secundario {
+        font-size: 30px;
+    }
+
+
+    .titulo-destaque {
+        font-size: 52px;
+    }
+
+
+    .titulo-underline {
+        width: 450px;
+    }
+
+
+    .hero-conteudo {
+        max-width: 1000px;
+
+        grid-template-columns:
+            minmax(0, 1.52fr)
+            minmax(285px, 0.88fr);
+
+        gap: 15px;
+    }
+
+
+    .hero-form {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+
+    .hero-form h2 {
+        font-size: 25px;
+    }
+
+
+    .flor-esquerda {
+        width: 210px;
+        left: -75px;
+    }
+
+
+    .flor-direita {
+        width: 210px;
+        right: -75px;
+    }
+}
+
+/* =========================================================
+   RECONHECIMENTO
+========================================================= */
+
 .reconhecimento {
     background-color: #F8F3EC;
+
     min-height: 600px;
-    padding: 38px 40px 30px;
+
+    padding: 48px 40px 32px;
+
     text-align: center;
 }
 
 .reconhecimento .container {
     max-width: 1100px;
+
     margin: 0 auto;
 }
 
 
-/* "A PERGUNTA" */
+/* =========================================================
+   "A PERGUNTA"
+========================================================= */
 
 .reconhecimento > .container > .section-label {
     display: block;
 
+    margin-bottom: 14px;
+
     font-family: 'Lato', sans-serif;
-    font-size: 12px;
+
+    font-size: 13px;
+
     font-weight: 400;
 
-    color: #7A2635;
+    letter-spacing: 0.5px;
 
-    margin-bottom: 12px;
+    color: #8A3040;
 }
 
-.reconhecimento h2 {
-    max-width: 800px;
 
-    margin: 0 auto 12px;
+/* =========================================================
+   TÍTULO PRINCIPAL
+========================================================= */
+
+.reconhecimento h2 {
+    max-width: 900px;
+
+    margin: 0 auto 16px;
 
     font-family: 'Cormorant Garamond', serif;
-    font-size: 34px;
+
+    font-size: 42px;
+
     font-weight: 500;
-    line-height: 1.05;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.3px;
 
     color: #5A1723;
 }
 
-.reconhecimento > .container > p:not(.destaque) {
-    max-width: 700px;
 
-    margin: 0 auto 12px;
+/* =========================================================
+   DESTAQUE — ME LIBERTAR?
+========================================================= */
+
+.reconhecimento .titulo-libertar {
+    display: inline-block;
+
+    color: #8E1F35;
+
+    font-weight: 700;
+
+    position: relative;
+
+    padding-bottom: 4px;
+}
+
+
+/* sublinhado orgânico do destaque */
+
+.reconhecimento .titulo-libertar::after {
+    content: "";
+
+    position: absolute;
+
+    left: 2%;
+
+    bottom: 0;
+
+    width: 96%;
+
+    height: 4px;
+
+    background: #C9364B;
+
+    border-radius: 50%;
+
+    transform: rotate(-1.5deg);
+}
+
+
+/* =========================================================
+   TEXTO EXPLICATIVO
+========================================================= */
+
+.reconhecimento > .container > p:not(.destaque) {
+    max-width: 720px;
+
+    margin: 0 auto 14px;
 
     font-family: 'Lato', sans-serif;
+
     font-size: 16px;
+
     font-weight: 400;
-    line-height: 1.35;
+
+    line-height: 1.4;
 
     color: #2D2325;
 }
 
+
+/* =========================================================
+   FRASE DE DESTAQUE
+========================================================= */
+
 .reconhecimento .destaque {
-    margin: 16px auto 30px;
+    margin: 18px auto 32px;
+
     font-family: 'Lato', sans-serif;
-    font-size: 18px;
+
+    font-size: 19px;
+
     font-weight: 700;
-    color: #B9777E;
+
+    line-height: 1.3;
+
+    color: #B14F5E;
 }
+
+
+/* =========================================================
+   4 ITENS
+========================================================= */
 
 .reconhecimento-itens {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     width: 100%;
+
     max-width: 1100px;
+
     margin: 0 auto;
 }
 
 
-/* CADA ITEM */
+/* =========================================================
+   CADA ITEM
+========================================================= */
+
 .reconhecimento-itens .reconhecimento-item {
     min-height: 115px;
 
     padding: 0 20px;
 
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: flex-start;
 
     text-align: center;
@@ -450,104 +1181,224 @@ p {
 
 
 /* remove a linha do último */
+
 .reconhecimento-itens .reconhecimento-item:last-child {
     border-right: none;
 }
 
 
+/* =========================================================
+   ÍCONES
+========================================================= */
+
 .reconhecimento-item .icon {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     width: 52px;
+
     height: 52px;
+
     margin-bottom: 14px;
-    color: var(--vinho);
+
+    color: #7A2635;
 }
 
 .reconhecimento-item .icon svg {
     width: 48px;
+
     height: 48px;
+
     fill: none;
+
     stroke: currentColor;
+
     stroke-width: 1.8;
+
     stroke-linecap: round;
+
     stroke-linejoin: round;
 }
 
 
-/* TEXTO DOS 4 ITENS */
+/* =========================================================
+   TEXTO DOS 4 ITENS
+========================================================= */
 
 .reconhecimento-itens .reconhecimento-item p {
     max-width: 175px;
+
     margin: 0;
+
     font-family: 'Lato', sans-serif;
+
     font-size: 14px;
+
     font-weight: 400;
+
     line-height: 1.35;
 
     color: #2D2325;
 }
 
 
-/* FRASE FINAL */
+/* =========================================================
+   FRASE FINAL
+========================================================= */
+
 .reconhecimento-final {
     margin-top: 22px;
 }
 
 
 /* primeira frase */
+
 .reconhecimento-final p:first-child {
     max-width: 720px;
+
     margin: 0 auto 6px;
+
     font-family: 'Cormorant Garamond', serif;
-    font-size: 18px;
+
+    font-size: 19px;
+
     font-weight: 500;
-    color: #B9777E;
+
+    line-height: 1.25;
+
+    color: #B14F5E;
 }
 
 
+/* texto final */
+
 .reconhecimento-final p:last-child {
     max-width: 550px;
+
     margin: 0 auto;
+
     font-family: 'Lato', sans-serif;
+
     font-size: 14px;
+
     font-weight: 400;
+
     line-height: 1.35;
 
     color: #2D2325;
 }
 
-/* SESSAO ENCONTRO - O QUE VOCE VAI VER NO ENCONTRO */
+/* =========================================================
+   SESSÃO ENCONTRO - O QUE VOCÊ VAI VER NO ENCONTRO
+   ========================================================= */
+
 .encontro {
     position: relative;
 
-    padding: 46px 0 50px;
+    padding: 46px 0 65px;
 
     background-color: var(--vinho);
 
     overflow: hidden;
+
+    /*
+     * BORDA COM MOVIMENTO
+     * Ondulação um pouco mais evidente,
+     * mantendo o efeito delicado.
+     */
+
+    clip-path: polygon(
+        /* TOPO */
+        0% 1.5%,
+        5% 0.8%,
+        10% 0.3%,
+        15% 0%,
+        20% 0.5%,
+        25% 0.9%,
+        30% 0.7%,
+        35% 0.2%,
+        40% 0%,
+        45% 0.4%,
+        50% 0.8%,
+        55% 0.7%,
+        60% 0.2%,
+        65% 0%,
+        70% 0.4%,
+        75% 0.8%,
+        80% 0.6%,
+        85% 0.2%,
+        90% 0%,
+        95% 0.5%,
+        100% 1.2%,
+
+        /* LATERAL DIREITA */
+        100% 97.2%,
+
+        /* ONDA INFERIOR - MAIS EVIDENTE */
+        95% 98.0%,
+        90% 99.0%,
+        85% 99.8%,
+        80% 100%,
+        75% 99.4%,
+        70% 98.5%,
+        65% 97.8%,
+        60% 97.5%,
+        55% 98.2%,
+        50% 99.1%,
+        45% 99.8%,
+        40% 100%,
+        35% 99.4%,
+        30% 98.5%,
+        25% 97.8%,
+        20% 97.5%,
+        15% 98.2%,
+        10% 99.1%,
+        5% 99.8%,
+        0% 98.8%
+    );
 }
+
+
+/* =========================================================
+   TÍTULO
+   ========================================================= */
 
 .section-title {
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     gap: 26px;
 
     margin-bottom: 42px;
-     position: relative;
+
+    position: relative;
+
     z-index: 2;
 }
 
+
+/* LINHAS LATERAIS DO TÍTULO */
+
 .section-title span {
     width: 145px;
-    height: 1px;
-    background-color: var(--bege);
-    opacity: 0.65;
-     flex-shrink: 0;
 
+    height: 1px;
+
+    background-color: var(--bege);
+
+    opacity: 0.65;
+
+    flex-shrink: 0;
 }
+
+
+/* TÍTULO */
 
 .section-title h2 {
     margin: 0;
@@ -561,6 +1412,10 @@ p {
     white-space: nowrap;
 }
 
+
+/* =========================================================
+   CARDS DO ENCONTRO
+   ========================================================= */
 
 .encontro-items {
     display: grid;
@@ -581,21 +1436,32 @@ p {
     min-height: 165px;
 
     padding: 0 28px;
+
     box-sizing: border-box;
+
     border-right: 1px solid rgba(200, 169, 133, 0.45);
+
     display: flex;
+
     flex-direction: column;
+
     align-items: center;
+
     justify-content: flex-start;
 }
+
 
 .encontro-item:last-child {
     border-right: none;
 }
 
 
+/* =========================================================
+   ÍCONES
+   ========================================================= */
+
 .encontro-item .icon {
-  width: 52px;
+    width: 52px;
 
     height: 52px;
 
@@ -608,7 +1474,7 @@ p {
     justify-content: center;
 }
 
-/*SGV*/
+
 .encontro-item .icon svg {
     width: 48px;
 
@@ -627,6 +1493,11 @@ p {
     display: block;
 }
 
+
+/* =========================================================
+   TEXTOS
+   ========================================================= */
+
 .encontro-item p {
     max-width: 205px;
 
@@ -644,8 +1515,10 @@ p {
 }
 
 
+/* =========================================================
+   FLORES DECORATIVAS
+   ========================================================= */
 
-/* FLORES DECORATIVAS*/
 .encontro::before,
 .encontro::after {
     content: "";
@@ -653,12 +1526,15 @@ p {
     position: absolute;
 
     width: 225px;
+
     height: 305px;
 
     background-image: url("../img/FLOR-HERO.png");
 
     background-repeat: no-repeat;
+
     background-position: center;
+
     background-size: contain;
 
     opacity: 0.20;
@@ -669,17 +1545,22 @@ p {
 }
 
 
-/* flor esquerda - espelhada */
+/* FLOR ESQUERDA */
+
 .encontro::before {
     left: -25px;
+
     bottom: -25px;
 
     transform: scaleX(-1);
 }
 
-/* flor direita */
+
+/* FLOR DIREITA */
+
 .encontro::after {
     right: -25px;
+
     bottom: -25px;
 }
 
@@ -807,12 +1688,13 @@ p {
 }
 
 
-/* SOBRE CLÁUDIA */
+/* =========================================================
+   SOBRE CLÁUDIA + SEGUNDA CHAMADA
+   ========================================================= */
+
 .sobre-claudia {
     background-color: var(--off-white);
-
     padding: 0;
-
     overflow: hidden;
 }
 
@@ -822,47 +1704,42 @@ p {
     padding: 0;
 }
 
-/* estrutura foto + texto */
 .sobre-claudia-content {
     display: grid;
-
     grid-template-columns: 40% 60%;
-
     align-items: stretch;
 }
 
+
+/* =========================================================
+   FOTO DA CLÁUDIA
+   ========================================================= */
+
 .sobre-claudia-imagem {
     width: 100%;
-
     min-height: 495px;
-
     overflow: hidden;
 }
 
 .sobre-claudia-imagem img {
     width: 100%;
-
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
     object-position: center;
 }
 
+
+/* =========================================================
+   TEXTO SOBRE A CLÁUDIA
+   ========================================================= */
+
 .sobre-claudia-texto {
     padding: 8px 60px 18px;
-
     box-sizing: border-box;
-
     display: flex;
-
     flex-direction: column;
 }
-
-
-/*LINHAS + SÍMBOLO*/
 
 .sobre-decoration {
     display: flex;
@@ -874,40 +1751,27 @@ p {
     padding-right: 300px;
 }
 
-
 .sobre-decoration span {
     width: 68px;
-
     height: 1px;
-
     background-color: var(--bege);
-
     opacity: 0.75;
 }
 
-
 .sobre-decoration svg {
     width: 20px;
-
     height: 20px;
-
     fill: none;
-
     stroke: var(--bege);
-
     stroke-width: 1.2;
-
     stroke-linecap: round;
-
     stroke-linejoin: round;
 }
 
-
-/* SOBRE A CLÁUDIA*/
 .sobre-label {
     padding-right: 300px;
-    margin: -45px 0 1px;   
-     text-align: center;
+    margin: -45px 0 1px;
+    text-align: center;
     color: var(--vinho);
     font-family: serif;
     font-size: 12px;
@@ -916,11 +1780,8 @@ p {
 
 .sobre-claudia-texto h2 {
     margin: 20px 0 15px;
-
     color: var(--vinho);
-
     font-family: serif;
-
     font-size: 38px;
     padding-left: 140px;
     font-weight: 400;
@@ -928,220 +1789,447 @@ p {
 
 .sobre-claudia-texto > p:not(.sobre-label) {
     margin: 0 0 16px;
-
     color: #302a28;
-
     font-size: 18px;
-
     line-height: 1.28;
-
     font-weight: 400;
 }
 
+
+/* =========================================================
+   LOGO
+   ========================================================= */
+
 .sobre-logo {
     display: flex;
-
     justify-content: center;
-
     margin-top: auto;
-
     padding-top: 5px;
 }
 
 .sobre-logo img {
     width: 50px;
-
     height: auto;
-
     object-fit: contain;
     margin: 0 0 0 -275px;
-
 }
 
+/* =========================================================
+   SEGUNDA CHAMADA
+   ========================================================= */
 
-/* SEGUNDA CHAMADA  */
 .segunda-chamada {
-  position: relative;
-  padding: 52px 0 43px;
-  background-color: var(--vinho);
-  overflow: hidden;
+    position: relative;
+
+    /*
+     * Sobe um pouco sobre a seção anterior,
+     * evitando aquele espaço branco aparecendo
+     * entre as duas áreas.
+     */
+    margin-top: -18px;
+
+    padding: 42px 0 50px;
+
+    background-color: var(--vinho);
+
+    overflow: hidden;
+
+    z-index: 5;
+
+    /*
+     * MOVIMENTO ORGÂNICO NAS BORDAS
+     */
+    clip-path: polygon(
+
+        /* =========================
+           TOPO
+           ========================= */
+
+        0% 1.5%,
+        5% 0.8%,
+        10% 0.3%,
+        15% 0%,
+        20% 0.5%,
+        25% 0.8%,
+        30% 0.5%,
+        35% 0.1%,
+        40% 0%,
+        45% 0.4%,
+        50% 0.8%,
+        55% 0.6%,
+        60% 0.2%,
+        65% 0%,
+        70% 0.4%,
+        75% 0.8%,
+        80% 0.5%,
+        85% 0.1%,
+        90% 0%,
+        95% 0.5%,
+        100% 1.2%,
+
+        /* =========================
+           LATERAL DIREITA
+           ========================= */
+
+        100% 97.5%,
+
+        /* =========================
+           ONDA INFERIOR
+           ========================= */
+
+        95% 98.1%,
+        90% 99.1%,
+        85% 99.8%,
+        80% 100%,
+        75% 99.5%,
+        70% 98.7%,
+        65% 98.0%,
+        60% 97.7%,
+        55% 98.4%,
+        50% 99.2%,
+        45% 99.8%,
+        40% 100%,
+        35% 99.5%,
+        30% 98.7%,
+        25% 98.0%,
+        20% 97.7%,
+        15% 98.4%,
+        10% 99.2%,
+        5% 99.8%,
+        0% 99%
+    );
 }
+
+
+/* =========================================================
+   CONTEÚDO
+   ========================================================= */
 
 .cta-content {
-  position: relative;
-  z-index: 2;
+    position: relative;
 
-  max-width: 920px;
-  margin: 0 auto;
+    z-index: 2;
 
-  display: grid;
-  grid-template-columns: 1fr 397px;
-  align-items: center;
+    max-width: 920px;
 
-  column-gap: 70px;
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 397px;
+
+    align-items: center;
+
+    column-gap: 70px;
 }
 
+
+/* =========================================================
+   TEXTO
+   ========================================================= */
+
 .cta-texto {
-  padding-left: 0;
+    padding-left: 0;
 }
 
 .cta-texto h2 {
-  margin: 0 0 7px;
+    margin: 0 0 7px;
 
-  color: var(--off-white);
+    color: var(--off-white);
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 1.25;
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 40px;
+
+    font-weight: 500;
+
+    line-height: 1.25;
 }
 
 .cta-texto p {
-  margin: 0;
+    margin: 0;
 
-  color: var(--bege);
+    color: var(--bege);
 
-  font-family: "Cormorant Garamond", serif;
-  font-size: 30px;
-  line-height: 1.2;
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 30px;
+
+    line-height: 1.2;
 }
 
-/* FORMULÁRIO DA SEGUNDA CHAMADA */
+
+/* =========================================================
+   FORMULÁRIO
+   ========================================================= */
+
 .cta-form {
-  display: flex;
-  flex-direction: column;
-  gap: 11px;
+    display: flex;
 
-  width: 397px;
+    flex-direction: column;
+
+    gap: 11px;
+
+    width: 397px;
 }
 
-
-/* GRUPO DO INPUT */
 .input-group {
-  position: relative;
+    position: relative;
 
-  width: 100%;
-  height: 51px;
+    width: 100%;
+
+    height: 51px;
 }
 
-/* INPUT */
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
 .cta-form input {
-  box-sizing: border-box;
-  margin-left: -20px;
-  width: 440px;
-  height: 54px;
-  padding: 5px 20px 0 60px;
-  border: none;
-  border-radius: 6px;
-  background-color: var(--off-white);
-  color: var(--carvao);
-  font-family: "Lato", sans-serif;
-  font-size: 14px;
-    
-  outline: none;
+    box-sizing: border-box;
+
+    margin-left: -20px;
+
+    width: 440px;
+
+    height: 54px;
+
+    padding: 5px 20px 0 60px;
+
+    border: 1px solid rgba(248, 243, 236, 0.18);
+
+    border-radius: 6px;
+
+    background-color: var(--off-white);
+
+    color: var(--carvao);
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .cta-form input::placeholder {
-  color: #625b5b;
-  opacity: 1;
+    color: #625b5b;
+
+    opacity: 1;
+}
+
+.cta-form input:focus {
+    border-color: rgba(185, 119, 126, 0.8);
+
+    box-shadow:
+        0 0 0 2px rgba(185, 119, 126, 0.12);
 }
 
 
-/* ÍCONE DO INPUT */
+/* =========================================================
+   ÍCONES
+   ========================================================= */
+
 .input-icon {
-  position: absolute;
-  left: 8px;
-  top: 60%;
-  transform: translateY(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 2;
+    position: absolute;
+
+    left: 8px;
+
+    top: 60%;
+
+    transform: translateY(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    z-index: 2;
 }
 
 .input-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: none;
-  stroke: var(--vinho);
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+    width: 20px;
+
+    height: 20px;
+
+    fill: none;
+
+    stroke: var(--vinho);
+
+    stroke-width: 1.5;
+
+    stroke-linecap: round;
+
+    stroke-linejoin: round;
 }
+
+
+/* =========================================================
+   BOTÃO DA SEGUNDA CHAMADA
+   ========================================================= */
 
 .cta-form button {
-  width: 440px;
-  height: 55px;
+    position: relative;
+
+    width: 440px;
+
+    height: 55px;
+
     margin-left: -20px;
-  margin-top: 2px;
 
-  border: none;
-  border-radius: 6px;
+    margin-top: 2px;
 
-  background-color: var(--bege);
+    padding: 0 13px;
 
-  color: white;
+    box-sizing: border-box;
 
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  font-weight: 400;
+    /*
+     * BORDA LUMINOSA
+     */
+    border: 2px solid #ff9b83;
 
-  cursor: pointer;
+    border-radius: 22px;
 
-  transition: background-color 0.2s ease;
+    /*
+     * VERMELHO FORTE
+     * mesmo conceito do botão do Hero
+     */
+    background: linear-gradient(
+        180deg,
+        #8d2639 0%,
+        #731629 100%
+    );
+
+    color: #fff;
+
+    font-family: "Lato", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1px;
+
+    cursor: pointer;
+
+    /*
+     * GLOW EXTERNO
+     */
+    box-shadow:
+        0 0 7px rgba(255, 99, 91, 0.95),
+        0 0 15px rgba(255, 91, 103, 0.52),
+        inset 0 1px 1px rgba(255, 255, 255, 0.18);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+
+    z-index: 2;
 }
+
+
+/* =========================================================
+   HOVER DO BOTÃO
+   ========================================================= */
 
 .cta-form button:hover {
-  background-color: #b9956d;
+    transform: translateY(-2px);
+
+    background: linear-gradient(
+        180deg,
+        #9b3044 0%,
+        #7d182d 100%
+    );
+
+    box-shadow:
+        0 0 9px rgba(255, 99, 91, 1),
+        0 0 20px rgba(255, 91, 103, 0.68),
+        inset 0 1px 1px rgba(255, 255, 255, 0.20);
 }
 
 
-/* FLORES DA SEGUNDA CHAMADA*/
+/* =========================================================
+   FLORES DECORATIVAS
+   ========================================================= */
+
 .segunda-chamada::before,
 .segunda-chamada::after {
-  content: "";
+    content: "";
 
-  position: absolute;
+    position: absolute;
 
-  width: 205px;
-  height: 300px;
+    width: 205px;
 
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
+    height: 300px;
 
-  opacity: 0.28;
+    background-repeat: no-repeat;
 
-  pointer-events: none;
+    background-position: center;
 
-  z-index: 1;
+    background-size: contain;
+
+    opacity: 0.20;
+
+    pointer-events: none;
+
+    z-index: 1;
+
+    transition:
+        transform 1.5s ease,
+        opacity 0.8s ease;
 }
 
 
 /* FLOR ESQUERDA */
+
 .segunda-chamada::before {
-  left: -20px;
-  bottom: 8px;
+    left: -20px;
 
-  background-image: url("../img/FLOR-2.png");
+    bottom: 8px;
 
-  transform: scaleX(-1);
-  opacity: 0.20;
+    background-image: url("../img/FLOR-2.png");
+
+    transform: scaleX(-1);
 }
 
 
 /* FLOR DIREITA */
+
 .segunda-chamada::after {
-  right: -15px;
-  bottom: 8px;
+    right: -15px;
 
-  background-image: url("../img/FLOR-2.png");
+    bottom: 8px;
+
+    background-image: url("../img/FLOR-2.png");
+
     height: 290px;
-
-  opacity: 0.20;
 }
 
 
+/* =========================================================
+   MOVIMENTO SUTIL DAS FLORES
+   ========================================================= */
+
+.segunda-chamada:hover::before {
+    transform:
+        scaleX(-1)
+        translateY(-4px);
+
+    opacity: 0.24;
+}
+
+.segunda-chamada:hover::after {
+    transform:
+        translateY(-4px);
+
+    opacity: 0.24;
+}
 /* FAQ */
 .faq {
   padding: 27px 0 24px;
@@ -2007,712 +3095,236 @@ p {
 
 
 
-
-/*AJUSTES FINAIS — TABLET 769px ATÉ 1100px */
+/* =========================================================
+   AJUSTE — TABLET 769px ATÉ 1100px
+   HERO
+   ========================================================= */
 
 @media (min-width: 769px) and (max-width: 1100px) {
 
-    /*HERO — TABLET */
     .hero {
-        min-height: auto;
-        padding: 25px 25px 30px;
+        min-height: auto !important;
+
+        padding: 25px 25px 35px !important;
+
+        box-sizing: border-box;
+
+        overflow: hidden;
+    }
+
+    .hero .container {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+
+    /* =====================================================
+       LOGO
+       ===================================================== */
+
+    .logo-hero {
+        width: 45px !important;
+
+        top: 15px !important;
+        left: 50% !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+
+    /* =====================================================
+       ONLINE / GRATUITO
+       ===================================================== */
+
+    .hero-info {
+        width: 100%;
+        max-width: 650px;
+
+        margin-top: 55px !important;
+        margin-bottom: 25px !important;
+
+        gap: 35px !important;
+
+        justify-content: center;
+
         box-sizing: border-box;
     }
 
+    .hero-info::before,
+    .hero-info::after {
+        content: "";
 
-    /* LOGO */
-    .logo-hero {
-        width: 45px;
-        top: 15px;
-        left: 50%;
-        transform: translateX(-50%);
+        width: 68px;
+
+        flex-shrink: 1;
     }
 
 
-
-    /* REMOVE FLORES DO HERO */
-    .hero .flor,
-    .hero .flor-esquerda,
-    .hero .flor-direita {
-        display: none !important;
-    }
-
-
-    /* ONLINE / GRATUITO */
-    .hero-info {
-        gap: 45px;
-        margin-top: 55px;
-        margin-bottom: 28px;
-    }
-
-
-    /* TÍTULO */
+    /* =====================================================
+       TÍTULO
+       ===================================================== */
 
     .hero h1 {
-        max-width: 720px;
-        margin-bottom: 12px;
+        width: 100%;
+        max-width: 720px !important;
 
-        font-size: 32px;
-        line-height: 1.08;
+        margin: 0 auto 10px !important;
+
+        padding: 0;
+
+        font-size: 32px !important;
+        line-height: 1.08 !important;
+
+        text-align: center !important;
+    }
+
+    .titulo-linha,
+    .titulo-secundario,
+    .titulo-destaque {
+        text-align: center !important;
     }
 
 
-    /* SUBTÍTULO */
+    /* =====================================================
+       SUBTÍTULO
+       ===================================================== */
 
     .hero-subtitle {
-        max-width: 650px;
-        margin-bottom: 12px;
+        width: 100%;
+        max-width: 650px !important;
 
-        font-size: 15px;
-        line-height: 1.3;
+        margin: 0 auto 14px !important;
+
+        font-size: 15px !important;
+        line-height: 1.3 !important;
+
+        text-align: center !important;
     }
 
 
-    /* VÍDEO */
+    /* =====================================================
+       CONTEÚDO DO HERO
+       ===================================================== */
 
-.hero-video { 
-    width: 68%; 
-    max-width: 600px; 
-    height: 290px; 
-    margin: 0 auto 14px; 
-    overflow: hidden;
-}
+    .hero-conteudo {
+        width: 100%;
+        max-width: 900px;
 
-.hero-video iframe {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    display: block;
-}
+        display: flex;
 
-    /* FORMULÁRIO */
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 14px;
+    }
+
+
+    /* =====================================================
+       VÍDEO
+       ===================================================== */
+
+    .hero-video {
+        width: 68% !important;
+        max-width: 600px !important;
+
+        height: 290px !important;
+
+        margin: 0 auto 14px !important;
+
+        aspect-ratio: auto !important;
+
+        overflow: hidden;
+
+        box-sizing: border-box;
+    }
+
+    .hero-video iframe {
+        width: 100%;
+        height: 100%;
+
+        border: 0;
+
+        display: block;
+    }
+
+
+    /* =====================================================
+       FORMULÁRIO
+       ===================================================== */
 
     .hero-form {
-        width: 90%;
-        max-width: 620px;
+        width: 90% !important;
+        max-width: 620px !important;
 
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
+        display: grid !important;
 
-        margin: 0 auto;
+        grid-template-columns: 1fr 1fr !important;
+
+        gap: 10px !important;
+
+        margin: 0 auto !important;
+
+        box-sizing: border-box;
     }
-
-
-    /* TÍTULO DO FORMULÁRIO */
 
     .hero-form h2 {
         grid-column: 1 / -1;
 
-        margin: 0 0 3px;
+        margin: 0 0 3px !important;
 
-        font-size: 13px;
+        font-size: 13px !important;
+
+        text-align: center;
     }
 
-
-    /* CAMPOS */
-
     .hero-input {
-        width: 100%;
-        height: 48px;
+        width: 100% !important;
+        height: 48px !important;
     }
 
     .hero-form input {
-        width: 100%;
-        height: 48px;
+        width: 100% !important;
+        height: 48px !important;
+
+        box-sizing: border-box;
     }
-
-
-    /* BOTÃO */
 
     .hero-form button {
-        width: 100%;
-        height: 48px;
-    }
-
-
-    /* DECORAÇÃO */
-
-    .form-decoracao {
-        grid-column: 1 / -1;
-
-        margin-top: 5px;
-    }
-
-    .form-decoracao span {
-        width: 90px;
-    }
-
-
-    /* RECONHECIMENTO  */
-    .reconhecimento {
-        min-height: auto;
-        padding: 35px 30px 30px;
-    }
-
-    .reconhecimento .container {
-        max-width: 100%;
-    }
-
-    /* A PERGUNTA */
-
-    .reconhecimento > .container > .section-label {
-        font-size: 11px;
-        margin-bottom: 10px;
-    }
-
-    /* TÍTULO */
-
-    .reconhecimento h2 {
-        max-width: 750px;
-        font-size: 32px;
-        line-height: 1.08;
-        margin-bottom: 12px;
-    }
-
-    /* TEXTO INTRODUTÓRIO */
-
-    .reconhecimento > .container > p:not(.destaque) {
-        max-width: 720px;
-        font-size: 15px;
-        line-height: 1.35;
-    }
-
-    /* DESTAQUE */
-
-    .reconhecimento .destaque {
-        margin: 15px auto 25px;
-        font-size: 17px;
-    }
-
-    /* 4 ITENS */
-
-    .reconhecimento-itens {
-        width: 100%;
-        max-width: 100%;
-    }
-
-    .reconhecimento-itens .reconhecimento-item {
-        min-height: 115px;
-        padding: 0 10px;
-    }
-
-    /* ÍCONES */
-
-    .reconhecimento-item .icon {
-        width: 48px;
-        height: 48px;
-        margin-bottom: 12px;
-    }
-
-    .reconhecimento-item .icon svg {
-        width: 44px;
-        height: 44px;
-    }
-
-    /* TEXTOS */
-
-    .reconhecimento-itens .reconhecimento-item p {
-        max-width: 160px;
-        font-size: 13px;
-        line-height: 1.35;
-    }
-
-    /* FRASE FINAL */
-
-    .reconhecimento-final {
-        margin-top: 20px;
-    }
-
-    .reconhecimento-final p:first-child {
-        font-size: 17px;
-    }
-
-    .reconhecimento-final p:last-child {
-        max-width: 600px;
-        font-size: 13px;
-        line-height: 1.35;
-    }
-
-    /* O QUE VOCÊ VAI VER NO ENCONTRO — TABLET */
-    .encontro {
-        padding: 40px 0 42px;
-    }
-
-
-    /* TÍTULO */
-
-    .encontro .section-title {
-        gap: 18px;
-        margin-bottom: 32px;
-    }
-
-    .encontro .section-title span {
-        width: 90px;
-    }
-
-    .encontro .section-title h2 {
-        font-size: 21px;
-    }
-
-
-    /* ITENS */
-
-    .encontro-items {
-        width: 90%;
-        max-width: 900px;
-        grid-template-columns: repeat(4, 1fr);
-    }
-
-
-    /* CADA ITEM */
-
-    .encontro-item {
-        min-height: 155px;
-        padding: 0 15px;
-    }
-
-
-    /* ÍCONES */
-
-    .encontro-item .icon {
-        width: 46px;
-        height: 46px;
-        margin-bottom: 14px;
-    }
-
-    .encontro-item .icon svg {
-        width: 42px;
-        height: 42px;
-    }
-
-
-    /* TEXTO */
-
-    .encontro-item p {
-        max-width: 170px;
-        font-size: 14px;
-        line-height: 1.3;
-    }
-
-
-    /* REMOVE AS FLORES NO TABLET */
-
-    .encontro::before,
-    .encontro::after {
-        display: none !important;
-    }
-
-
-    /* DETALHES DO ENCONTRO  */
-    .detalhes {
-        padding: 25px 25px 25px;
-    }
-
-    .detalhes h2 {
-        font-size: 20px;
-        margin-bottom: 14px;
-    }
-
-    .detalhes-box {
-        width: 90%;
-        max-width: 850px;
-        min-height: 85px;
-    }
-
-    .detalhe-item {
-        gap: 10px;
-    }
-
-    .detalhe-item .icon {
-        width: 38px;
-        height: 38px;
-    }
-
-    .detalhe-item .icon svg {
-        width: 32px;
-        height: 32px;
-    }
-
-    .detalhe-item > div > span {
-        font-size: 14px;
-    }
-
-    .detalhe-item p {
-        font-size: 16px;
-    }
-
-
-
-
-    /* SOBRE A CLÁUDIA */
-    .sobre-claudia-content {
-        grid-template-columns: 45% 55%;
-        align-items: stretch;
-    }
-
-    .sobre-claudia-imagem {
-        min-height: 400px;
-    }
-
-    .sobre-claudia-texto {
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: center !important;
-        justify-content: flex-start !important;
-        padding: 20px 35px !important;
-    }
-
-    .sobre-label {
-        order: 1 !important;
-
         width: 100% !important;
-        margin: 0 0 6px 0 !important;
-        padding: 0 !important;
+        height: 48px !important;
 
-        text-align: center !important;
-
-        align-self: center !important;
-
-        position: static !important;
-        transform: none !important;
-    }
-
-    .sobre-decoration {
-        order: 2 !important;
-
-        width: 100% !important;
-        max-width: 100% !important;
-
-        height: auto !important;
-
-        display: flex !important;
-
-        justify-content: center !important;
-        align-items: center !important;
-
-        margin: 0 auto 12px auto !important;
-        padding: 0 !important;
-
-        position: static !important;
-        transform: none !important;
-    }
- 
-
-    .sobre-claudia-texto h2 {
-        order: 3 !important;
-
-        width: 100% !important;
-
-        margin: 0 0 16px 0 !important;
-        padding: 0 !important;
-
-        text-align: center !important;
-
-        align-self: center !important;
-
-        font-size: 32px;
-    }
-
-
-    .sobre-claudia-texto > p:not(.sobre-label) {
-        order: 4 !important;
-
-        width: 100% !important;
-
-        margin-left: 0 !important;
-        margin-right: 0 !important;
-
-        text-align: left !important;
-
-        font-size: 15px;
-        line-height: 1.3;
-    }
-
-
-
-        .sobre-claudia-texto img {
-        order:5!important;
-        display:block!important;
-        margin-left:auto!important;
-        margin-right:auto!important;
-    }
-
-
-    .sobre-logo {
-        order: 5 !important;
-
-        display: flex !important;
-
-        margin-top: 10px !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-    }
-
-
-    /* SEGUNDA CHAMADA — TABLET */
-    .segunda-chamada {
-        padding: 45px 0 40px;
-    }
-
-    .cta-content {
-        width: 90%;
-        max-width: 920px;
-        grid-template-columns: 40% 60%;
-        column-gap: 25px;
-        align-items: center;
-    }
-
-    .cta-texto h2 {
-        font-size: 34px;
-        line-height: 1.2;
-    }
-
-    .cta-texto p {
-        font-size: 24px;
-        line-height: 1.2;
-    }
-
-    .cta-form {
-        width: 100%;
-        gap: 10px;
-    }
-
-    .cta-form input {
-        width: 100%;
-        margin-left: 0;
-        height: 50px;
-    }
-
-    /* ALINHAMENTO DOS ÍCONES — TABLET */
-
-    .cta-form .input-icon {
-        left: 30px;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .cta-form button {
-        width: 100%;
-        margin-left: 0;
-        height: 52px;
-        font-size: 16px;
-    }
-
-    /* REMOVE AS FLORES DA SEGUNDA CHAMADA NO TABLET */
-    .segunda-chamada::before,
-    .segunda-chamada::after {
-        display: none !important;
-    }
-
-
-
-    /* FAQ — TABLET */
-
-    .faq {
-        padding: 30px 0 28px;
-    }
-
-    .faq .container {
-        width: 90%;
-    }
-
-    .faq .section-title {
-        gap: 20px;
-        margin-bottom: 22px;
-    }
-
-    .faq .section-title span {
-        width: 55px;
-    }
-
-    .faq .section-title h2 {
-        font-size: 28px;
-    }
-
-
-    /* LISTA EM CARDS */
-
-    .faq-list {
-        width: 100%;
-        max-width: 900px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        margin: 0 auto;
-    }
-
-
-    /* CARD */
-
-    .faq-item {
-        width: 100%;
-        min-height: auto;
-        padding: 0;
-        display: block;
-        border: 1px solid rgba(200, 169, 133, 0.65);
-        border-radius: 6px;
-        background-color: var(--off-white);
-        box-shadow: 0 2px 7px rgba(45, 35, 37, 0.12);
-        overflow: hidden;
         box-sizing: border-box;
-    }
-
-
-    /* ÁREA CLICÁVEL */
-
-    .faq-item summary {
-        width: 100%;
-        min-height: 58px;
-        padding: 12px 18px;
-        display: flex;
-        align-items: center;
-        gap: 14px;
-        cursor: pointer;
-        list-style: none;
-        box-sizing: border-box;
-    }
-
-    .faq-item summary::-webkit-details-marker {
-        display: none;
-    }
-
-    .faq-item summary::marker {
-        display: none;
-    }
-
-
-    /* ÍCONE */
-
-    .faq-item .faq-icon {
-        width: 30px;
-        height: 30px;
-        flex-shrink: 0;
-        margin: 0;
-        border: 1.5px solid var(--vinho);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .faq-item .faq-icon svg {
-        width: 21px;
-        height: 21px;
-    }
-
-
-    /* PERGUNTA */
-
-    .faq-question {
-        width: 100%;
-        min-width: 0;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 15px;
-    }
-
-    .faq-question h3 {
-        margin: 0;
-        font-size: 20px;
-        font-weight: 500;
-        line-height: 1.2;
-    }
-
-
-    /* SETA */
-
-    .faq-question .faq-arrow {
-        display: none !important;
-    }
-
-    .faq-question::after {
-        content: "";
-        width: 9px;
-        height: 9px;
-        flex-shrink: 0;
-        display: block;
-        border-right: 2px solid #8D817B;
-        border-bottom: 2px solid #8D817B;
-        transform: rotate(45deg);
-        margin-right: 5px;
-        margin-top: -5px;
-        box-sizing: border-box;
-        transition: transform 0.2s ease;
-    }
-
-    .faq-item[open] .faq-question::after {
-        transform: rotate(225deg);
-        margin-top: 5px;
-    }
-
-
-    /* RESPOSTA */
-
-    .faq-answer {
-        display: none;
-        margin-left: 0;
-        margin-top: 8px;
-    }
-
-    .faq-item[open] .faq-answer {
-        display: block;
-        max-height: 300px;
-        padding: 0 18px 18px 62px;
-        opacity: 1;
-    }
-
-    .faq-answer p {
-        margin: 0;
-        color: var(--carvao);
-        font-family: "Lato", sans-serif;
-        font-size: 18px;
-        line-height: 1.45;
-    }
-
-    .container {
-     max-width: 100%;
-     }
-
-
-     /* FOOTER — TABLET */
-    .footer {
-        padding: 17px 20px 14px;
-    }
-
-    .footer p {
-        font-size: 10px;
-    }
-
-    .footer-links {
-        margin-top: 9px;
-        gap: 7px;
-    }
-
-    .footer-links a {
-        font-size: 10px;
-    }
-
-    .footer-links span {
-        font-size: 9px;
     }
 
 }
 
 
 
-/* MOBILE até 768px*/
+/* =========================================================
+   MOBILE — ATÉ 768px
+   ========================================================= */
 
 @media (max-width: 768px) {
 
- 
     .container {
         width: 90%;
         max-width: none;
         margin: 0 auto;
         box-sizing: border-box;
     }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
 
     .hero {
         min-height: auto;
@@ -2732,11 +3344,12 @@ p {
     }
 
 
- 
+    /* =====================================================
+       LOGO
+       ===================================================== */
 
     .logo-hero {
         position: relative;
-
         top: auto;
         left: auto;
 
@@ -2747,11 +3360,21 @@ p {
         z-index: 2;
     }
 
+
+    /* =====================================================
+       FLORES DO HERO
+       ===================================================== */
+
     .flor-esquerda,
     .flor-direita {
         display: none;
     }
-      
+
+
+    /* =====================================================
+       ONLINE / GRATUITO
+       ===================================================== */
+
     .hero-info {
         width: 100%;
         min-height: 34px;
@@ -2761,119 +3384,227 @@ p {
 
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
 
-        gap: 12px;
+        gap: 50px;
+
+        position: relative;
+
+        box-sizing: border-box;
 
         border: 1px solid var(--vinho);
         border-radius: 18px;
 
         background-color: var(--vinho);
-
-        box-sizing: border-box;
     }
 
+    /* linhas laterais */
+
+    .hero-info::before,
+    .hero-info::after {
+        content: "";
+
+        width: 68px;
+        height: 1px;
+
+        flex-shrink: 1;
+
+        background: #9e735d;
+
+        opacity: 0.65;
+    }
+
+    /* textos */
 
     .hero-info span {
         display: flex;
         align-items: center;
-        gap: 5px;
 
         color: white;
 
         font-family: "Lato", sans-serif;
+
         font-size: 10px;
-        font-weight: 400;
+        font-weight: 600;
+
+        letter-spacing: 1.7px;
 
         line-height: 1;
 
         white-space: nowrap;
     }
 
-
-    .hero-info span svg {
-        width: 20px;
-        height: 20px;
-
-        fill: none;
-        stroke: white;
-
-        stroke-width: 1.8;
-
-        stroke-linecap: round;
-        stroke-linejoin: round;
-
-        flex-shrink: 0;
-    }
-
+    /* pontinho central */
 
     .hero-info .hero-separador {
         display: block;
 
-        margin: 0 3px;
+        margin: 0 2px;
 
-        color: white;
+        color: white !important;
 
         font-family: Arial, sans-serif;
-        font-size: 9px;
+
+        font-size: 10px !important;
+        font-weight: 600;
+
+        letter-spacing: 0 !important;
 
         line-height: 1;
     }
 
 
+    /* =====================================================
+       TÍTULO
+       ===================================================== */
+
     .hero h1 {
         width: 100%;
-        max-width: none;
+        max-width: 100%;
 
-        margin: 0 0 6px;
-        padding: 3px;
+        margin: 0 auto 8px;
+        padding: 0;
 
         box-sizing: border-box;
 
-        font-size: 20px;
-        line-height: 1.15;
+        font-size: 27px;
+        line-height: 1.05;
         font-weight: 500;
 
-        text-align: left;
+        text-align: center;
     }
+
+    .titulo-linha {
+        display: block;
+
+        font-size: 27px;
+        line-height: 1.05;
+
+        text-align: center;
+    }
+
+    .titulo-secundario {
+        display: block;
+
+        font-size: 23px;
+        line-height: 1.05;
+
+        text-align: center;
+    }
+
+    .titulo-destaque {
+        display: block;
+
+        font-size: 37px;
+        line-height: 0.95;
+
+        text-align: center;
+    }
+
+    .titulo-underline {
+        display: block;
+
+        width: 220px;
+        max-width: 70%;
+
+        height: 5px;
+
+        margin: 7px auto 0;
+    }
+
+
+    /* =====================================================
+       SUBTÍTULO
+       ===================================================== */
 
     .hero-subtitle {
         width: 100%;
-        max-width: none;
+        max-width: 100%;
 
-        margin: -8px 0 18px;
-        padding: 3px;
+        margin: 5px auto 20px;
+        padding: 0;
 
         box-sizing: border-box;
 
-        font-size: 16px;
-        line-height: 1.4;
+        font-size: 15px;
+        line-height: 1.35;
 
-        text-align: left;
+        text-align: center;
+    }
+
+    .hero-subtitle strong {
+        font-size: 17px;
     }
 
 
-    .hero-video { 
-        width: 100%; 
-        max-width: none; 
-        height: auto; 
-        aspect-ratio: 15 / 9; 
-        margin: 10px 0 35px; 
-        border-radius: 8px; 
-        overflow: hidden; 
-        box-sizing: border-box; 
+    /* =====================================================
+       VÍDEO + FORMULÁRIO
+       ===================================================== */
+
+    .hero-conteudo {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+
+        gap: 18px;
+
+        align-items: stretch;
+    }
+
+
+    /* =====================================================
+       VÍDEO
+       ===================================================== */
+
+    .hero-video {
+        position: relative;
+
+        width: 100%;
+        max-width: 100%;
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        margin: 0;
+
+        overflow: hidden;
+
+        border-radius: 8px;
+
+        box-sizing: border-box;
     }
 
     .hero-video iframe {
         width: 100%;
         height: 100%;
+
         border: 0;
+
         display: block;
     }
 
+
+    /* =====================================================
+       FORMULÁRIO
+       ===================================================== */
+
     .hero-form {
+        position: relative;
+
         width: 100%;
-        max-width: none;
+        max-width: 100%;
+
+        height: auto;
+        min-height: 0;
+
+        padding: 20px 18px 18px;
 
         display: flex;
         flex-direction: column;
@@ -2887,21 +3618,73 @@ p {
     }
 
 
+    /* =====================================================
+       DECORAÇÃO DO FORMULÁRIO
+       ===================================================== */
+
+    .form-florinha {
+        position: absolute;
+
+        top: 78px;
+        left: 32px;
+
+        color: #e7cda5;
+
+        font-size: 22px;
+
+        line-height: 1;
+
+        z-index: 2;
+    }
+
+
+    /* =====================================================
+       TÍTULO DO FORMULÁRIO
+       ===================================================== */
+
     .hero-form h2 {
         width: 100%;
 
-        margin: 0 0 12px;
+        margin: 0 0 5px;
         padding: 0;
 
-        font-family: "Lato", sans-serif;
-        font-size: 12px;
-        font-weight: 500;
-        line-height: 1.2;
+        font-family: "Cormorant Garamond", serif;
 
-        text-align: left;
+        font-size: 23px;
+        font-weight: 600;
 
-        color: var(--vinho);
+        line-height: 1.05;
+
+        text-align: center;
+
+        color: #fff8f0;
     }
+
+
+    /* =====================================================
+       TEXTO DO FORMULÁRIO
+       ===================================================== */
+
+    .form-subtitle {
+        width: 100%;
+        max-width: 280px;
+
+        margin: 0 auto 7px;
+
+        font-family: "Lato", sans-serif;
+
+        font-size: 10px;
+        line-height: 1.3;
+
+        text-align: center;
+
+        color: #fff3ea;
+    }
+
+
+    /* =====================================================
+       CAMPOS
+       ===================================================== */
 
     .hero-input {
         position: relative;
@@ -2915,6 +3698,8 @@ p {
         box-sizing: border-box;
     }
 
+
+    /* ÍCONES SVG */
 
     .hero-input-icon {
         position: absolute;
@@ -2936,12 +3721,12 @@ p {
         pointer-events: none;
     }
 
-
     .hero-input-icon svg {
         width: 17px;
         height: 17px;
 
         fill: none;
+
         stroke: var(--vinho);
 
         stroke-width: 1.6;
@@ -2950,11 +3735,15 @@ p {
         stroke-linejoin: round;
     }
 
+
+    /* INPUT */
+
     .hero-form input {
         width: 100%;
         height: 50px;
 
         margin: 0;
+
         padding: 0 15px 0 45px;
 
         box-sizing: border-box;
@@ -2962,9 +3751,10 @@ p {
         border: 1px solid #AB855F;
         border-radius: 6px;
 
-        background: transparent;
+        background: #fff8f1;
 
         font-family: "Lato", sans-serif;
+
         font-size: 11px;
 
         color: var(--carvao);
@@ -2972,22 +3762,26 @@ p {
         outline: none;
     }
 
-
     .hero-form input::placeholder {
         color: var(--carvao);
 
         opacity: 1;
 
         font-family: "Lato", sans-serif;
+
         font-size: 11px;
     }
 
+
+    /* =====================================================
+       BOTÃO
+       ===================================================== */
 
     .hero-form button {
         width: 100%;
         height: 50px;
 
-        margin: 15px 0 0;
+        margin: 3px 0 0;
         padding: 0;
 
         box-sizing: border-box;
@@ -2996,9 +3790,11 @@ p {
         border-radius: 7px;
 
         background: var(--vinho);
+
         color: white;
 
         font-family: "Lato", sans-serif;
+
         font-size: 15px;
         font-weight: 500;
 
@@ -3006,272 +3802,290 @@ p {
     }
 
 
-    .form-decoracao {
-        display: none;
+    /* =====================================================
+       SEGURANÇA
+       ===================================================== */
+
+    .form-seguranca {
+        width: 100%;
+
+        margin: 0 auto;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 6px;
+
+        text-align: center;
+    }
+
+    .form-seguranca .cadeado {
+        font-size: 12px;
+    }
+
+    .form-seguranca p {
+        margin: 0;
+
+        font-family: "Lato", sans-serif;
+
+        font-size: 8px;
+        line-height: 1.3;
+
+        color: #fff3ea;
+
+        text-align: left;
     }
 
 
+    /* =====================================================
+       RECONHECIMENTO
+       ===================================================== */
 
+    .reconhecimento {
+        min-height: auto;
 
-/* RECONHECIMENTO - MOBILE */
+        padding: 30px 0 55px;
 
-.reconhecimento {
-    min-height: auto;
+        text-align: center;
 
-    padding: 30px 0 55px;
+        box-sizing: border-box;
 
-    text-align: center;
+        overflow: visible;
+    }
 
-    box-sizing: border-box;
+    .reconhecimento .container {
+        width: calc(100% - 60px);
+        max-width: 320px;
 
-    overflow: visible;
-}
+        margin: 0 auto;
+    }
 
+    .reconhecimento > .container > .section-label {
+        display: block;
 
-/* CONTAINER */
+        margin: 0 0 18px;
 
-.reconhecimento .container {
-    width: calc(100% - 60px);
-    max-width: 320px;
+        font-family: "Lato", sans-serif;
 
-    margin: 0 auto;
-}
+        font-size: 10px;
+        line-height: 1;
 
+        color: var(--vinho);
+    }
 
-/* A PERGUNTA */
+    .reconhecimento h2 {
+        width: 100%;
+        max-width: 320px;
 
-.reconhecimento > .container > .section-label {
-    display: block;
+        margin: 0 auto 14px;
+        padding: 0;
 
-    margin: 0 0 18px;
+        font-size: 21px;
+        line-height: 1.15;
+        font-weight: 500;
 
-    font-family: "Lato", sans-serif;
-    font-size: 10px;
-    line-height: 1;
+        text-align: center;
 
-    color: var(--vinho);
-}
+        box-sizing: border-box;
+    }
 
+    .reconhecimento h2 br {
+        display: none;
+    }
 
-.reconhecimento h2 {
-    width: 100%;
-    max-width: 320px;
+    .reconhecimento > .container > p:not(.destaque) br {
+        display: none;
+    }
 
-    margin: 0 auto 14px;
-    padding: 0;
+    .reconhecimento > .container > p:not(.destaque) {
+        width: 100%;
+        max-width: 320px;
 
-    font-size: 21px;
-    line-height: 1.15;
-    font-weight: 500;
+        margin: 0 auto 32px;
+        padding: 0;
 
-    text-align: center;
+        font-family: "Lato", sans-serif;
 
-    box-sizing: border-box;
-}
+        font-size: 12px;
+        line-height: 1.35;
 
-.reconhecimento h2 br {
-    display: none;
-}
+        text-align: center;
+    }
 
+    .reconhecimento .destaque {
+        width: 100%;
 
-.reconhecimento > .container > p:not(.destaque) br {
-    display: none;
-}
+        margin: 0 auto 22px;
+        padding: 0;
 
-.reconhecimento > .container > p:not(.destaque) {
-    width: 100%;
-    max-width: 320px;
+        font-family: "Lato", sans-serif;
 
-    margin: 0 auto 32px;
-    padding: 0;
+        font-size: 13px;
+        line-height: 1.3;
+        font-weight: 600;
 
-    font-family: "Lato", sans-serif;
-    font-size: 12px;
-    line-height: 1.35;
+        color: var(--vinho);
 
-    text-align: center;
-}
+        text-align: center;
+    }
 
+    .reconhecimento-itens {
+        width: calc(100% + 20px);
+        max-width: none;
 
-.reconhecimento .destaque {
-    width: 100%;
+        display: flex;
+        flex-direction: column;
 
-    margin: 0 auto 22px;
-    padding: 0;
+        gap: 12px;
 
-    font-family: "Lato", sans-serif;
-    font-size: 13px;
-    line-height: 1.3;
-    font-weight: 600;
+        margin: 0 -10px;
+    }
 
-    color: var(--vinho);
+    .reconhecimento-itens .reconhecimento-item {
+        width: 100%;
 
-    text-align: center;
-}
+        height: auto;
+        min-height: 82px;
 
+        padding: 14px 12px;
 
-.reconhecimento-itens {
-    width: calc(100% + 20px);
-    max-width: none;
+        display: flex;
+        flex-direction: row;
 
-    display: flex;
-    flex-direction: column;
+        align-items: center;
 
-    gap: 12px;
+        gap: 12px;
 
-    margin: 0 -10px;
-}
+        box-sizing: border-box;
 
+        border: 1px solid #C8A985;
+        border-radius: 8px;
 
-.reconhecimento-itens .reconhecimento-item {
-    width: 100%;
+        text-align: left;
 
-    height: auto;
-    min-height: 82px;
+        overflow: visible;
+    }
 
-    padding: 14px 12px;
+    .reconhecimento-item .icon {
+        width: 60px;
+        min-width: 42px;
 
-    display: flex;
-    flex-direction: row;
+        height: 100%;
+        min-height: 50px;
 
-    align-items: center;
+        padding-right: 12px;
 
-    gap: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
-    box-sizing: border-box;
+        box-sizing: border-box;
 
-    border: 1px solid #C8A985;
-    border-radius: 8px;
+        border-right: 1px solid #DCCFC4;
 
-    text-align: left;
+        flex-shrink: 0;
+    }
 
-    overflow: visible;
-}
+    .reconhecimento-item .icon svg {
+        width: 30px;
+        height: 30px;
 
+        fill: none;
 
-.reconhecimento-item .icon {
-    width: 60px;
-    min-width: 42px;
+        stroke: var(--vinho);
 
-    height: 100%;
-    min-height: 50px;
+        stroke-width: 1.5;
 
-    padding-right: 12px;
+        stroke-linecap: round;
+        stroke-linejoin: round;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        flex-shrink: 0;
+    }
 
-    box-sizing: border-box;
+    .reconhecimento-itens .reconhecimento-item p {
+        flex: 1;
 
-    border-right: 1px solid #DCCFC4;
+        width: auto;
+        max-width: none;
 
-    flex-shrink: 0;
-}
+        height: auto;
+        min-height: 0;
 
+        margin: 0;
+        padding: 0;
 
-/* SVG */
+        font-family: "Lato", sans-serif;
 
-.reconhecimento-item .icon svg {
-    width: 30px;
-    height: 30px;
+        font-size: 10px;
+        line-height: 1.35;
 
-    fill: none;
+        text-align: left;
 
-    stroke: var(--vinho);
+        color: var(--carvao);
 
-    stroke-width: 1.5;
+        white-space: normal;
 
-    stroke-linecap: round;
-    stroke-linejoin: round;
+        overflow: visible;
 
-    flex-shrink: 0;
-}
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
 
+    .reconhecimento-itens .reconhecimento-item:last-child {
+        height: auto;
+        min-height: 105px;
 
-.reconhecimento-itens .reconhecimento-item p {
-    flex: 1;
+        border: 1px solid #DCCFC4;
 
-    width: auto;
-    max-width: none;
+        overflow: visible;
+    }
 
-    height: auto;
-    min-height: 0;
+    .reconhecimento-final {
+        margin-top: 28px;
 
-    margin: 0;
-    padding: 0;
+        width: 100%;
+    }
 
-    font-family: "Lato", sans-serif;
+    .reconhecimento-final p:first-child {
+        width: 100%;
+        max-width: none;
 
-    font-size: 10px;
-    line-height: 1.35;
+        margin: 0 auto 7px;
 
-    text-align: left;
+        font-family: "Cormorant Garamond", serif;
 
-    color: var(--carvao);
+        font-size: 15px;
+        line-height: 1.2;
 
-    white-space: normal;
+        color: var(--vinho);
 
-    overflow: visible;
+        text-align: center;
 
-    word-break: normal;
-    overflow-wrap: break-word;
-}
+        white-space: nowrap;
 
+        margin-left: -13px;
+    }
 
-.reconhecimento-itens .reconhecimento-item:last-child {
-    height: auto;
-    min-height: 105px;
+    .reconhecimento-final p:last-child {
+        width: 100%;
+        max-width: 315px;
 
-    border: 1px solid #DCCFC4;
+        margin: 0 auto;
 
-    overflow: visible;
-}
- 
-.reconhecimento-final {
-    margin-top: 28px;
+        font-family: "Lato", sans-serif;
 
-    width: 100%;
-}
+        font-size: 12px;
+        line-height: 1.35;
 
+        text-align: center;
+    }
 
-/* PRIMEIRA FRASE */
 
-.reconhecimento-final p:first-child {
-    width: 100%;
-    max-width: none;
-
-    margin: 0 auto 7px;
-
-    font-family: "Cormorant Garamond", serif;
-    font-size: 15px;
-    line-height: 1.2;
-
-    color: var(--vinho);
-
-    text-align: center;
-
-    white-space: nowrap;
-    margin-left: -13px;
-}
-
-/* SEGUNDA FRASE */
-
-.reconhecimento-final p:last-child {
-    width: 100%;
-    max-width: 315px;
-
-    margin: 0 auto;
-
-    font-family: "Lato", sans-serif;
-    font-size: 12px;
-    line-height: 1.35;
-
-    text-align: center;
-}
-    /* 
-      SESSAO O QUE VOCÊ VAI VER
-     */
+    /* =====================================================
+       O QUE VOCÊ VAI VER
+       ===================================================== */
 
     .encontro {
         padding: 40px 0 30px;
@@ -3279,11 +4093,9 @@ p {
         overflow: hidden;
     }
 
-
     .encontro .container {
         width: 90%;
     }
-
 
     .encontro .section-title {
         gap: 10px;
@@ -3291,13 +4103,11 @@ p {
         margin-bottom: 24px;
     }
 
-
     .encontro .section-title span {
         width: 35px;
 
         flex-shrink: 0;
     }
-
 
     .encontro .section-title h2 {
         font-size: 18px;
@@ -3306,7 +4116,6 @@ p {
 
         text-align: center;
     }
-
 
     .encontro-items {
         width: 100%;
@@ -3318,7 +4127,6 @@ p {
 
         margin: 0 auto;
     }
-
 
     .encontro-item {
         min-height: auto;
@@ -3337,11 +4145,9 @@ p {
         border-bottom: 1px solid rgba(200, 169, 133, 0.45);
     }
 
-
     .encontro-item:last-child {
         border-bottom: none;
     }
-
 
     .encontro-item .icon {
         width: 30px;
@@ -3352,14 +4158,12 @@ p {
         margin-bottom: 0;
     }
 
-
     .encontro-item .icon svg {
         width: 32px;
         height: 32px;
 
         stroke-width: 1.5;
     }
-
 
     .encontro-item p {
         max-width: none;
@@ -3373,27 +4177,23 @@ p {
     }
 
 
-
-    /* 
+    /* =====================================================
        DETALHES DO ENCONTRO
-     */
+       ===================================================== */
 
     .detalhes {
         padding: 25px 0 25px;
     }
 
-
     .detalhes .container {
         width: 90%;
     }
-
 
     .detalhes h2 {
         margin: 0 0 12px;
 
         font-size: 18px;
     }
-
 
     .detalhes-box {
         width: 100%;
@@ -3406,7 +4206,6 @@ p {
         border: 1px solid #C8A985;
         border-radius: 5px;
     }
-
 
     .detalhe-item {
         width: 100%;
@@ -3426,11 +4225,9 @@ p {
         border-bottom: 1px solid rgba(184, 137, 91, 0.4);
     }
 
-
     .detalhe-item:last-child {
         border-bottom: none;
     }
-
 
     .detalhe-item .icon {
         width: 27px;
@@ -3439,14 +4236,12 @@ p {
         flex-shrink: 0;
     }
 
-
     .detalhe-item .icon svg {
         width: 25px;
         height: 25px;
 
         stroke-width: 1.7;
     }
-
 
     .detalhe-item > div {
         display: flex;
@@ -3455,12 +4250,10 @@ p {
         align-items: flex-start;
     }
 
-
     .detalhe-item > div > span {
         font-size: 12px;
         line-height: 1.1;
     }
-
 
     .detalhe-item p {
         margin: 0;
@@ -3469,15 +4262,20 @@ p {
         line-height: 1.1;
     }
 
+
+    /* =====================================================
+       SOBRE A CLÁUDIA
+       ===================================================== */
+
     .sobre-claudia {
         width: 100%;
+
         padding: 0;
 
         background-color: #F8F3EC;
 
         overflow: hidden;
     }
-
 
     .sobre-claudia .container {
         width: 100%;
@@ -3486,605 +4284,543 @@ p {
         margin: 0;
     }
 
+    .sobre-claudia-content {
+        width: 100%;
 
+        display: grid;
 
-.sobre-claudia-content {
-    width: 100%;
+        grid-template-columns: 1fr;
 
-    display: grid;
+        grid-template-areas:
+            "label"
+            "decoracao"
+            "foto"
+            "titulo"
+            "texto1"
+            "texto2"
+            "texto3"
+            "texto4"
+            "texto5"
+            "texto6"
+            "logo";
+    }
 
-    grid-template-columns: 1fr;
+    .sobre-claudia-imagem {
+        grid-area: foto;
 
-    grid-template-areas:
-        "label"
-        "decoracao"
-        "foto"
-        "titulo"
-        "texto1"
-        "texto2"
-        "texto3"
-        "texto4"
-        "texto5"
-        "texto6"
-        "logo";
-}
+        width: 194px !important;
+        height: 198px !important;
 
+        min-height: 0 !important;
+        max-height: 198px !important;
 
-/* =================================================
-   FOTO
-   ================================================= */
+        margin: 0 auto !important;
 
-.sobre-claudia-imagem {
-    grid-area: foto;
+        overflow: hidden;
 
-    width: 194px !important;
-    height: 198px !important;
+        border-radius: 10px;
+    }
 
-    min-height: 0 !important;
-    max-height: 198px !important;
+    .sobre-claudia-imagem img {
+        width: 100% !important;
+        height: 100% !important;
 
-    margin: 0 auto !important;
+        min-height: 0 !important;
+        max-height: 198px !important;
 
-    overflow: hidden;
+        display: block;
 
-    border-radius: 10px;
-}
+        object-fit: cover;
+        object-position: center center;
+    }
 
+    .sobre-claudia-texto {
+        display: contents;
+    }
 
-.sobre-claudia-imagem img {
-    width: 100% !important;
-    height: 100% !important;
+    .sobre-label {
+        grid-area: label;
 
-    min-height: 0 !important;
-    max-height: 198px !important;
+        width: 100%;
 
-    display: block;
+        margin: 13px 0 0;
+        padding: 0;
 
-    object-fit: cover;
-    object-position: center center;
-}
+        text-align: center;
 
+        font-size: 12px;
+        line-height: 1.2;
 
+        color: #6F1D2A;
 
-.sobre-claudia-texto {
-    display: contents;
-}
+        font-weight: 500;
 
+        letter-spacing: 0.2px;
+    }
 
-.sobre-label {
-    grid-area: label;
+    .sobre-decoration {
+        grid-area: decoracao;
 
-    width: 100%;
+        width: 300px !important;
+        max-width: calc(100% - 40px);
 
-    margin: 13px 0 0;
-    padding: 0;
+        height: 13px;
 
-    text-align: center;
+        display: flex !important;
 
-    font-size: 12px;
-    line-height: 1.2;
+        align-items: center !important;
+        justify-content: center !important;
 
-    color: #6F1D2A;
+        gap: 12px;
 
-    font-weight: 500;
+        margin: 8px auto 14px !important;
+        padding: 0 !important;
 
-    letter-spacing: 0.2px;
-}
+        position: relative;
 
+        left: auto !important;
+        right: auto !important;
 
-/* DECORAÇÃO */
+        transform: none !important;
 
-/*
-   Agora a decoração fica DEPOIS dos textos,
-   embaixo da seção e centralizada.
-*/
+        box-sizing: border-box;
+    }
 
-.sobre-decoration {
-    grid-area: decoracao;
+    .sobre-decoration span {
+        display: block;
 
-    width: 300px !important;
-    max-width: calc(100% - 40px);
+        width: 36px;
+        height: 1px;
 
-    height: 13px;
+        flex-shrink: 0;
 
-    display: flex !important;
+        background-color: #B89A91;
+    }
 
-    align-items: center !important;
-    justify-content: center !important;
+    .sobre-decoration svg {
+        width: 13px;
+        height: 13px;
 
-    gap: 12px;
+        flex-shrink: 0;
 
-    margin: 8px auto 14px !important;
-    padding: 0 !important;
+        display: block;
 
-    position: relative;
+        fill: none;
 
-    left: auto !important;
-    right: auto !important;
+        stroke: #B89A91;
 
-    transform: none !important;
+        stroke-width: 1.3;
+    }
 
-    box-sizing: border-box;
-}
+    .sobre-claudia-texto h2 {
+        grid-area: titulo;
 
+        margin: 12px 0 14px;
+        padding: 0;
 
-.sobre-decoration span {
-    display: block;
+        text-align: center;
 
-    width: 36px;
-    height: 1px;
+        font-size: 25px;
+        line-height: 1.2;
 
-    flex-shrink: 0;
+        font-weight: 400;
 
-    background-color: #B89A91;
-}
+        color: #6F1D2A;
+    }
 
+    .sobre-claudia-texto > p:not(.sobre-label) {
+        width: 300px;
 
-.sobre-decoration svg {
-    width: 13px;
-    height: 13px;
+        max-width: calc(100% - 40px);
 
-    flex-shrink: 0;
+        margin: 0 auto 12px;
 
-    display: block;
+        font-size: 12px;
 
-    fill: none;
+        line-height: 1.4;
 
-    stroke: #B89A91;
+        text-align: left;
 
-    stroke-width: 1.3;
-}
+        color: #171717;
+    }
 
+    .sobre-claudia-texto > p:nth-of-type(2) {
+        grid-area: texto1;
+    }
 
+    .sobre-claudia-texto > p:nth-of-type(3) {
+        grid-area: texto2;
+    }
 
-.sobre-claudia-texto h2 {
-    grid-area: titulo;
+    .sobre-claudia-texto > p:nth-of-type(4) {
+        grid-area: texto3;
+    }
 
-    margin: 12px 0 14px;
-    padding: 0;
+    .sobre-claudia-texto > p:nth-of-type(5) {
+        grid-area: texto4;
+    }
 
-    text-align: center;
+    .sobre-claudia-texto > p:nth-of-type(6) {
+        grid-area: texto5;
+    }
 
-    font-size: 25px;
-    line-height: 1.2;
+    .sobre-claudia-texto > p:nth-of-type(7) {
+        grid-area: texto6;
+    }
 
-    font-weight: 400;
+    .sobre-logo {
+        grid-area: logo;
 
-    color: #6F1D2A;
-}
+        width: 300px;
+        max-width: calc(100% - 40px);
 
+        margin: 2px auto 20px !important;
 
-.sobre-claudia-texto > p:not(.sobre-label) {
-    width: 300px;
+        padding-top: 8px;
 
-    max-width: calc(100% - 40px);
+        border-top: 1px solid #D8C5B8;
 
-    margin: 0 auto 12px;
+        display: flex !important;
 
-    font-size: 12px;
+        justify-content: center !important;
+        align-items: center !important;
+    }
 
-    line-height: 1.4;
+    .sobre-logo img {
+        width: 35px;
+        height: auto;
 
-    text-align: left;
+        display: block;
 
-    color: #171717;
-}
+        margin: 0 auto !important;
+    }
 
 
-/* PARÁGRAFOS */
+    /* =====================================================
+       SEGUNDA CHAMADA
+       ===================================================== */
 
-.sobre-claudia-texto > p:nth-of-type(2) {
-    grid-area: texto1;
-}
+    .segunda-chamada {
+        padding: 40px 0 35px;
 
-.sobre-claudia-texto > p:nth-of-type(3) {
-    grid-area: texto2;
-}
+        overflow: hidden;
+    }
 
-.sobre-claudia-texto > p:nth-of-type(4) {
-    grid-area: texto3;
-}
+    .segunda-chamada .container {
+        width: 100%;
+    }
 
-.sobre-claudia-texto > p:nth-of-type(5) {
-    grid-area: texto4;
-}
+    .cta-content {
+        width: 100%;
 
-.sobre-claudia-texto > p:nth-of-type(6) {
-    grid-area: texto5;
-}
+        display: flex;
+        flex-direction: column;
 
-.sobre-claudia-texto > p:nth-of-type(7) {
-    grid-area: texto6;
-}
+        align-items: center;
 
+        gap: 20px;
+    }
 
-/* LOGO */
+    .cta-texto {
+        width: 100%;
 
-.sobre-logo {
-    grid-area: logo;
+        padding: 0 47px;
 
-    width: 300px;
-    max-width: calc(100% - 40px);
+        text-align: left;
 
-    margin: 2px auto 20px !important;
+        box-sizing: border-box;
+    }
 
-    padding-top: 8px;
+    .cta-texto h2 {
+        margin: 0 25px 6px;
 
-    border-top: 1px solid #D8C5B8;
+        font-size: 25px;
+        line-height: 1.15;
 
-    display: flex !important;
+        text-align: left;
 
-    justify-content: center !important;
-    align-items: center !important;
-}
+        white-space: nowrap;
+    }
 
+    .cta-texto p {
+        margin: -2px 25px;
 
-.sobre-logo img {
-    width: 35px;
-    height: auto;
+        font-size: 18px;
+        line-height: 1.2;
 
-    display: block;
+        text-align: left;
 
-    margin: 0 auto !important;
-}
+        white-space: nowrap;
+    }
 
+    .cta-form {
+        width: 100%;
 
-.segunda-chamada {
-    padding: 40px 0 35px;
-    overflow: hidden;
-}
+        display: flex;
+        flex-direction: column;
 
-.segunda-chamada .container {
-    width: 100%;
-}
+        align-items: center;
 
-.cta-content {
-    width: 100%;
+        gap: 0;
+    }
 
-    display: flex;
-    flex-direction: column;
+    .cta-form .input-group {
+        display: none;
+    }
 
-    align-items: center;
+    .cta-form button {
+        width: 280px;
+        height: 48px;
 
-    gap: 20px;
-}
+        margin: 0 auto;
 
-.cta-texto {
-    width: 100%;
+        padding: 0;
 
-    padding: 0 47px;
+        display: flex;
 
-    text-align: left;
+        align-items: center;
+        justify-content: center;
 
-    box-sizing: border-box;
-}
+        border-radius: 5px;
 
+        font-size: 17px;
 
-.cta-texto h2 {
-    margin: 0 25px 6px;
+        cursor: pointer;
+    }
 
-    font-size: 25px;
-    line-height: 1.15;
-
-    text-align: left;
-
-    /* NÃO DEIXA O TÍTULO QUEBRAR */
-    white-space: nowrap;
-}
-
-
-/* ESCONDE O <br> SOMENTE NO MOBILE 
-.cta-texto h2 br {
-    display: none;
-}
-*/
-
-
-.cta-texto p {
-    margin: -2px 25px;
-
-    font-size: 18px;
-    line-height: 1.2;
-
-    text-align: left;
-
-    /* DEIXA A FRASE EM UMA ÚNICA LINHA */
-    white-space: nowrap;
-}
-
-
-/* FORMULÁRIO */
-
-.cta-form {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-
-    align-items: center;
-
-    gap: 0;
-}
-
-
-/* ESCONDE SOMENTE OS CAMPOS NO MOBILE */
-/* O BOTÃO CONTINUA APARECENDO */
-.cta-form .input-group {
-    display: none;
-}
-
-
-
-.cta-form button {
-    width: 280px;
-    height: 48px;
-
-    margin: 0 auto;
-
-    padding: 0;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border-radius: 5px;
-
-    font-size: 17px;
-
-    cursor: pointer;
-}
-
-    /* REMOVE AS FLORES DA SEGUNDA CHAMADA NO MOBILE */
- .segunda-chamada::before,
- .segunda-chamada::after {
+    .segunda-chamada::before,
+    .segunda-chamada::after {
         display: none !important;
     }
- 
-/*FAQ*/
-.faq {
-    padding: 28px 0 25px;
 
-    background-color: var(--off-white);
-}
 
-.faq .container {
-    width: 90%;
-}
+    /* =====================================================
+       FAQ
+       ===================================================== */
 
-.faq .section-title {
-    display: flex;
+    .faq {
+        padding: 28px 0 25px;
 
-    align-items: center;
-    justify-content: center;
+        background-color: var(--off-white);
+    }
 
-    gap: 10px;
+    .faq .container {
+        width: 90%;
+    }
 
-    margin-bottom: 20px;
-}
+    .faq .section-title {
+        display: flex;
 
-.faq .section-title span {
-    width: 30px;
-    height: 1px;
+        align-items: center;
+        justify-content: center;
 
-    flex-shrink: 0;
+        gap: 10px;
 
-    background-color: var(--rose);
-}
+        margin-bottom: 20px;
+    }
 
-.faq .section-title h2 {
-    margin: 0;
+    .faq .section-title span {
+        width: 30px;
+        height: 1px;
 
-    font-size: 21px;
-    font-weight: 400;
+        flex-shrink: 0;
 
-    white-space: nowrap;
+        background-color: var(--rose);
+    }
 
-    text-align: center;
-}
+    .faq .section-title h2 {
+        margin: 0;
 
-.faq-list {
-    width: 100%;
+        font-size: 21px;
+        font-weight: 400;
 
-    display: flex;
-    flex-direction: column;
+        white-space: nowrap;
 
-    gap: 9px;
+        text-align: center;
+    }
 
-    margin: 0 auto;
-}
+    .faq-list {
+        width: 100%;
 
-.faq-item {
-    width: 100%;
+        display: flex;
+        flex-direction: column;
 
-    min-height: auto;
+        gap: 9px;
 
-    padding: 0;
+        margin: 0 auto;
+    }
 
-    display: block;
+    .faq-item {
+        width: 100%;
 
-    border: 1px solid rgba(200, 169, 133, 0.65);
+        min-height: auto;
 
-    border-radius: 5px;
+        padding: 0;
 
-    background-color: var(--off-white);
+        display: block;
 
-    box-shadow: 0 2px 7px rgba(45, 35, 37, 0.12);
+        border: 1px solid rgba(200, 169, 133, 0.65);
 
-    overflow: hidden;
+        border-radius: 5px;
 
-    box-sizing: border-box;
-}
+        background-color: var(--off-white);
 
+        box-shadow: 0 2px 7px rgba(45, 35, 37, 0.12);
 
-.faq-item summary {
-    width: 100%;
+        overflow: hidden;
 
-    min-height: 51px;
+        box-sizing: border-box;
+    }
 
-    padding: 10px 13px;
+    .faq-item summary {
+        width: 100%;
 
-    display: flex;
+        min-height: 51px;
 
-    align-items: center;
+        padding: 10px 13px;
 
-    gap: 11px;
+        display: flex;
 
-    cursor: pointer;
+        align-items: center;
 
-    list-style: none;
+        gap: 11px;
 
-    box-sizing: border-box;
-}
+        cursor: pointer;
 
+        list-style: none;
 
-/* REMOVE SETA PADRÃO DO DETAILS */
-.faq-item summary::-webkit-details-marker {
-    display: none;
-}
+        box-sizing: border-box;
+    }
 
-.faq-item summary::marker {
-    display: none;
-}
+    .faq-item summary::-webkit-details-marker {
+        display: none;
+    }
 
+    .faq-item summary::marker {
+        display: none;
+    }
 
-.faq-item .faq-icon {
-    width: 27px;
-    height: 27px;
+    .faq-item .faq-icon {
+        width: 27px;
+        height: 27px;
 
-    flex-shrink: 0;
+        flex-shrink: 0;
 
-    margin: 0;
+        margin: 0;
 
-    border: 1.5px solid var(--vinho);
+        border: 1.5px solid var(--vinho);
 
-    border-radius: 50%;
+        border-radius: 50%;
 
-    display: flex;
+        display: flex;
 
-    align-items: center;
-    justify-content: center;
-}
+        align-items: center;
+        justify-content: center;
+    }
 
-.faq-item .faq-icon svg {
-    width: 21px;
-    height: 21px;
+    .faq-item .faq-icon svg {
+        width: 21px;
+        height: 21px;
 
-    fill: none;
+        fill: none;
 
-    stroke: var(--vinho);
+        stroke: var(--vinho);
 
-    stroke-width: 1.5;
+        stroke-width: 1.5;
 
-    stroke-linecap: round;
-    stroke-linejoin: round;
-}
+        stroke-linecap: round;
+        stroke-linejoin: round;
+    }
 
+    .faq-question {
+        width: 100%;
 
+        min-width: 0;
 
-.faq-question {
-    width: 100%;
+        display: flex;
 
-    min-width: 0;
+        align-items: center;
 
-    display: flex;
+        justify-content: space-between;
 
-    align-items: center;
+        gap: 10px;
+    }
 
-    justify-content: space-between;
+    .faq-question h3 {
+        margin: 0;
 
-    gap: 10px;
-}
+        font-size: 15px;
+        font-weight: 500;
 
-.faq-question h3 {
-    margin: 0;
+        line-height: 1.2;
+    }
 
-    font-size: 15px;
-    font-weight: 500;
+    .faq-question .faq-arrow {
+        display: none !important;
+    }
 
-    line-height: 1.2;
-}
+    .faq-question::after {
+        content: "";
 
+        width: 8px;
+        height: 8px;
 
-/* SETA */
+        flex-shrink: 0;
 
-/*
-   NÃO vamos usar o "⌄" do HTML.
+        display: block;
 
-   A seta será criada pelo ::after.
-*/
+        border-right: 2px solid #8D817B;
+        border-bottom: 2px solid #8D817B;
 
-.faq-question .faq-arrow {
-    display: none !important;
-}
+        transform: rotate(45deg);
 
+        margin-right: 5px;
+        margin-top: -5px;
 
-/* SETA PARA BAIXO */
-.faq-question::after {
-    content: "";
+        box-sizing: border-box;
 
-    width: 8px;
-    height: 8px;
+        transition: transform 0.2s ease;
+    }
 
-    flex-shrink: 0;
+    .faq-item[open] .faq-question::after {
+        transform: rotate(225deg);
 
-    display: block;
+        margin-top: 5px;
+    }
 
-    border-right: 2px solid #8D817B;
-    border-bottom: 2px solid #8D817B;
+    .faq-answer {
+        display: none;
 
-    transform: rotate(45deg);
+        margin-left: 0;
+        margin-top: 10px;
+    }
 
-    margin-right: 5px;
-    margin-top: -5px;
+    .faq-item[open] .faq-answer {
+        display: block;
 
-    box-sizing: border-box;
+        max-height: 300px;
 
-    transition: transform 0.2s ease;
-}
+        padding: 0 14px 14px 51px;
 
+        opacity: 1;
+    }
 
-/* SETA QUANDO ABERTO */
+    .faq-answer p {
+        margin: 0;
 
-.faq-item[open] .faq-question::after {
-    transform: rotate(225deg);
+        color: var(--carvao);
 
-    margin-top: 5px;
-}
+        font-family: "Lato", sans-serif;
 
+        font-size: 11px;
 
-/* RESPOSTA */
+        line-height: 1.4;
+    }
 
-.faq-answer {
-    display: none;
 
-    margin-left: 0;
-    margin-top: 10px;
-}
-
-.faq-item[open] .faq-answer {
-    display: block;
-
-    max-height: 300px;
-
-    padding: 0 14px 14px 51px;
-
-    opacity: 1;
-}
-
-.faq-answer p {
-    margin: 0;
-
-    color: var(--carvao);
-
-    font-family: "Lato", sans-serif;
-
-    font-size: 11px;
-
-    line-height: 1.4;
-}
-
-
+    /* =====================================================
+       RODAPÉ
+       ===================================================== */
 
     .footer {
         padding: 15px 0 15px;
@@ -4094,11 +4830,9 @@ p {
         text-align: center;
     }
 
-
     .footer .container {
         width: 90%;
     }
-
 
     .footer p {
         margin: 0;
@@ -4108,344 +4842,197 @@ p {
         line-height: 1.4;
     }
 
-
     .footer-links {
         margin-top: 7px;
 
         gap: 5px;
     }
 
-
     .footer-links a {
         font-size: 10px;
     }
-
 
     .footer-links span {
         font-size: 10px;
     }
 
+}
 
-    /*QUESTIONARIO*/
+/* =========================================================
+   SEGUNDA CHAMADA — CELULAR E IPAD MINI
+   ========================================================= */
 
-     .questionario-overlay {
-        padding: 10px;
+/* CELULAR — até 767px */
+@media (max-width: 767px) {
+
+    .segunda-chamada {
+        padding: 45px 0 40px !important;
     }
 
-
-    /* =================================================
-       FUNDO
-    ================================================== */
-
-    .questionario-fundo {
-        width: 100%;
-
-        height: 90vh;
-
-        max-height: 680px;
-
-        border-radius: 8px;
+    .segunda-chamada .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
     }
 
+    .cta-content {
+        width: 100% !important;
+        max-width: 100% !important;
 
-    /* =================================================
-       LOGO
-    ================================================== */
+        display: flex !important;
+        flex-direction: column !important;
 
-    .questionario-logo {
-        top: 18px;
+        align-items: center !important;
+        justify-content: center !important;
 
-        left: 24px;
+        gap: 20px !important;
     }
 
+    .cta-texto {
+        width: 100% !important;
+        padding: 0 25px !important;
 
-    .questionario-logo span {
-        font-size: 24px;
+        box-sizing: border-box !important;
+        text-align: center !important;
     }
 
+    .cta-texto h2 {
+        width: 100% !important;
 
-    .questionario-logo small {
-        font-size: 7px;
+        margin: 0 auto 7px !important;
 
-        letter-spacing: 1.5px;
+        font-size: 25px !important;
+        line-height: 1.15 !important;
+
+        text-align: center !important;
+        white-space: normal !important;
     }
 
+    .cta-texto p {
+        width: 100% !important;
 
-    /* =================================================
-       FLORES
-    ================================================== */
+        margin: 0 auto !important;
 
-    .flor-imagem {
-        opacity: 0.15;
+        font-size: 16px !important;
+        line-height: 1.3 !important;
+
+        text-align: center !important;
     }
 
+    .cta-form {
+        width: 100% !important;
 
-    .flor-esquerda {
-        width: 190px;
+        display: flex !important;
+        flex-direction: column !important;
 
-        left: -75px;
-
-        bottom: -55px;
-
-        transform: rotate(-8deg);
+        align-items: center !important;
+        gap: 0 !important;
     }
 
-
-    .flor-direita {
-        width: 190px;
-
-        right: -55px;
-
-        top: -45px;
-
-        transform: rotate(8deg);
+    .cta-form .input-group {
+        display: none !important;
     }
 
+    .cta-form button {
+        width: 280px !important;
+        max-width: calc(100% - 40px) !important;
 
-    /* =================================================
-       CARD
-    ================================================== */
+        height: 48px !important;
 
-    .questionario-card {
-        width: 92%;
+        margin: 0 auto !important;
 
-        height: auto;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
 
-        max-height: 82vh;
+        font-size: 16px !important;
+    }
+}
 
-        border-radius: 13px;
+
+/* =========================================================
+   IPAD MINI — EXATAMENTE 768px
+   ========================================================= */
+
+@media (min-width: 768px) and (max-width: 768px) {
+
+    .segunda-chamada {
+        padding: 45px 0 40px !important;
     }
 
+    .segunda-chamada .container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 25px !important;
 
-    /* =================================================
-       TOPO
-    ================================================== */
-
-    .questionario-header {
-        padding: 20px 25px 10px;
+        box-sizing: border-box !important;
     }
 
+    .cta-content {
+        width: 100% !important;
+        max-width: 100% !important;
 
-    .progresso-texto {
-        font-size: 10px;
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        gap: 20px !important;
     }
 
+    .cta-texto {
+        width: 100% !important;
+        padding: 0 !important;
 
-    .progresso-porcentagem {
-        font-size: 11px;
-        position: relative;
-        right: 22px;
-        top: 4px;
+        text-align: center !important;
+        box-sizing: border-box !important;
     }
 
+    .cta-texto h2 {
+        width: 100% !important;
 
-    .progresso-container {
-        width: calc(100% - 50px);
+        margin: 0 auto 8px !important;
+
+        font-size: 28px !important;
+        line-height: 1.15 !important;
+
+        text-align: center !important;
+        white-space: normal !important;
     }
 
+    .cta-texto p {
+        width: 100% !important;
 
-    /* =================================================
-       FECHAR
-    ================================================== */
+        margin: 0 auto !important;
 
-    .questionario-fechar {
-        top: 16px;
+        font-size: 16px !important;
+        line-height: 1.3 !important;
 
-        right: 17px;
-
-        font-size: 25px;
+        text-align: center !important;
     }
 
+    .cta-form {
+        width: 100% !important;
 
-    /* =================================================
-       CONTEÚDO
-    ================================================== */
+        display: flex !important;
+        flex-direction: column !important;
 
-    .questionario-conteudo {
-        padding: 25px;
+        align-items: center !important;
     }
 
+    .cta-form button {
+        width: 280px !important;
+        max-width: 100% !important;
 
-    .questionario-conteudo h1 {
-        font-size: 21px;
+        height: 48px !important;
 
-        margin-bottom: 20px;
+        margin: 0 auto !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        font-size: 16px !important;
     }
-
-
-    /* =================================================
-       OPÇÕES
-    ================================================== */
-
-    .questionario-opcoes {
-        gap: 9px;
-    }
-
-
-    .questionario-opcao {
-        min-height: 48px;
-
-        padding: 11px 15px;
-
-        font-size: 13px;
-    }
-
-
-    /* =================================================
-       TEXTAREA
-    ================================================== */
-
-    .questionario-texto {
-        min-height: 135px;
-
-        font-size: 13px;
-    }
-
-
-    /* CAMPO OUTRO - MOBILE */
-    .questionario-outro {
-        width: 100%;
-        height: 42px;
-
-        padding: 0 12px;
-
-        box-sizing: border-box;
-
-        border: 1px solid #D8C9C0;
-        border-radius: 9px;
-
-        background: #FFFDFC;
-
-        font-family: "Lato", sans-serif;
-        font-size: 13px;
-        color: #2D2325;
-
-        outline: none;
-    }
-
-    .questionario-outro::placeholder {
-        color: #8E7770;
-    }
-
-    .questionario-outro:focus {
-        border-color: #7A2635;
-
-        box-shadow:
-            0 0 0 2px rgba(122, 38, 53, 0.08);
-    }
-
-    /* =================================================
-       ESCALA
-    ================================================== */
-
-    .questionario-escala {
-        width: 100%;
-
-        max-width: none;
-    }
-
-
-    .escala-numeros {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        gap: 2px;
-    }
-
-    .escala-opcao {
-        width: 26px;
-        height: 26px;
-        min-width: 26px;
-        flex-shrink: 0;
-        font-size: 10px;
-    }
-
-    .escala-legenda {
-        margin-top: 9px;
-
-        font-size: 11px;
-    }
-
-
-    /* =================================================
-       NAVEGAÇÃO
-    ================================================== */
-
-    .questionario-navegacao {
-        padding-top: 25px;
-    }
-
-
-    .btn-voltar,
-    .btn-proxima {
-        min-width: 105px;
-
-        height: 42px;
-
-        font-size: 12px;
-    }
-
-
-    /* =================================================
-       INFORMAÇÕES
-       
-       Escondidas no celular como já estava.
-    ================================================== */
-
-    .questionario-info {
-        display: none;
-    }
-
-
-    /* =================================================
-       SUCESSO
-    ================================================== */
-
-    .questionario-sucesso {
-        min-height: 430px;
-
-        padding: 30px 25px;
-    }
-
-
-    .sucesso-icone {
-        width: 55px;
-
-        height: 55px;
-
-        margin-bottom: 20px;
-
-        font-size: 25px;
-    }
-
-
-    .questionario-sucesso h1 {
-        font-size: 21px;
-
-        line-height: 1.3;
-
-        margin-bottom: 15px;
-    }
-
-
-    .questionario-sucesso p {
-        font-size: 14px;
-
-        line-height: 1.5;
-
-        margin-bottom: 28px;
-    }
-
-
-    .sucesso-botao {
-        width: 100%;
-
-
-        max-width: 280px;
-
-        height: 46px;
-
-        font-size: 12px;
-    }
-
-}  
+}
