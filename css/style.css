@@ -586,6 +586,7 @@ p {
     overflow: hidden;
 
     color: white;
+    gap: 5px;
 }
 
 
@@ -644,7 +645,7 @@ p {
 
     font-family: "Cormorant Garamond", serif;
 
-    font-size: 28px;
+    font-size: 29px;
 
     line-height: 0.92;
 
@@ -704,7 +705,7 @@ p {
 .hero-form input {
     width: 100%;
 
-    height: 38px;
+    height: 40px;
 
     padding: 0 11px 0 40px;
 
@@ -5068,6 +5069,7 @@ p {
         line-height: 1;
 
         z-index: 2;
+        display: none;
     }
 
 
